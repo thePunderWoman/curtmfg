@@ -1,0 +1,116 @@
+h3 {
+  padding-top: 20px;
+  margin-left: 10px;
+  margin-top: 0px;
+  margin-bottom: 3px;
+  font-size: 2.0em;
+  position: relative;
+  z-index: 1; }
+
+.content p {
+  font-size: 1.2em; }
+
+.error {
+  color: Red;
+  font-weight: bold; }
+
+#page_content #dealer_form {
+  padding: 40px 20px 0;
+  z-index: 2;
+  float: left;
+  width: 449px;
+  font-size: 1.2em; }
+  #page_content #dealer_form ul {
+    list-style: none;
+    margin: 0;
+    padding: 0; }
+    #page_content #dealer_form ul li {
+      display: block;
+      padding: 3px 0; }
+      #page_content #dealer_form ul li label {
+        float: left;
+        font-weight: bold;
+        padding-top: 4px;
+        width: 150px; }
+      #page_content #dealer_form ul li input {
+        float: left;
+        width: 220px; }
+      #page_content #dealer_form ul li textarea {
+        float: left;
+        width: 220px;
+        font-family: Arial, Helvetica, sans-serif; }
+  #page_content #dealer_form #dealerSubmit {
+    margin: 3px 72px 0 0;
+    float: right;
+    font-size: 1em; }
+  #page_content #dealer_form .messageConfirmation {
+    border: 2px solid #ccc;
+    display: inline-block;
+    padding: 0 10px 10px; }
+#page_content #dealer_right {
+  z-index: 1;
+  float: right;
+  width: 480px; }
+  #page_content #dealer_right #dealer_title {
+    padding-top: 40px; }
+  #page_content #dealer_right #dealer_text {
+    display: block;
+    padding-right: 30px;
+    font-size: 14px;
+    line-height: 1.5em; }
+  #page_content #dealer_right #dealer_img {
+    position: relative;
+    top: 14px;
+    right: 80px;
+    width: 347px;
+    float: right; }
+#page_content #dealer_benefits {
+  display: block;
+  padding-top: 40px; }
+  #page_content #dealer_benefits .benefit {
+    width: 215px;
+    height: 380px;
+    margin: 0 5px;
+    padding-left: 15px;
+    float: left;
+    background: url("/Content/img/vertical_shadow.png") 0 20px no-repeat; }
+    #page_content #dealer_benefits .benefit:first-child {
+      background: none; }
+    #page_content #dealer_benefits .benefit img {
+      width: 215px; }
+    #page_content #dealer_benefits .benefit .horizontalShadow {
+      position: relative; }
+    #page_content #dealer_benefits .benefit h3, #page_content #dealer_benefits .benefit a {
+      color: #e44f31;
+      padding-top: 0;
+      margin-left: 0;
+      margin-top: 0px;
+      margin-bottom: 3px;
+      font-size: 1.8em;
+      line-height: 1.8em;
+      position: relative;
+      z-index: 1; }
+    #page_content #dealer_benefits .benefit blockquote, #page_content #dealer_benefits .benefit a {
+      line-height: 1.1em;
+      font-size: 10pt;
+      width: 175px;
+      margin: 0px; }
+    #page_content #dealer_benefits .benefit blockquote {
+      line-height: 1.4; }
+      #page_content #dealer_benefits .benefit blockquote .quote {
+        font-family: IM Fill DW Pica;
+        display: inline-block;
+        color: #e44f31;
+        height: 3px;
+        line-height: 0.2em;
+        font-size: 24pt; }
+
+#rightContent {
+  position: relative;
+  z-index: 1;
+  width: 71%;
+  float: left;
+  padding-right: 15px;
+  font-size: 1.2em; }
+
+/* End Dealer Info */

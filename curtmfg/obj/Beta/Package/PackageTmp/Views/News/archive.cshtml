@@ -1,0 +1,27 @@
+﻿@using curtmfg.Models;
+@{
+    ViewBag.Title = "Latest News";
+    ViewBag.layoutclass = "content";
+    Layout = "~/Views/Shared/_InternalLayout.cshtml";
+    List<curtmfg.NewsItem> news = ViewBag.news;
+    int page = ViewBag.page;
+    int pages = ViewBag.pages;
+}
+
+<h2>News Room Archive</h2>
+<a href="/News" class="newshome">Back to News Home</a>
+@foreach (curtmfg.NewsItem item in news) {
+    <article class="news">
+        <a href="/news/article/@String.Format("{0:M-dd-yyyy}", item.publishStart)/@item.slug" class="title">@item.title</a>
+        <p class="byline">@String.Format("{0: MMMM d, yyyy} at {0: h:mm tt}",item.publishStart)</p>
+        <p class="lead">@item.lead <a href="/news/article/@String.Format("{0:M-dd-yyyy}", item.publishStart)/@item.slug">Read More &gt;</a></p>
+    </article>
+}
+@if (pages > 1) {
+    <footer id="pagination">
+        @if (page != 1) {<a id="prev" href="/news?page=@(page - 1)" rel="prev" title="Previous Page">&lt; Previous</a>}
+        <span>Page @page of @pages</span>
+        @if (page != pages) {<a id="next" href="/news?page=@(page + 1)" rel="next" title="Next Page">Next &gt;</a>}
+    </footer>
+}
+<a href="/News" class="newshome">Back to News Home</a>

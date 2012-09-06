@@ -1,0 +1,30 @@
+﻿@using curtmfg.Models;
+@{
+    ViewBag.Title = "Forum";
+    ViewBag.css = new List<string> { Url.Content("~/Content/css/forum.css") };
+    Layout = "~/Views/Shared/_InternalLayout.cshtml";
+    List<FullGroup> groups = ViewBag.groups;
+}
+
+<h3>Forum</h3>
+
+@foreach (FullGroup group in groups) {
+    <div class="forumgroup">
+        <div class="forumtitle"><strong>@group.name</strong><span class="clear"></span></div>
+        <p class="desc">@group.description</p>
+        <div class="forumtopics">
+            @foreach (FullTopic topic in group.topics) {
+                <a class="forumtopic" href="/Forum/Topic/@topic.topicID/@UDF.GenerateSlug(topic.name)">
+                    <span class="image">
+                        <img src="@((topic.image != null && topic.image != "") ? topic.image : "/Content/img/noimage.png")" alt="@topic.name" />
+                    </span>
+                    <span class="info">
+                        <span class="name">@topic.name</span>
+                        @topic.count Discussion@((topic.count != 1) ? "s" : "")
+                    </span>
+                </a>
+            }
+            <div class="clear"></div>
+        </div>
+    </div>
+}

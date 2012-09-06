@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="alex_db" Class="docsDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\sqlexpress;Initial Catalog=alex_db;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="alex_dbConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.users" Member="users">
+    <Type Name="user">
+      <Column Name="userID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="username" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="password" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="email" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="fname" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="lname" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="website" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="phone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="fax" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="isAdmin" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="comments" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="dateAdded" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="isActive" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="superUser" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="stateID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="city" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="address" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="isDealer" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="biography" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="photo" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

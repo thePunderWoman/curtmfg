@@ -1,0 +1,13 @@
+﻿@using curtmfg.Models;
+@{
+    ViewBag.Title = "Hitch Lookup - Select a Year";
+    ViewBag.css = new List<string> { Url.Content("~/Content/css/hitchLookup.css") };
+    Layout = "~/Views/Shared/_InternalLayout.cshtml";
+}
+
+<h4 id="vehicle" class="hasvehicle"><span><span class="yourvehicle"></span> &nbsp;</span></h4>
+<h3>Select A Mount</h3>
+<ul class="lookup">
+    <li><a href="/HitchLookup/Mount/Front Mount">Front Mount</a></li>
+    <li><a href="/HitchLookup/Mount/Rear Mount">Rear Mount</a></li>
+</ul>

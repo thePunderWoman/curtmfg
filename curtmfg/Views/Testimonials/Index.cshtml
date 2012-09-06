@@ -1,0 +1,135 @@
+﻿@{
+    ViewBag.Title = "Testimonials";
+    ViewBag.css = new List<string>() { "/Content/css/testimonials.css" };
+    ViewBag.layoutclass = "content";
+    Layout = "~/Views/Shared/_InternalLayout.cshtml";
+    List<curtmfg.Testimonial> testimonials = ViewBag.testimonials;
+    int colcount = Convert.ToInt32(Math.Ceiling(testimonials.Count() / 2.0));
+    List<curtmfg.Testimonial> cola = testimonials.Take(colcount).ToList<curtmfg.Testimonial>();
+    List<curtmfg.Testimonial> colb = testimonials.Skip(colcount).ToList<curtmfg.Testimonial>();
+    int pagecount = ViewBag.pagecount;
+    int page = ViewBag.page;
+    List<string> errors = ViewBag.errors ?? new List<string>();
+
+}
+<script type="text/javascript" src="/Scripts/custom/testimonials.js"></script>
+<h3>Testimonials</h3>
+<a href="#addtestimonial" class="button" id="submitTestimonial">Submit Your Testimonial</a>
+@if (testimonials != null) {
+    <div class="column">
+        @foreach (curtmfg.Testimonial testimonial in cola) {
+            <article class="testimonial">
+                <header>
+                    <p>@testimonial.title</p>
+                    <div class="starrating">
+                        <span class="stars" style="width: @((testimonial.rating / 5.0) * 100)%;"></span>
+                    </div>
+                    <span class="clear"></span>
+                </header>
+                <p>@testimonial.testimonial1</p>
+                @if (testimonial.first_name != null && testimonial.first_name != "") {
+                    <cite>@testimonial.first_name@((testimonial.location != null && testimonial.location != "") ? " from " + testimonial.location : "")</cite>
+                }
+            </article>
+        }
+    </div>
+    <div class="column">
+        @foreach (curtmfg.Testimonial testimonial in colb) {
+            <article class="testimonial">
+                <header>
+                    <p>@testimonial.title</p>
+                    <div class="starrating">
+                        <span class="stars" style="width: @((testimonial.rating / 5.0) * 100)%;"></span>
+                    </div>
+                    <span class="clear"></span>
+                </header>
+                <p>@testimonial.testimonial1</p>
+                @if (testimonial.first_name != null && testimonial.first_name != "") {
+                    <cite>@testimonial.first_name@((testimonial.location != null && testimonial.location != "") ? " from " + testimonial.location : "")</cite>
+                }
+            </article>
+        }
+    </div>
+    <footer id="pagination">
+        @if (page > 1 && pagecount > 1) {
+            //Previous page link
+            <a id="prevpage" rel="prev" href="/Testimonials?page=@(page - 1)">&lt; Prev</a>
+        }
+        <span id="pagecount">Page @page of @pagecount</span>
+        @if (pagecount > 1 && page != pagecount) {
+            //Next page link
+            <a id="nextpage" rel="next" href="/Testimonials?page=@(page + 1)">Next &gt;</a>
+        }
+    </footer>
+}
+<div id="addtestimonial">
+    <h4>Submit Your Testimonial</h4>
+    @if (errors.Count() > 0) {
+        <ul class="error">
+            @foreach (string error in errors) {
+                <li>@error</li>
+            }
+        </ul>
+    }
+    <form id="testimonialForm" action="/Testimonials/AddTestimonial" method="post">
+        <ul class="formlist">
+            <li>
+                <label for="rating" id="ratinglabel">Rating <span class="req">*</span></label>
+                <input type="hidden" name="rating" id="rating" value="@((ViewBag.rating != null) ? ViewBag.rating : 0)" />
+                <div id="rate">
+                    <span id="star_1" class="star"></span>
+                    <span id="star_2" class="star"></span>
+                    <span id="star_3" class="star"></span>
+                    <span id="star_4" class="star"></span>
+                    <span id="star_5" class="star"></span>
+                </div>
+            </li>
+            <li>
+                <label for="addtitle">Title <span class="req">*</span></label>
+                <input type="text" name="addtitle" id="addtitle" placeholder="Enter a Title" value="@((ViewBag.addtitle != null) ? ViewBag.addtitle : "")" required />
+            </li>
+            <li>
+                <label for="testimonial">Testimonial <span class="req">*</span></label>
+                <textarea name="testimonial" id="testimonial" placeholder="Enter your Comments" required>@((ViewBag.testimonial != null) ? ViewBag.testimonial : "")</textarea>
+            </li>
+            <li>
+                <label for="first_name">First Name</label>
+                <input type="text" name="first_name" id="first_name" placeholder="Enter your First Name" value="@((ViewBag.first_name != null) ? ViewBag.first_name : "")" />
+            </li>
+            <li>
+                <label for="last_name">Last Name</label>
+                <input type="text" name="last_name" id="last_name" placeholder="Enter your Last Name" value="@((ViewBag.last_name != null) ? ViewBag.last_name : "")" />
+            </li>
+            <li>
+                <label for="location">Location</label>
+                <input type="text" name="location" id="location" placeholder="Enter your Location (i.e. 'Eau Claire, WI')" value="@((ViewBag.location != null) ? ViewBag.location : "")" />
+            </li>
+            <li id="testimonialrecaptcha">
+                @Html.Raw(curtmfg.Models.ReCaptcha.GenerateCaptcha())
+            </li>
+            <li id="submittestimonial">
+                <input type="submit" value="Submit" class="submit" />
+            </li>
+
+        </ul>
+        <span class="clear"></span>
+    </form>
+</div>
+<div id="success-message" style="display: none;"></div>
+<div id="site-message">@TempData["message"]</div>
+<script type="text/javascript">
+    $(function () {
+        $('#site-message').hide();
+        if ($('#site-message').html().length > 0) {
+            $("#site-message").dialog({
+                modal: true,
+                autoOpen: true,
+                buttons: {
+                    Ok: function () {
+                        $(this).dialog("close");
+                    }
+                }
+            });
+        }
+    });
+</script>

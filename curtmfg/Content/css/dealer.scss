@@ -1,0 +1,155 @@
+﻿$textcolor: #e44f31;
+
+h3 {
+    padding-top: 20px;
+    margin-left: 10px;
+    margin-top: 0px;
+    margin-bottom: 3px;
+    font-size: 2.0em;
+    position: relative;
+    z-index: 1;
+}
+
+.content {
+	p {
+		font-size: 1.2em;
+	}
+}
+
+.error {
+	color: Red;
+	font-weight: bold;
+}
+
+#page_content {
+	#dealer_form {
+		padding: 40px 20px 0; 
+		z-index: 2;
+		float: left;
+		width: 449px;
+		font-size: 1.2em;
+		ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			li {
+				display: block;
+				padding: 3px 0;
+				label {
+					float: left;
+					font-weight: bold;
+					padding-top: 4px;
+					width: 150px;
+				}
+				input {
+					float: left;
+					width: 220px;
+				}
+				textarea {
+					float: left;
+					width: 220px;
+					font-family: Arial, Helvetica, sans-serif;
+				}
+			}
+		}
+		#dealerSubmit {
+			margin: 3px 72px 0 0;
+			float: right;
+			font-size: 1em;
+		}
+		.messageConfirmation {
+			border:2px solid #ccc;
+			display:inline-block;
+			padding: 0 10px 10px;
+		}
+	}
+
+	#dealer_right {
+		z-index: 1;
+		float: right;
+		width: 480px;
+		
+		#dealer_title {
+			padding-top:40px;
+		}
+		#dealer_text {
+			display: block;
+			padding-right: 30px;
+			font-size: 14px;
+			line-height: 1.5em;
+		}
+		#dealer_img {
+			 position:relative;
+			 top: 14px;
+			 right: 80px;
+			 width: 347px;
+			 float:right;
+		}
+
+	}
+
+	#dealer_benefits {
+		display: block;
+		padding-top: 40px;
+		.benefit {
+			width: 215px;
+			height: 380px;
+			margin: 0 5px;
+			padding-left: 15px;
+			float: left;
+			background: url("/Content/img/vertical_shadow.png") 0 20px no-repeat;
+			&:first-child {
+				background: none;
+			}
+
+			img {
+				width: 215px;
+			}
+
+			.horizontalShadow {
+				position:relative;
+			}
+			h3, a {
+				color: $textcolor;
+				padding-top: 0;
+				margin-left: 0;
+				margin-top: 0px;
+				margin-bottom: 3px;
+				font-size: 1.8em;
+				line-height: 1.8em;
+				position: relative;
+				z-index: 1;
+			}
+
+			blockquote, a {
+				line-height: 1.1em;
+				font-size: 10pt;
+				width: 175px;
+				margin: 0px;
+			}
+			blockquote {
+				line-height: 1.4;
+				.quote {
+					font-family: IM Fill DW Pica;
+					display: inline-block;
+					color: $textcolor;
+					height: 3px;
+					line-height: 0.2em;
+					font-size: 24pt;
+				}
+			}
+		}
+	}
+}
+
+
+
+#rightContent {
+	position: relative;
+	z-index: 1;
+    width: 71%;
+    float:left;
+    padding-right: 15px;
+	font-size: 1.2em;
+}
+/* End Dealer Info */

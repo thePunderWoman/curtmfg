@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html class="no-js">
+<head>
+    @Html.Partial("_Head")
+    <link rel="canonical" href="http://www.curtmfg.com"/>
+    <script type="text/javascript" defer src="@Url.Content("~/Scripts/custom/homepage.js")"></script>
+    <script type="text/javascript" defer src="@Url.Content("~/Scripts/custom/tabs.js")"></script>
+</head>
+
+<body>
+    <div id="container">
+        @Html.Partial("_Header")
+        <section id="page_content">
+            @Html.Partial("_LifestyleBar")
+            @RenderBody()
+        </section>
+        @Html.Partial("_Sitemap")
+        @Html.Partial("_Footer")
+    </div>
+    @Html.Partial("_AnalyticsBottom")
+</body>
+</html>

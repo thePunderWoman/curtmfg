@@ -1,0 +1,19 @@
+﻿@{
+    List<curtmfg.Models.SimpleMenu> menus = ViewBag.sitemapmenus ?? new List<curtmfg.Models.SimpleMenu>();
+}
+<section id="site_map">
+    @foreach (curtmfg.Models.SimpleMenu menu in menus) {
+        if (menu != null) {
+            <nav class="map_box">
+                <h5>@((menu.display_name != null && menu.display_name != "") ? menu.display_name : menu.menu_name)</h5>
+                <ul>
+                    @foreach (curtmfg.Models.menuItem item in menu.contents) {
+                        <li><a href="@((item.hasContent()) ? ("/page/" + item.content.slug) : item.menuLink)">@((item.hasContent()) ? item.content.page_title : item.menuTitle)</a></li>
+                    }
+                </ul>
+            </nav>
+        }
+    }
+    <span class="clear"></span>
+</section>
+<div id="site_map_bottom"></div>

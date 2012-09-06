@@ -1,0 +1,53 @@
+﻿@{
+    ViewBag.Title = "Thank You for Contacting CURT Manufacturing";
+    ViewBag.layoutclass = "content";
+    List<string> css = new List<string>();
+    css.Add(Url.Content("~/Content/css/contact.css"));
+    ViewBag.css = css;
+    Layout = "~/Views/Shared/_InternalLayout.cshtml";
+    curtmfg.Contact contact = ViewBag.contact;
+}
+
+<h2>Thank you for contacting Us!</h2>
+
+<p>We have received your message and will contact you at @contact.email once we have a response to your message.</p>
+<p>Below you will find the contents of your message, so you can make sure we got everything right.</p>
+
+<div id="contact_box">
+    <strong>Name:</strong>
+    <p>@contact.first_name @contact.last_name</p>
+    
+    <strong>Email:</strong>
+    <p>@contact.email</p>
+
+    @if (contact.phone != "") {
+        <strong>Phone:</strong>
+        <p>@contact.phone</p>
+    }
+    @if (contact.address1 != "") {
+        <strong>Address:</strong>
+        <p>@contact.address1<br />
+            @if (contact.address2 != "") {
+                @contact.address2<br />
+            }
+            @if (contact.city != "") {
+                @contact.city
+            }
+            @if (contact.state != "") {
+                @((contact.city != "") ? ", " : "") @contact.state
+            }
+            @if (contact.postalcode != "") {
+                <text> </text>@contact.postalcode
+            }
+        </p>
+    }
+    <strong>Reason:</strong>
+    <p>@contact.type</p>
+
+    <strong>Subject:</strong>
+    <p>@contact.subject</p>
+
+    <strong>Message:</strong>
+    <p>@contact.message</p>
+    <div class="clear"></div>
+</div>

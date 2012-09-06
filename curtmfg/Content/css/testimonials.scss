@@ -1,0 +1,148 @@
+﻿h3 {
+    padding-top: 20px;
+    margin-left: 10px;
+    margin-top: 0px;
+    margin-bottom: 3px;
+    font-size: 2.0em;
+    position: relative;
+    z-index: 1;
+}
+
+#submitTestimonial {
+	position: absolute;
+	right: 20px;
+	top: 20px;
+}
+
+.column {
+	float: left;
+	width: 463px;
+	.testimonial {
+		display: block;
+		border: 1px dashed #ccc; 
+		font-size: 1.2em;
+		padding: 20px;
+		margin: 10px 5px;
+
+		p {
+			margin: 0;
+		}
+
+		header {
+			display: block;
+			padding-bottom: 5px;
+			p {
+				margin: 0;
+				font-weight: bold;
+				float: left;
+				font-size: 1.4em;
+				padding-right: 10px;
+				max-width: 308px;
+			}
+			.starrating {
+				float: right;
+			}
+		}
+
+		cite {
+			&:before {
+				content: "- ";
+			}
+			display: block;
+			padding-top: 5px;
+			text-align: right;
+		}
+	}
+}
+
+#pagination {
+	display: block;
+	text-align: center;
+	font-size: 1.2em;
+	a {
+		float: left;
+		color: Black;
+		font-weight: bold;
+
+		&#nextpage {
+			float: right;
+		}
+	}
+}
+
+div#addtestimonial {
+	display: block;
+	padding: 15px 0;
+	border-bottom: 1px solid #ccc;
+
+	h4 {
+		font-weight: bold;
+		font-size: 1.5em;
+		margin: 0;
+	}
+	
+	ul.formlist {
+		list-style: none;
+		padding: 0 5px;
+		margin: 0;
+		display: block;
+		li {
+			display: block;
+			margin: 0;
+			padding: 3px 0;
+
+			input {
+				width: 300px;
+				&.submit {
+					width: auto;
+				}
+			}
+
+			label {
+				display: block;
+				font-size: 0.9em;
+			}
+
+			textarea {
+				width: 400px;
+				height: 100px;
+			}
+		}
+	}
+
+	ul.error {
+		float: none;
+		display: block;
+		width: auto;
+		color: red;
+		font-weight: bold;
+	}
+
+}
+
+.success {
+	display: block;
+	color: green;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+div#rate {
+	display: block;
+	height: 15px;
+	width: 85px;
+	text-align: center;
+	
+	span.star {
+		height: 15px;
+		width: 17px;
+		float: left;
+		background: url('../img/star.png') bottom left repeat-x;
+		cursor: pointer;
+	}
+
+	span.hovered, span.selected {
+		background: url('../img/star.png') top left repeat-x;
+	}
+
+}

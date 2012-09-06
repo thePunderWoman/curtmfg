@@ -1,0 +1,9 @@
+#container {filter: none;}
+#sub_nav ul li.active .overlay {filter: none;}
+div.optionbox {filter:none;}
+#tab_container #tab_scroll #online .platinum .bar, #tab_container #tab_scroll #local .platinum .bar {filter: none;}
+#tab_container #tab_scroll #online .gold .bar, #tab_container #tab_scroll #local .gold .bar {filter: none;}
+#tab_container #tab_scroll #online .silver .bar, #tab_container #tab_scroll #local .silver .bar {filter: none;}
+#twitter #twitterBox #twitterheader .twitterbutton {filter: none;}
+#site_map_bottom {filter: none;}
+#toggles div.toggle div.togglebox span {filter: none;}

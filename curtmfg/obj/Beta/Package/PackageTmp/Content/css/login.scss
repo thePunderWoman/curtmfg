@@ -1,0 +1,16 @@
+﻿p {
+	font-size: 1.2em;
+	&.errormessage {
+		font-weight: bold;
+		font-size: 1.6em;
+		color: #b51807;
+	}
+}
+#dealer-login-form {
+	display: block;
+	margin-bottom: 30px;
+	label {
+		display: block;
+		padding: 3px 0;
+	}
+}

@@ -1,0 +1,169 @@
+#container {
+  background: #857f73;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #857f73 0%, #c6c1bd 33%, #ededed 50%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #857f73), color-stop(33%, #c6c1bd), color-stop(50%, #ededed));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #857f73 0%, #c6c1bd 33%, #ededed 50%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #857f73 0%, #c6c1bd 33%, #ededed 50%);
+  /* Opera11.10+ */
+  background: -ms-linear-gradient(top, #857f73 0%, #c6c1bd 33%, #ededed 50%);
+  /* IE10+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#857f73', endColorstr='#ededed',GradientType=0 );
+  /* IE6-9 */
+  background: linear-gradient(top, #857f73 0%, #c6c1bd 33%, #ededed 50%);
+  /* W3C */ }
+
+#page_content {
+  background: #fff;
+  position: relative; }
+  #page_content.content h2 {
+    font-size: 3.0em;
+    font-family: ITCAvantGardeGothicStdBold;
+    text-transform: uppercase;
+    color: #666;
+    letter-spacing: -0.1em;
+    line-height: 1;
+    margin: 0;
+    padding: .83em 0; }
+  #page_content #sidebar {
+    position: relative;
+    float: left;
+    width: 240px;
+    height: 100%;
+    padding: 0 0 20px;
+    margin: 20px 0 0 -20px; }
+    #page_content #sidebar div.menutitle {
+      position: relative;
+      z-index: 10;
+      list-style: none;
+      margin: 0 0 5px;
+      padding: 7px 20px;
+      background-color: #f4f4f4;
+      border-bottom: 1px solid #ddd; }
+      #page_content #sidebar div.menutitle strong {
+        margin: 0;
+        padding: 6px 0 5px;
+        color: #000;
+        font-size: 1.8em;
+        border-bottom: 4px solid #ddd;
+        float: left; }
+    #page_content #sidebar ul {
+      list-style: none;
+      margin: 0;
+      padding: 0; }
+      #page_content #sidebar ul li {
+        display: block; }
+        #page_content #sidebar ul li a {
+          display: block;
+          padding: 4px 5px 4px 20px;
+          text-decoration: none;
+          color: #000;
+          font-size: 1.2em; }
+          #page_content #sidebar ul li a:hover, #page_content #sidebar ul li a.active {
+            background-color: #ccc; }
+        #page_content #sidebar ul li ul li {
+          padding-left: 15px; }
+          #page_content #sidebar ul li ul li a {
+            font-size: 1.1em;
+            padding: 3px 5px 3px 20px; }
+  #page_content .main {
+    float: left;
+    width: 640px;
+    padding-left: 20px; }
+
+#pagination {
+  display: block;
+  clear: both;
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+  margin-top: 10px;
+  text-align: center; }
+  #pagination a {
+    float: left;
+    text-decoration: none; }
+    #pagination a:hover {
+      text-decoration: underline; }
+    #pagination a#next {
+      float: right; }
+
+article.news {
+  display: block;
+  padding: 8px 0; }
+  article.news h2 {
+    font-size: 1.6em;
+    margin: 10px 0 2px;
+    padding: 0 0 2px; }
+  article.news .title {
+    font-size: 1.4em;
+    margin: 0 0 2px;
+    padding: 0 0 2px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #000; }
+    article.news .title:hover {
+      text-decoration: underline; }
+  article.news .byline {
+    border-top: 1px solid #cccccc;
+    font-size: 1.1em;
+    text-align: right;
+    margin: 3px 0; }
+  article.news .lead {
+    font-size: 1.2em;
+    padding: 0 0 10px 10px;
+    margin: 0;
+    line-height: 1.2; }
+    article.news .lead a {
+      font-size: .8em;
+      color: #343434; }
+  article.news .content {
+    font-size: 1.2em;
+    padding: 0 0 10px 10px;
+    margin: 0;
+    line-height: 1.2; }
+  article.news a.back {
+    color: #343434;
+    font-weight: bold;
+    font-size: 1.1em;
+    text-decoration: none; }
+    article.news a.back:hover {
+      text-decoration: underline; }
+
+a.archive, a.newshome {
+  font-size: 1.2em;
+  color: #f05922;
+  margin: 5px 0; }
+
+a.archive {
+  float: right; }
+
+.result {
+  display: block;
+  padding: 10px;
+  font-size: 1.4em;
+  border-top: 1px dashed #ccc; }
+  .result a {
+    color: #343434;
+    font-weight: bold; }
+  .result .description {
+    font-size: .8em;
+    font-style: italic;
+    padding-left: 10px; }
+
+#pagination {
+  display: block;
+  text-align: center;
+  font-size: 1.2em; }
+  #pagination a {
+    float: left;
+    color: Black;
+    font-weight: bold; }
+    #pagination a#nextpage {
+      float: right; }
+
+#hitchlookup {
+  height: 190px; }
+  #hitchlookup p {
+    padding-bottom: 2px; }

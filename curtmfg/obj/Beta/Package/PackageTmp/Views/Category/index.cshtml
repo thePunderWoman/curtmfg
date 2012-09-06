@@ -1,0 +1,228 @@
+﻿@using System.Drawing;
+@{
+    curtmfg.Models.Category category = ViewBag.category;
+    List<curtmfg.Models.Category> breadcrumbs = ViewBag.breadcrumbs;
+    ViewBag.Title = category.catTitle;
+    string colorcode = ViewBag.colorcode;
+    ViewBag.css = new List<string> { Url.Content("~/Content/css/category.css") };
+    Layout = "~/Views/Shared/_InternalLayout.cshtml";
+    int page = ViewBag.page;
+    int perpage = ViewBag.perpage;
+    int pagecount = ViewBag.pagecount;
+    List<curtmfg.Models.APIPart> parts = ViewBag.parts;
+    List<string> attributes = ViewBag.attributes;
+    Dictionary<string, curtmfg.Models.APIContent> contents = new Dictionary<string, curtmfg.Models.APIContent>();
+    foreach (curtmfg.Models.APIContent content in category.content) {
+        contents.Add(content.type, content);
+    }
+}
+<script type="text/javascript" src="@Url.Content("~/Scripts/custom/tabs.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/custom/category.js")"></script>
+<script type="text/javascript">
+    (function () {
+        var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+        po.src = 'https://apis.google.com/js/plusone.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+    })();
+</script>
+
+@{
+    if (colorcode != null && colorcode != "") {
+		<style type="text/css">
+			#tab_container #tab_scroll .tab_content .subcategory:hover {border-color: rgb(@colorcode);}
+			#page_gradient {
+				background: -moz-linear-gradient(top, rgba(@colorcode,0.45) 0%, rgba(@colorcode,0) 100%); /* FF3.6+ */
+				background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(@colorcode,0.45)), color-stop(100%,rgba(@colorcode,0))); /* Chrome,Safari4+ */
+				background: -webkit-linear-gradient(top, rgba(@colorcode,0.45) 0%,rgba(@colorcode,0) 100%); /* Chrome10+,Safari5.1+ */
+				background: -o-linear-gradient(top, rgba(@colorcode,0.45) 0%,rgba(@colorcode,0) 100%); /* Opera11.10+ */
+				background: -ms-linear-gradient(top, rgba(@colorcode,0.45) 0%,rgba(@colorcode,0) 100%); /* IE10+ */
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#73@(ViewBag.hexcode.Replace("#", ""))', endColorstr='#00@(ViewBag.hexcode.Replace("#", ""))',GradientType=0 ); /* IE6-9 */
+				background: linear-gradient(top, rgba(@colorcode,0.45) 0%,rgba(@colorcode,0) 100%); /* W3C */
+			}
+		</style>
+    }
+}
+
+<div id="page_gradient"></div>
+@if (ViewBag.vehicleID != "") {
+    <h4 id="vehicle" class="hasvehicle"><span><span class="yourvehicle">Your Vehicle:</span> <a href="/HitchLookup/Find?year=@ViewBag.year&amp;make=@ViewBag.make&amp;model=@ViewBag.model&amp;style=@ViewBag.style">@ViewBag.year @ViewBag.make @ViewBag.model @ViewBag.style</a><a href="/HitchLookup/Clear" class="clearvehicle" data-home="no">Clear</a><img style="display: none;" class="clearloading" src="/Content/img/ajax-loader2.gif" alt="Clearing Your Vehicle..." /></span></h4>
+} else if (category.vehicleSpecific) {
+    <h4 id="vehicle"><img class="warning" src="/Content/img/warning.png" alt="This part is vehicle specific" /><span>These parts are vehicle specific and we don't know your vehicle. <a href="/HitchLookup" class="fitYourVehicle" id="fitYourVehicle">Find Your Vehicle</a></span></h4>
+}
+
+@if (breadcrumbs.Count() > 1) {
+    <p class="breadcrumbs">
+        @for (int i = breadcrumbs.Count() - 1; i >= 0; i--) {
+            if (i != 0) {
+                <a href="@Url.RouteUrl("CategoryWithID", new { id = breadcrumbs[i].catID, name = breadcrumbs[i].catTitle.Replace('/', '|') })">@breadcrumbs[i].catTitle</a> <text>></text>
+            } else {
+                @breadcrumbs[i].catTitle
+            }
+        }
+    </p>
+}
+
+<h3>@category.catTitle</h3>
+<input type="hidden" id="categoryid" value="@category.catID" />
+<input type="hidden" id="vehicleID" value="@((ViewBag.vehicleID != "") ? ViewBag.vehicleID : "0")" />
+<input type="hidden" id="vehicleSpecific" value="@category.vehicleSpecific" />
+
+<div id="categoryBrief">
+    @if (contents.ContainsKey("CategoryBrief")) {
+        if (contents["CategoryBrief"].isHTML) {
+            @Html.Raw(contents["CategoryBrief"].content)
+        } else {
+            @contents["CategoryBrief"].content
+        }
+        <a href="#categoryContent" id="showCategoryContent">See More &gt;</a>
+    } else if (category.longDesc.Length > 0) {
+        <p>@category.longDesc</p>
+    } else if (category.shortDesc.Length > 0) {
+        <p>@category.shortDesc</p>
+    }
+    <span class="clear"></span>
+</div>
+<div id="categoryContent">
+    @if (contents.ContainsKey("CategoryContent")) {
+        if (contents["CategoryContent"].isHTML) {
+            @Html.Raw(contents["CategoryContent"].content)
+        } else {
+            @contents["CategoryContent"].content
+        }
+    }
+    <span class="clear"></span>
+    <a href="#categoryBrief" id="hideCategoryContent">&lt; See Less</a>
+    <span class="clear"></span>
+</div>
+<ul class="tabs">
+    @if (category.sub_categories.Count > 0) {
+        <li><a href="/Category/@category.catID/@category.catTitle#tab=subcategories" id="subcategories_tab">Subcategories</a></li>
+    }
+    @if (parts.Count() > 0) {
+        <li><a href="/Category/@category.catID/@category.catTitle#tab=parts" id="parts_tab">Parts</a></li>
+        <li><a href="/Category/@category.catID/@category.catTitle#tab=grid" id="grid_tab">Grid</a></li>
+    }
+    <li class="clear"></li>
+</ul>
+<div id="tab_container">
+    <div id="tab_scroll">
+        @if (category.sub_categories.Count > 0) {
+            <div class="tab_content" id="subcategories">
+                @foreach (curtmfg.Models.Category subcat in category.sub_categories) {
+                    <a class="subcategory" href="@Url.RouteUrl("CategoryWithID", new { id = subcat.catID, name = subcat.catTitle.Replace('/', '|') })">
+                        <img src="@subcat.image" alt="@subcat.catTitle" />
+                        <span class="subcatname">@subcat.catTitle</span>
+                    </a>
+                    
+                }
+                <span class="clear"></span>
+            </div>
+        }
+        @if (parts.Count > 0) {
+            <div class="tab_content" id="parts">
+                <img id="loadingprevious" src="/Content/img/ajax-loader2.gif" alt="Loading..." />
+                <div id="loadPrevious" style="display: none;">
+                    <span class="arrow-up"></span>
+                    <span id="previouspage">Load Page @(page - 1)</span>
+                    <span class="arrow-up rightside"></span>
+                </div>
+                <section class="partPage" id="page_@(page)">
+                    <span class="pageNumber">Page @page</span>
+	                @Html.Partial("_PartListing")
+                </section>
+                @if (pagecount > 1) {
+                    <img id="loading" src="/Content/img/ajax-loader2.gif" alt="Loading..." />
+                    <footer id="pagination">
+                        @if (page > 1 && pagecount > 1) {
+                            //Previous page link
+                            <a id="prevpage" rel="prev" href="/Category/@category.catID/@category.catTitle.Replace('/', '|')?page=@(page - 1)">&lt; Prev</a>
+                        }
+                        <span id="pagecount">Page @page of @pagecount</span>
+                        @if (pagecount > 1 && page != pagecount) {
+                            //Next page link
+                            <a id="nextpage" rel="next" href="/Category/@category.catID/@category.catTitle.Replace('/', '|')?page=@(page + 1)">Next &gt;</a>
+                        }
+                    </footer>
+                }
+            </div>
+            <div class="tab_content" id="grid">
+                <table class="gridview" border="0">
+                    <thead>
+                        <tr>
+                            <th>Image</th>
+                            <th>Part #</th>
+                            @foreach (string attribute in attributes) {
+                                <th class="attribute">@attribute</th>
+                            }
+                            <th>Details</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+                <img id="gridViewLoading" src="/Content/img/ajax-loader3.gif" alt="loading more grid items..." />
+            </div>
+        }
+    </div>
+</div>
+<span class="clear"></span>
+
+<!-- Mail Part -->
+<div id="shadowbox_mail" style="display:none">
+    <div style="background-color: White; height: 100%">
+        <form method="post" action="" id="mailForm">
+            <h3 style="margin: 0px 10px;padding-top: 5px;">Message Preview</h3>
+            <textarea id="messagePreview" name="messagePreview" cols="40" rows="5"></textarea><br />
+            <input type="text" name="fromName" id="fromName" placeholder="Enter your name" /><br />
+            <input type="text" name="fromEmail" id="fromEmail" placeholder="Enter your e-mail" /><br />
+            <input type="text" name="toName" id="toName" placeholder="Enter recipient's name" /><br />
+            <input type="text" name="toEmail" id="toEmail" placeholder="Enter recipient's e-mail" /><br />
+            <textarea cols="40" rows="5" name="comments" id="comments" placeholder="Enter additional comments"></textarea><br />
+            <input type="submit" name="btnReset" id="btnReset" value=" " />
+            <input type="submit" name="btnMail" id="btnMail" value=" " />
+        </form>
+    </div>
+</div>
+
+<script type="text/html" id="part-template">
+    <article class="part" id="part_${ $data.partID }">
+        <div class="productImage">
+            <a title="${$data.shortDesc}" href="/part/${$data.partID}" class="main_img">
+                <img class="product_img" alt="Product Image" src="/Content/img/noimage.png" />
+            </a>
+            <div class="fitinfo">
+                <span class="clear"></span>
+            </div>
+        </div>
+        <div class="productContent">
+            <header class="contentHeader">
+                <a href="/part/${$data.partID}" class="productTitle">${$data.shortDesc}</a>
+            </header>
+            <p class="shortDescription"></p>
+            <span class="clear"></span>
+            <a href="/part/${$data.partID}" class="viewdetails">View Details ></a>
+        </div>
+        <div class="productRight">
+            <a href="/WhereToBuy/" class="buyOnline button" id="${$data.partID}">Where To Buy</a>
+            <p class="msrp">MSRP <span>${$data.listPrice}</span></p>
+            <div class="social">
+                <div class="partreviews">
+                    <div class="starrating"></div>
+                    <a class="readReview" href="/part/${$data.partID}#tab=reviews">Read All Reviews</a>
+                    <span class="clear"></span>
+                </div>
+                <a href="javascript:mailPart(${$data.partID})" title="Mail Part" class="mail"><img alt="Mail Part" src="/Content/img/gmail.png" /></a>
+                <div class="twitter-tweet">
+                    <iframe scrolling="no" frameborder="0" allowTransparency="true" src="//platform.twitter.com/widgets/tweet_button.html?count=none&amp;url=http://www.curtmfg.com/part/${$data.partID}"></iframe>
+                </div>
+                <div class="facebook-like">
+                    <iframe src="//www.facebook.com/plugins/like.php?href=http://www.curtmfg.com/part/${$data.partID}&amp;send=false&amp;layout=standard&amp;width=48&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=20&amp;appId=154903937934243"  scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+                </div>
+                <div class="gplus1">
+                    <g:plusone size="medium" annotation="none" href="http://www.curtmfg.com/part/${$data.partID}"></g:plusone>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </article>
+</script>

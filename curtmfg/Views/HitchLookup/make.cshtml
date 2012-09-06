@@ -1,0 +1,18 @@
+﻿@using curtmfg.Models;
+@{
+    ViewBag.Title = "Hitch Lookup - Select a Model";
+    ViewBag.css = new List<string> { Url.Content("~/Content/css/hitchLookup.css") };
+    Layout = "~/Views/Shared/_InternalLayout.cshtml";
+    string mount = ViewBag.mount;
+    string year = ViewBag.year;
+    string make = ViewBag.make;
+    List<string> models = ViewBag.models;
+}
+
+<h4 id="vehicle" class="hasvehicle"><span><span class="yourvehicle">Your Vehicle:</span> @year @make</span></h4>
+<h3>Select Your Vehicle's Model</h3>
+<ul class="lookup">
+    @foreach (string modelstr in models) {
+        <li><a href="/HitchLookup/Mount/@mount/Year/@year/Make/@make.Replace('/', '|')/Model/@modelstr.Replace('/', '|')">@modelstr</a></li>
+    }
+</ul>

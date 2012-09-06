@@ -1,0 +1,72 @@
+body, #site_overlay_container, #directions {
+  width: 100%;
+  margin: 0;
+  float: none;
+  background: white url(none);
+  position: relative; }
+
+#container, #site_overlay, #directionsformcont, #changeDirections {
+  display: none; }
+
+#topnav, #navbar, #nav, #sidebar, .ad, .noprint {
+  display: none; }
+
+#directions {
+  box-shadow: none;
+  border-radius: none;
+  height: auto !important;
+  width: 100% !important;
+  top: 0px !important;
+  padding: 0 !important; }
+  #directions #directionsclose {
+    display: none; }
+  #directions #directionsContent {
+    overflow-y: visible !important;
+    overflow: visible !important;
+    height: auto !important;
+    width: 100%; }
+    #directions #directionsContent #directionsPanel, #directions #directionsContent #directions_mapcont {
+      display: block;
+      clear: both;
+      padding-bottom: 15px;
+      float: none !important;
+      width: auto !important;
+      width: 100% !important; }
+    #directions #directionsContent #directionsPanel div.adp-list {
+      display: none; }
+
+body {
+  font: 1em Georgia, "Times New Roman", Times, serif;
+  color: #000; }
+
+#directions h1, #directions h2, #directions h3, #directions h4, #directions h5, #directions h6 {
+  font-family: Helvetica, Arial, sans-serif;
+  color: #000; }
+
+#directions h1 {
+  font-size: 250%; }
+
+#directions h2 {
+  font-size: 175%; }
+
+#directions h3 {
+  font-size: 135%; }
+
+#directions h4 {
+  font-size: 100%;
+  font-variant: small-caps; }
+
+#directions h5 {
+  font-size: 100%; }
+
+#directions h6 {
+  font-size: 90%;
+  font-style: italic; }
+
+a:link, a:visited {
+  color: #00c;
+  font-weight: bold;
+  text-decoration: underline; }
+
+#content a:link:after, #content a:visited:after {
+  content: " (" attr(href) ") "; }

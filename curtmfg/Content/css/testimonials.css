@@ -1,0 +1,108 @@
+h3 {
+  padding-top: 20px;
+  margin-left: 10px;
+  margin-top: 0px;
+  margin-bottom: 3px;
+  font-size: 2.0em;
+  position: relative;
+  z-index: 1; }
+
+#submitTestimonial {
+  position: absolute;
+  right: 20px;
+  top: 20px; }
+
+.column {
+  float: left;
+  width: 463px; }
+  .column .testimonial {
+    display: block;
+    border: 1px dashed #ccc;
+    font-size: 1.2em;
+    padding: 20px;
+    margin: 10px 5px; }
+    .column .testimonial p {
+      margin: 0; }
+    .column .testimonial header {
+      display: block;
+      padding-bottom: 5px; }
+      .column .testimonial header p {
+        margin: 0;
+        font-weight: bold;
+        float: left;
+        font-size: 1.4em;
+        padding-right: 10px;
+        max-width: 308px; }
+      .column .testimonial header .starrating {
+        float: right; }
+    .column .testimonial cite {
+      display: block;
+      padding-top: 5px;
+      text-align: right; }
+      .column .testimonial cite:before {
+        content: "- "; }
+
+#pagination {
+  display: block;
+  text-align: center;
+  font-size: 1.2em; }
+  #pagination a {
+    float: left;
+    color: Black;
+    font-weight: bold; }
+    #pagination a#nextpage {
+      float: right; }
+
+div#addtestimonial {
+  display: block;
+  padding: 15px 0;
+  border-bottom: 1px solid #ccc; }
+  div#addtestimonial h4 {
+    font-weight: bold;
+    font-size: 1.5em;
+    margin: 0; }
+  div#addtestimonial ul.formlist {
+    list-style: none;
+    padding: 0 5px;
+    margin: 0;
+    display: block; }
+    div#addtestimonial ul.formlist li {
+      display: block;
+      margin: 0;
+      padding: 3px 0; }
+      div#addtestimonial ul.formlist li input {
+        width: 300px; }
+        div#addtestimonial ul.formlist li input.submit {
+          width: auto; }
+      div#addtestimonial ul.formlist li label {
+        display: block;
+        font-size: 0.9em; }
+      div#addtestimonial ul.formlist li textarea {
+        width: 400px;
+        height: 100px; }
+  div#addtestimonial ul.error {
+    float: none;
+    display: block;
+    width: auto;
+    color: red;
+    font-weight: bold; }
+
+.success {
+  display: block;
+  color: green;
+  font-weight: bold;
+  font-size: 16px; }
+
+div#rate {
+  display: block;
+  height: 15px;
+  width: 85px;
+  text-align: center; }
+  div#rate span.star {
+    height: 15px;
+    width: 17px;
+    float: left;
+    background: url("../img/star.png") bottom left repeat-x;
+    cursor: pointer; }
+  div#rate span.hovered, div#rate span.selected {
+    background: url("../img/star.png") top left repeat-x; }

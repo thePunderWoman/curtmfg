@@ -1,0 +1,25 @@
+#sub_nav ul li span {
+	filter: alpha(opacity='50');
+	background: none !important;
+}
+
+#sub_nav ul li#accessories span {background: none;}
+#sub_nav ul li#electrical span {background: none;}
+#sub_nav ul li#security span {background: none;}
+#sub_nav ul li#specialized_towing span {background: none;}
+#sub_nav ul li#trailer_balls span {background: none;}
+#sub_nav ul li#cargo_management span {background: none;}
+#sub_nav ul li#ball_mounts span {background: none;}
+#sub_nav ul li#hitches span {background: none;}
+#container {
+    background: #ededed url('/Content/img/bg-gradient.jpg') top left repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#857f73', endColorstr='#ededed',GradientType=0 ); /* IE6-8 */
+}
+
+.fitinfo img {
+    float: right;
+}
+
+#tab_container .fitinfo img {
+    float: none;
+}

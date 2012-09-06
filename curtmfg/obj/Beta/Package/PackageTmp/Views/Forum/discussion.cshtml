@@ -1,0 +1,105 @@
+﻿@using curtmfg.Models;
+@{
+    ViewBag.Title = "Forum";
+    ViewBag.css = new List<string> { Url.Content("~/Content/css/forum.css") };
+    Layout = "~/Views/Shared/_InternalLayout.cshtml";
+    FullTopic topic = ViewBag.topic;
+    Thread thread = ViewBag.thread;
+    List<string> errors = ViewBag.errors ?? new List<string>();
+    int page = ViewBag.page;
+    int perpage = ViewBag.perpage;
+    int pagecount = ViewBag.pagecount;
+}
+<script type="text/javascript" src="/Scripts/custom/thread.js"></script>
+
+<h3><a href="/Forum">Forum Discussion</a></h3>
+<p class="desc"><a href="/Forum/Topic/@topic.topicID/@UDF.GenerateSlug(topic.name)">< Back to @topic.name</a></p>
+<div class="forumtitle">
+    <strong id="threadTitle">@thread.firstPost.title</strong>
+    @if (thread.closed) {
+        <p class="closed">Closed Discussion</p>
+    } else {
+        <button type="button" id="addReply" class="button">Reply</button>
+    }
+    <span class="clear"></span>
+</div>
+<div id="forumposts">
+    @foreach (Post post in thread.posts) {
+        <div class="forumpost" id="post_@(post.postID)">
+            <div class="datebox">
+                <p><strong>Posted On</strong><br />@String.Format("{0:dddd, MMMM d, yyyy} at {0: h:mm tt}", post.createdDate)</p>
+                <p><strong>By</strong><br />@((post.email != "") ? Html.Raw("<a href='mailto:" + post.email + "'>" + post.getName() + "</a>") : Html.Raw(post.getName()))
+                    @if (post.company != "") {
+                        <br />@post.company
+                    }
+                </p>
+            </div>
+            <div class="postbox">
+                <p class="title">@post.title</p>
+                    <div class="controls">
+                        <a href="/Forum/FlagAsSpam/@post.postID" data-id="@post.postID" class="flag">Flag as Spam</a>
+                    </div>
+                <p>@post.post</p>
+            </div>
+            <div class="clear"></div>
+        </div>
+    }
+</div>
+<footer id="pagination">
+    @if (page > 1 && pagecount > 1) {
+        //Previous page link
+        <a id="prevpage" rel="prev" href="/Forum/Discussion/@thread.threadID/@UDF.GenerateSlug(thread.firstPost.title)?page=@(page - 1)">&lt; Prev</a>
+    }
+    <span id="pagecount">Page @page of @pagecount</span>
+    @if (pagecount > 1 && page != pagecount) {
+        //Next page link
+        <a id="nextpage" rel="next" href="/Forum/Discussion/@thread.threadID/@UDF.GenerateSlug(thread.firstPost.title)?page=@(page + 1)">Next &gt;</a>
+    }
+</footer>
+<div id="addReplyForm">
+    <h4>Reply</h4>
+    @if (errors.Count() > 0) {
+        <ul class="error">
+            @foreach (string error in errors) {
+                <li>@error</li>
+            }
+        </ul>
+    }
+    <form id="replyForm" action="/Forum/AddReply" method="post">
+        <input type="hidden" id="threadID" name="threadID" value="@thread.threadID" />
+        <ul class="formlist">
+            <li>
+                <label for="addtitle">Title <span class="req">*</span></label>
+                <input type="text" name="addtitle" id="addtitle" placeholder="Enter a Title" value="@((ViewBag.addtitle != null) ? ViewBag.addtitle : "")" required />
+            </li>
+            <li>
+                <label for="post">Post <span class="req">*</span></label>
+                <textarea name="post" id="post" rows="6" cols="50" placeholder="Enter your post" required>@((ViewBag.post != null) ? ViewBag.testimonial : "")</textarea>
+            </li>
+            <li>
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" placeholder="Enter your Name (Optional)" value="@((ViewBag.name != null) ? ViewBag.name : "")" />
+            </li>
+            <li>
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" placeholder="Enter your Email (Optional)" value="@((ViewBag.email != null) ? ViewBag.email : "")" />
+            </li>
+            <li>
+                <label for="company">Company</label>
+                <input type="text" name="company" id="company" placeholder="Enter your company name (Optional)" value="@((ViewBag.company != null) ? ViewBag.company : "")" />
+            </li>
+            <li>
+                <label for="notify">Email me on replies?</label>
+                <input type="checkbox" name="notify" id="notify" value="true" @((ViewBag.notify != null && ViewBag.notify) ? "checked='checked'" : "") />
+            </li>
+            <li id="postrecaptcha">
+                @Html.Raw(curtmfg.Models.ReCaptcha.GenerateCaptcha())
+            </li>
+            <li id="submitpost">
+                <input type="submit" value="Submit" class="submit" />
+            </li>
+        </ul>
+        <span class="clear"></span>
+    </form>
+</div>
+<div id="success-message" style="display: none;"></div>

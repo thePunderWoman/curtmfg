@@ -1,0 +1,14 @@
+﻿@{
+    ViewBag.Title = "Frequently Asked Questions";
+    ViewBag.layoutclass = "content";
+    Layout = "~/Views/Shared/_InternalLayout.cshtml";
+    List<curtmfg.FAQ> faqs = ViewBag.faqs;
+}
+
+<h2>Frequently Asked Questions</h2>
+@foreach (curtmfg.FAQ faq in faqs) {
+    <article class="question">
+        <p>@faq.question</p>
+        <div class="answer">@faq.answer</div>
+    </article>
+}

@@ -1,0 +1,788 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Beta|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\curtmfg.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{36955DA6-5371-4C6F-8E34-2963B75BE8FF}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>curtmfg</RootNamespace>
+    <AssemblyName>curtmfg</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.GData.Client">
+      <HintPath>..\packages\Google.GData.Client.2.1.0.0\lib\Google.GData.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.GData.Extensions">
+      <HintPath>..\packages\Google.GData.Extensions.2.1.0.0\lib\Google.GData.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.GData.YouTube">
+      <HintPath>..\packages\Google.GData.YouTube.2.1.0.0\lib\Google.GData.YouTube.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.8\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NuGet.Core, Version=2.0.30619.9119, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NuGet.Core.2.0.1\lib\net40-Client\NuGet.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp">
+      <HintPath>..\packages\RestSharp.104.0\lib\net4\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20710.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\BlogController.cs" />
+    <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\ContentController.cs" />
+    <Compile Include="Controllers\DealerController.cs" />
+    <Compile Include="Controllers\FAQController.cs" />
+    <Compile Include="Controllers\ForumController.cs" />
+    <Compile Include="Controllers\HitchLookupController.cs" />
+    <Compile Include="Controllers\IndexController.cs" />
+    <Compile Include="Controllers\LegacyController.cs" />
+    <Compile Include="Controllers\LifestyleController.cs" />
+    <Compile Include="Controllers\NewsController.cs" />
+    <Compile Include="Controllers\PartController.cs" />
+    <Compile Include="Controllers\SearchController.cs" />
+    <Compile Include="Controllers\SheetController.cs" />
+    <Compile Include="Controllers\SitemapController.cs" />
+    <Compile Include="Controllers\TestimonialsController.cs" />
+    <Compile Include="Controllers\TestingController.cs" />
+    <Compile Include="Controllers\TwitterController.cs" />
+    <Compile Include="Controllers\VideoController.cs" />
+    <Compile Include="Controllers\WhereToBuyController.cs" />
+    <Compile Include="Controllers\_404Controller.cs" />
+    <Compile Include="CurtDev.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CurtDev.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="docs.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>docs.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\APIModels.cs" />
+    <Compile Include="Models\Archive.cs" />
+    <Compile Include="Models\AuthenticateModel.cs" />
+    <Compile Include="Models\BlogCategory.cs" />
+    <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\Contact.cs" />
+    <Compile Include="Models\DealerModel.cs" />
+    <Compile Include="Models\FAQ.cs" />
+    <Compile Include="Models\Forum.cs" />
+    <Compile Include="Models\Hitch_API.cs" />
+    <Compile Include="Models\Logger.cs" />
+    <Compile Include="Models\MediaModel.cs" />
+    <Compile Include="Models\MenuModel.cs" />
+    <Compile Include="Models\News.cs" />
+    <Compile Include="Models\Post.cs" />
+    <Compile Include="Models\ReCaptcha.cs" />
+    <Compile Include="Models\SearchModel.cs" />
+    <Compile Include="Models\SiteContentModel.cs" />
+    <Compile Include="Models\Social.cs" />
+    <Compile Include="Models\StateRegion.cs" />
+    <Compile Include="Models\Testimonial.cs" />
+    <Compile Include="Models\Twitter.cs" />
+    <Compile Include="Models\UDF.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="Content\css\alexfont.css" />
+    <Content Include="Content\css\blog.css" />
+    <Content Include="Content\css\blog.scss" />
+    <Content Include="Content\css\category.css" />
+    <Content Include="Content\css\category.scss" />
+    <Content Include="Content\css\contact.css" />
+    <Content Include="Content\css\contact.scss" />
+    <Content Include="Content\css\dealer.css" />
+    <Content Include="Content\css\dealer.scss" />
+    <Content Include="Content\css\demo_table.css" />
+    <Content Include="Content\css\device.css" />
+    <Content Include="Content\css\directionsprint.css" />
+    <Content Include="Content\css\directionsprint.scss" />
+    <Content Include="Content\css\fonts\itcavantgardestd-bold-webfont.svg" />
+    <Content Include="Content\css\fonts\lubalingraphstd-demi-webfont.svg" />
+    <Content Include="Content\css\forum.css" />
+    <Content Include="Content\css\forum.scss" />
+    <Content Include="Content\css\hitch.css" />
+    <Content Include="Content\css\hitch.scss" />
+    <Content Include="Content\css\hitchLookup.css" />
+    <Content Include="Content\css\hitchLookup.scss" />
+    <Content Include="Content\css\home.css" />
+    <Content Include="Content\css\home.scss" />
+    <Content Include="Content\css\IE7.css" />
+    <Content Include="Content\css\IE8.css" />
+    <Content Include="Content\css\IE9.css" />
+    <Content Include="Content\css\internal.css" />
+    <Content Include="Content\css\internal.scss" />
+    <Content Include="Content\css\lifestyle.css" />
+    <Content Include="Content\css\lifestyle.scss" />
+    <Content Include="Content\css\lifestylelanding.css" />
+    <Content Include="Content\css\lifestylelanding.scss" />
+    <Content Include="Content\css\login.css" />
+    <Content Include="Content\css\login.scss" />
+    <Content Include="Content\css\master.css" />
+    <Content Include="Content\css\master.scss" />
+    <Content Include="Content\css\media.css" />
+    <Content Include="Content\css\part.css" />
+    <Content Include="Content\css\part.scss" />
+    <Content Include="Content\css\PIE.htc" />
+    <Content Include="Content\css\search.css" />
+    <Content Include="Content\css\search.scss" />
+    <Content Include="Content\css\shadowbox.css" />
+    <Content Include="Content\css\testimonials.css" />
+    <Content Include="Content\css\testimonials.scss" />
+    <Content Include="Content\css\video-js.css" />
+    <Content Include="Content\css\wheretobuy.css" />
+    <Content Include="Content\css\wheretobuy.scss" />
+    <Content Include="Content\img\404.jpg" />
+    <Content Include="Content\img\Accessories.png" />
+    <Content Include="Content\img\accessories_tab.jpg" />
+    <Content Include="Content\img\ajax-loader-small.gif" />
+    <Content Include="Content\img\ajax-loader.gif" />
+    <Content Include="Content\img\ajax-loader2.gif" />
+    <Content Include="Content\img\ajax-loader3.gif" />
+    <Content Include="Content\img\ajax-loader4.gif" />
+    <Content Include="Content\img\altButton.png" />
+    <Content Include="Content\img\ashley.png" />
+    <Content Include="Content\img\back_disabled.jpg" />
+    <Content Include="Content\img\back_enabled.jpg" />
+    <Content Include="Content\img\ballmounts_tab.jpg" />
+    <Content Include="Content\img\bg-gradient.jpg" />
+    <Content Include="Content\img\bike.jpg" />
+    <Content Include="Content\img\black_arrow.png" />
+    <Content Include="Content\img\boat.jpg" />
+    <Content Include="Content\img\brightStar.png" />
+    <Content Include="Content\img\bringIt_white.png" />
+    <Content Include="Content\img\btnCompare.png" />
+    <Content Include="Content\img\btnLogin.jpg" />
+    <Content Include="Content\img\btnReset.png" />
+    <Content Include="Content\img\btnSearch.jpg" />
+    <Content Include="Content\img\btnSend.png" />
+    <Content Include="Content\img\buyCurtHitches.png" />
+    <Content Include="Content\img\buyNow.png" />
+    <Content Include="Content\img\camp.jpg" />
+    <Content Include="Content\img\cancel.png" />
+    <Content Include="Content\img\cargomanagement_tab.jpg" />
+    <Content Include="Content\img\classList_shadow.png" />
+    <Content Include="Content\img\climb.jpg" />
+    <Content Include="Content\img\close.png" />
+    <Content Include="Content\img\close_btn.png" />
+    <Content Include="Content\img\close_btn_h.png" />
+    <Content Include="Content\img\Computer.png" />
+    <Content Include="Content\img\Computero.png" />
+    <Content Include="Content\img\curt.png" />
+    <Content Include="Content\img\CURT_Logo_Horizontal.png" />
+    <Content Include="Content\img\dark_shadow.jpg" />
+    <Content Include="Content\img\dealer.png" />
+    <Content Include="Content\img\dealer_header.jpg" />
+    <Content Include="Content\img\dealer_shadow.png" />
+    <Content Include="Content\img\dealer_title.png" />
+    <Content Include="Content\img\delivery_truck.png" />
+    <Content Include="Content\img\delivery_trucko.png" />
+    <Content Include="Content\img\dimStar.png" />
+    <Content Include="Content\img\discountHitches.png" />
+    <Content Include="Content\img\discount_hitch.png" />
+    <Content Include="Content\img\dog.jpg" />
+    <Content Include="Content\img\electrical_tab.jpg" />
+    <Content Include="Content\img\error.png" />
+    <Content Include="Content\img\eyeglass.png" />
+    <Content Include="Content\img\facebook.png" />
+    <Content Include="Content\img\facebookF.png" />
+    <Content Include="Content\img\featuredProd.png" />
+    <Content Include="Content\img\file_pdf.png" />
+    <Content Include="Content\img\file_xls.png" />
+    <Content Include="Content\img\file_zip.png" />
+    <Content Include="Content\img\findHitch.png" />
+    <Content Include="Content\img\fish.png" />
+    <Content Include="Content\img\fit.png" />
+    <Content Include="Content\img\fitLifestyle.jpg" />
+    <Content Include="Content\img\fitVehicle.jpg" />
+    <Content Include="Content\img\fitYourVehicle.jpg" />
+    <Content Include="Content\img\footer_bar.jpg" />
+    <Content Include="Content\img\forward_disabled.jpg" />
+    <Content Include="Content\img\forward_enabled.jpg" />
+    <Content Include="Content\img\fusion_mount.png" />
+    <Content Include="Content\img\gmail.png" />
+    <Content Include="Content\img\headerOrange.jpg" />
+    <Content Include="Content\img\hitchDepot.png" />
+    <Content Include="Content\img\hitches_tab.jpg" />
+    <Content Include="Content\img\home_banner.png" />
+    <Content Include="Content\img\home_BringIt.jpg" />
+    <Content Include="Content\img\home_BringIt.png" />
+    <Content Include="Content\img\home_BringIt_optimized.jpg" />
+    <Content Include="Content\img\home_shadow.png" />
+    <Content Include="Content\img\horse.jpg" />
+    <Content Include="Content\img\hunt.jpg" />
+    <Content Include="Content\img\icons\Accessories.png" />
+    <Content Include="Content\img\icons\Accessories_opacity.png" />
+    <Content Include="Content\img\icons\Ball_Mounts.png" />
+    <Content Include="Content\img\icons\Ball_Mounts_opacity.png" />
+    <Content Include="Content\img\icons\Cargo_Management.png" />
+    <Content Include="Content\img\icons\Cargo_Management_opacity.png" />
+    <Content Include="Content\img\icons\Electrical.png" />
+    <Content Include="Content\img\icons\Electrical_opacity.png" />
+    <Content Include="Content\img\icons\Hitches.png" />
+    <Content Include="Content\img\icons\Hitches_opacity.png" />
+    <Content Include="Content\img\icons\Security.png" />
+    <Content Include="Content\img\icons\Security_opacity.png" />
+    <Content Include="Content\img\icons\Specialized_Towing.png" />
+    <Content Include="Content\img\icons\Specialized_Towing_opacity.png" />
+    <Content Include="Content\img\icons\Trailer_Balls.png" />
+    <Content Include="Content\img\icons\Trailer_Balls_opacity.png" />
+    <Content Include="Content\img\installVideo.jpg" />
+    <Content Include="Content\img\installVideo.png" />
+    <Content Include="Content\img\instore_solutions.png" />
+    <Content Include="Content\img\internalheader.jpg" />
+    <Content Include="Content\img\internalheader2.jpg" />
+    <Content Include="Content\img\internalheader3.jpg" />
+    <Content Include="Content\img\lifestyleboxbg-h.png" />
+    <Content Include="Content\img\lifestyleboxbg.png" />
+    <Content Include="Content\img\lifestyles\5thWheels.jpg" />
+    <Content Include="Content\img\lifestyles\5thWheels2.jpg" />
+    <Content Include="Content\img\lifestyles\accessories.jpg" />
+    <Content Include="Content\img\lifestyles\BallMounts.jpg" />
+    <Content Include="Content\img\lifestyles\CargoManagement.jpg" />
+    <Content Include="Content\img\lifestyles\CargoManagement2.jpg" />
+    <Content Include="Content\img\lifestyles\GooseneckHitches.jpg" />
+    <Content Include="Content\img\lifestyles\GooseneckHitches2.jpg" />
+    <Content Include="Content\img\lifestyles\HeavyDuty.jpg" />
+    <Content Include="Content\img\lifestyles\homepage-lifestyle-horse.jpg" />
+    <Content Include="Content\img\lifestyles\ReceiverHitches.jpg" />
+    <Content Include="Content\img\lifestyles\Security.jpg" />
+    <Content Include="Content\img\lifestyles\Security2.jpg" />
+    <Content Include="Content\img\lifestyles\SpecializedTowing.jpg" />
+    <Content Include="Content\img\lifestyle\compact.png" />
+    <Content Include="Content\img\lifestyle\cycling-large.jpg" />
+    <Content Include="Content\img\lifestyle\cycling.jpg" />
+    <Content Include="Content\img\lifestyle\farmranch.jpg" />
+    <Content Include="Content\img\lifestyle\fullsize.png" />
+    <Content Include="Content\img\lifestyle\heavyduty.jpg" />
+    <Content Include="Content\img\lifestyle\hunting.jpg" />
+    <Content Include="Content\img\lifestyle\largeboat.png" />
+    <Content Include="Content\img\lifestyle\marine-large.jpg" />
+    <Content Include="Content\img\lifestyle\marine.jpg" />
+    <Content Include="Content\img\lifestyle\midsize.png" />
+    <Content Include="Content\img\lifestyle\midsizeboat.png" />
+    <Content Include="Content\img\lifestyle\motorsports-large.jpg" />
+    <Content Include="Content\img\lifestyle\motorsports.jpg" />
+    <Content Include="Content\img\lifestyle\Option1.png" />
+    <Content Include="Content\img\lifestyle\Option2.png" />
+    <Content Include="Content\img\lifestyle\Option3.png" />
+    <Content Include="Content\img\lifestyle\Option4.png" />
+    <Content Include="Content\img\lifestyle\outdoor-large.jpg" />
+    <Content Include="Content\img\lifestyle\outdoor.jpg" />
+    <Content Include="Content\img\lifestyle\rvcamping-large.jpg" />
+    <Content Include="Content\img\lifestyle\rvcamping.jpg" />
+    <Content Include="Content\img\lifestyle\smallboat.png" />
+    <Content Include="Content\img\lifestyle\suv.png" />
+    <Content Include="Content\img\lifestyle\titanic.jpg" />
+    <Content Include="Content\img\lifestyle\titanic.png" />
+    <Content Include="Content\img\loading.gif" />
+    <Content Include="Content\img\logo.png" />
+    <Content Include="Content\img\logo_big.png" />
+    <Content Include="Content\img\logo_brown.jpg" />
+    <Content Include="Content\img\logo_footer.png" />
+    <Content Include="Content\img\logo_footer_optimized.png" />
+    <Content Include="Content\img\lookup_box.png" />
+    <Content Include="Content\img\mapbluedot.png" />
+    <Content Include="Content\img\mapdot.png" />
+    <Content Include="Content\img\mapdot2.png" />
+    <Content Include="Content\img\mapdot3.png" />
+    <Content Include="Content\img\mapdot4.png" />
+    <Content Include="Content\img\mapflag-shadow.png" />
+    <Content Include="Content\img\mapflag.png" />
+    <Content Include="Content\img\mt_bike.jpg" />
+    <Content Include="Content\img\nav_selected.png" />
+    <Content Include="Content\img\newProducts\16115_b.jpg" />
+    <Content Include="Content\img\newProducts\16130_b.jpg" />
+    <Content Include="Content\img\newProducts\16245_b.jpg" />
+    <Content Include="Content\img\newProducts\16550.jpg" />
+    <Content Include="Content\img\newProducts\16560_b.jpg" />
+    <Content Include="Content\img\newProducts\16570_b.jpg" />
+    <Content Include="Content\img\next.png" />
+    <Content Include="Content\img\noconnimage.jpg" />
+    <Content Include="Content\img\nofit.png" />
+    <Content Include="Content\img\noimage.jpg" />
+    <Content Include="Content\img\noimage.png" />
+    <Content Include="Content\img\norelation.png" />
+    <Content Include="Content\img\online_resources.png" />
+    <Content Include="Content\img\order_center.jpg" />
+    <Content Include="Content\img\pause.png" />
+    <Content Include="Content\img\pdf.png" />
+    <Content Include="Content\img\play.png" />
+    <Content Include="Content\img\playvideo.png" />
+    <Content Include="Content\img\previous.png" />
+    <Content Include="Content\img\prodImg_border.png" />
+    <Content Include="Content\img\product_info.png" />
+    <Content Include="Content\img\quote_left.png" />
+    <Content Include="Content\img\quote_right.png" />
+    <Content Include="Content\img\searchBox.jpg" />
+    <Content Include="Content\img\searchBox_left.jpg" />
+    <Content Include="Content\img\searchBox_middle.jpg" />
+    <Content Include="Content\img\searchBox_right.jpg" />
+    <Content Include="Content\img\security_tab.jpg" />
+    <Content Include="Content\img\shadow.png" />
+    <Content Include="Content\img\shadowbox\close.png" />
+    <Content Include="Content\img\shadowbox\expressInstall.swf" />
+    <Content Include="Content\img\shadowbox\loading.gif" />
+    <Content Include="Content\img\shadowbox\next.png" />
+    <Content Include="Content\img\shadowbox\pause.png" />
+    <Content Include="Content\img\shadowbox\play.png" />
+    <Content Include="Content\img\shadowbox\player.swf" />
+    <Content Include="Content\img\shadowbox\previous.png" />
+    <Content Include="Content\img\sitemap_back.jpg" />
+    <Content Include="Content\img\sitemap_bottom.jpg" />
+    <Content Include="Content\img\ski.jpg" />
+    <Content Include="Content\img\smalllogo.png" />
+    <Content Include="Content\img\smProdImg_border.png" />
+    <Content Include="Content\img\sort_asc.png" />
+    <Content Include="Content\img\sort_asc_disabled.png" />
+    <Content Include="Content\img\sort_both.png" />
+    <Content Include="Content\img\sort_desc.png" />
+    <Content Include="Content\img\sort_desc_disabled.png" />
+    <Content Include="Content\img\specializedtowing_tab.jpg" />
+    <Content Include="Content\img\star.png" />
+    <Content Include="Content\img\start_here.png" />
+    <Content Include="Content\img\toggle.png" />
+    <Content Include="Content\img\togglebg.jpg" />
+    <Content Include="Content\img\topLogo.jpg" />
+    <Content Include="Content\img\topLogo.png" />
+    <Content Include="Content\img\trailerballs_tab.jpg" />
+    <Content Include="Content\img\tube.jpg" />
+    <Content Include="Content\img\twitter-bird-3.png" />
+    <Content Include="Content\img\twitter-bird-4.png" />
+    <Content Include="Content\img\twitter.png" />
+    <Content Include="Content\img\twitterT.png" />
+    <Content Include="Content\img\twitter_newbird_white.png" />
+    <Content Include="Content\img\vertical_shadow.png" />
+    <Content Include="Content\img\warning.png" />
+    <Content Include="Content\img\Website-Truck-Header.png" />
+    <Content Include="Content\img\yourlogohere.gif" />
+    <Content Include="Content\img\youtube-dark.png" />
+    <Content Include="Content\img\youtube.png" />
+    <Content Include="Content\img\youtube_logo.png" />
+    <Content Include="Content\img\youtube_logo_small.png" />
+    <Content Include="Content\img\Zip.png" />
+    <Content Include="Content\img\zip_icon.jpg" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\swf\Inside_CURT_Streaming_2011.swf" />
+    <Content Include="Content\testing\css\img\CURT.png" />
+    <Content Include="Content\testing\css\img\fifth-wheel.png" />
+    <Content Include="Content\testing\css\img\Trucking-Times-Photo.png" />
+    <Content Include="Content\testing\css\img\Web1.png" />
+    <Content Include="Content\testing\css\img\Web2.png" />
+    <Content Include="Content\testing\css\img\Web4.png" />
+    <Content Include="Content\testing\css\page.css" />
+    <Content Include="Content\testing\video-js\demo.html" />
+    <Content Include="Content\testing\video-js\flowplayer\Engineering.flv" />
+    <Content Include="Content\testing\video-js\flowplayer\flowplayer.controls.swf" />
+    <Content Include="Content\testing\video-js\flowplayer\flowplayer.js" />
+    <Content Include="Content\testing\video-js\flowplayer\flowplayer.swf" />
+    <Content Include="Content\testing\video-js\flowplayer\style.css" />
+    <Content Include="Content\testing\video-js\LICENSE.txt" />
+    <Content Include="Content\testing\video-js\mediaplayer\jwplayer.js" />
+    <Content Include="Content\testing\video-js\mediaplayer\license.txt" />
+    <Content Include="Content\testing\video-js\mediaplayer\player.swf" />
+    <Content Include="Content\testing\video-js\mediaplayer\preview.jpg" />
+    <Content Include="Content\testing\video-js\mediaplayer\readme.html" />
+    <Content Include="Content\testing\video-js\mediaplayer\swfobject.js" />
+    <Content Include="Content\testing\video-js\mediaplayer\video.mp4" />
+    <Content Include="Content\testing\video-js\skins\hu.css" />
+    <Content Include="Content\testing\video-js\skins\tube.css" />
+    <Content Include="Content\testing\video-js\skins\vim.css" />
+    <Content Include="Content\testing\video-js\video-js.css" />
+    <Content Include="Content\testing\video-js\video.js" />
+    <Content Include="Content\testing\video-js\video_full_fixed.js" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.all.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.base.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Content\video\controlbar\back.png" />
+    <Content Include="Content\video\controlbar\divider.png" />
+    <Content Include="Content\video\controlbar\fullscreen.png" />
+    <Content Include="Content\video\controlbar\mute.png" />
+    <Content Include="Content\video\controlbar\next.png" />
+    <Content Include="Content\video\controlbar\normalscreen.png" />
+    <Content Include="Content\video\controlbar\pause.png" />
+    <Content Include="Content\video\controlbar\play.png" />
+    <Content Include="Content\video\controlbar\prev.png" />
+    <Content Include="Content\video\controlbar\timeBuffer.png" />
+    <Content Include="Content\video\controlbar\timeProgress.png" />
+    <Content Include="Content\video\controlbar\timeRail.png" />
+    <Content Include="Content\video\controlbar\timeThumb.png" />
+    <Content Include="Content\video\controlbar\unmute.png" />
+    <Content Include="Content\video\controlbar\volumeProgress.png" />
+    <Content Include="Content\video\controlbar\volumeRail.png" />
+    <Content Include="Content\video\controlbar\volumeThumb.png" />
+    <Content Include="Content\video\display\back.png" />
+    <Content Include="Content\video\display\buffer.png" />
+    <Content Include="Content\video\display\error.png" />
+    <Content Include="Content\video\display\mute.png" />
+    <Content Include="Content\video\display\play.png" />
+    <Content Include="Content\video\dock\back.png" />
+    <Content Include="Content\video\five.xml" />
+    <Content Include="Content\video\player.swf" />
+    <Content Include="Content\video\playlist\item.png" />
+    <Content Include="Content\video\playlist\rail.png" />
+    <Content Include="Content\video\playlist\thumb.png" />
+    <Content Include="CURT_logo_4clr_24.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\custom\archive.js" />
+    <Content Include="Scripts\custom\category.js" />
+    <Content Include="Scripts\custom\contact.js" />
+    <Content Include="Scripts\custom\hitch.js" />
+    <Content Include="Scripts\custom\hitchResults.js" />
+    <Content Include="Scripts\custom\hitch_lookup.js" />
+    <Content Include="Scripts\custom\homepage.js" />
+    <Content Include="Scripts\custom\jquery.cycle.lite.js" />
+    <Content Include="Scripts\custom\jquery.dataTables.min.js" />
+    <Content Include="Scripts\custom\jquery.popup.js" />
+    <Content Include="Scripts\custom\jquery.smoothDivScroll-1.1-min.js" />
+    <Content Include="Scripts\custom\lifestyle.js" />
+    <Content Include="Scripts\custom\lifestyles.js" />
+    <Content Include="Scripts\custom\randomize.js" />
+    <Content Include="Scripts\custom\refresh.js" />
+    <Content Include="Scripts\custom\scripts.js" />
+    <Content Include="Scripts\custom\shadowbox.js" />
+    <Content Include="Scripts\custom\skeleton.js" />
+    <Content Include="Scripts\custom\tabs.js" />
+    <Content Include="Scripts\custom\testimonials.js" />
+    <Content Include="Scripts\custom\thread.js" />
+    <Content Include="Scripts\custom\tooltip.js" />
+    <Content Include="Scripts\custom\tooltip.min.js" />
+    <Content Include="Scripts\custom\topic.js" />
+    <Content Include="Scripts\custom\wheretobuy.js" />
+    <Content Include="Scripts\jquery.animate-shadow-min.js" />
+    <Content Include="Scripts\jquery.easing.1.3.js" />
+    <Content Include="Scripts\jquery.hoverIntent.minified.js" />
+    <Content Include="Scripts\jquery.imagesloaded.min.js" />
+    <Content Include="Scripts\jquery.tmpl.min.js" />
+    <Content Include="Scripts\modernizr.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Content\img\Desktopimages\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\HitchLookup\find.cshtml" />
+    <Content Include="Views\HitchLookup\index.cshtml" />
+    <Content Include="Views\HitchLookup\make.cshtml" />
+    <Content Include="Views\HitchLookup\model.cshtml" />
+    <Content Include="Views\HitchLookup\mount.cshtml" />
+    <Content Include="Views\HitchLookup\year.cshtml" />
+    <Content Include="Views\Index\index.cshtml" />
+    <Content Include="Views\Lifestyle\index.cshtml" />
+    <Content Include="Views\Lifestyle\lifestyle.cshtml" />
+    <Content Include="Views\News\archive.cshtml" />
+    <Content Include="Views\News\article.cshtml" />
+    <Content Include="Views\News\index.cshtml" />
+    <Content Include="Views\Part\index.cshtml" />
+    <Content Include="Views\Search\index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_AnalyticsBottom.cshtml" />
+    <Content Include="Views\Shared\_AnalyticsTop.cshtml" />
+    <Content Include="Views\Shared\_BlogNavigation.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Views\Shared\_Head.cshtml" />
+    <Content Include="Views\Shared\_Header.cshtml" />
+    <Content Include="Views\Shared\_IE.cshtml" />
+    <Content Include="Views\Shared\_InternalHeader.cshtml" />
+    <Content Include="Views\Shared\_InternalLayout.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_LifestyleBar.cshtml" />
+    <Content Include="Views\Shared\_LifestyleLayout.cshtml" />
+    <Content Include="Views\Shared\_Lookup.cshtml" />
+    <Content Include="Views\Shared\_MainMenu.cshtml" />
+    <Content Include="Views\Shared\_Message.cshtml" />
+    <Content Include="Views\Shared\_PartListing.cshtml" />
+    <Content Include="Views\Shared\_Sitemap.cshtml" />
+    <Content Include="Views\Shared\_SiteSearch.cshtml" />
+    <Content Include="Views\Shared\_SubNav.cshtml" />
+    <Content Include="Views\Sheet\index.cshtml" />
+    <Content Include="Views\Sitemap\index.cshtml" />
+    <Content Include="Views\Testimonials\Index.cshtml" />
+    <Content Include="Views\Testing\index.cshtml" />
+    <Content Include="Views\Video\Index.cshtml" />
+    <Content Include="Views\WhereToBuy\index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\css\fonts\itcavantgardestd-bold-webfont.eot" />
+    <Content Include="Content\css\fonts\itcavantgardestd-bold-webfont.ttf" />
+    <Content Include="Content\css\fonts\itcavantgardestd-bold-webfont.woff" />
+    <Content Include="Content\css\fonts\lubalingraphstd-demi-webfont.eot" />
+    <Content Include="Content\css\fonts\lubalingraphstd-demi-webfont.ttf" />
+    <Content Include="Content\css\fonts\lubalingraphstd-demi-webfont.woff" />
+    <Content Include="Content\img\Web.config" />
+    <None Include="Content\testing\css\img\.DS_Store" />
+    <None Include="Content\testing\video-js\.DS_Store" />
+    <None Include="Content\testing\video-js\demo-subtitles.srt" />
+    <None Include="Content\testing\video-js\mediaplayer\JW Player Quick Start Guide.pdf" />
+    <None Include="Content\testing\video-js\README.markdown" />
+    <None Include="Content\video\CURTTestingFacility.ogg" />
+    <None Include="CurtDev.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>CurtDev.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="docs.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>docs.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Web.Beta.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Blog\Author.cshtml" />
+    <Content Include="Views\Blog\Index.cshtml" />
+    <Content Include="Views\Blog\ViewArchive.cshtml" />
+    <Content Include="Views\Blog\ViewCategory.cshtml" />
+    <Content Include="Views\Blog\ViewPost.cshtml" />
+    <Content Include="Views\Category\Grid.cshtml" />
+    <Content Include="Views\Category\index.cshtml" />
+    <Content Include="Views\Contact\Index.cshtml" />
+    <Content Include="Views\Contact\Thank.cshtml" />
+    <Content Include="Views\Content\index.cshtml" />
+    <Content Include="Views\Dealer\becomeadealer.cshtml" />
+    <Content Include="Views\Dealer\forgotpassword.cshtml" />
+    <Content Include="Views\Dealer\index.cshtml" />
+    <Content Include="Views\Dealer\login.cshtml" />
+    <Content Include="Views\FAQ\index.cshtml" />
+    <Content Include="Views\Forum\discussion.cshtml" />
+    <Content Include="Views\Forum\index.cshtml" />
+    <Content Include="Views\Forum\topic.cshtml" />
+    <Content Include="Views\Forum\unsubscribe.cshtml" />
+    <Content Include="Views\_404\index.cshtml" />
+    <None Include="Properties\PublishProfiles\Beta.pubxml" />
+    <None Include="Properties\PublishProfiles\Release.pubxml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="docs.dbml.layout">
+      <DependentUpon>docs.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CurtDev.dbml.layout">
+      <DependentUpon>CurtDev.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>54381</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

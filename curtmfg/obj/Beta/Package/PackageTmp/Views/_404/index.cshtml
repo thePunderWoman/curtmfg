@@ -1,0 +1,23 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    @Html.Partial("_Head")
+    <link rel="stylesheet" type="text/css" media="all" href="@Url.Content("~/Content/css/internal.css")" />
+</head>
+<body>
+    <div id="container">
+        @Html.Partial("_InternalHeader")
+        <section id="page_content" class="content" style="min-height: 400px">
+            <h2>Page Not Found</h2>
+            <p>This page could not be found.  You can try again later.</p>
+        </section>
+        @Html.Partial("_Sitemap")
+        @Html.Partial("_Footer")
+    </div>
+    @Html.Partial("_AnalyticsBottom")
+</body>
+</html>

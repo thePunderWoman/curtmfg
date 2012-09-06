@@ -1,0 +1,300 @@
+#page_content {
+  background: #fff;
+  padding: 0 20px 20px;
+  width: 929px; }
+  #page_content #page_gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    z-index: 0;
+    background: #b2b2b2;
+    /* Old browsers */
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2IyYjJiMiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(top, #b2b2b2 0%, white 100%);
+    /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #b2b2b2), color-stop(100%, white));
+    /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #b2b2b2 0%, white 100%);
+    /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #b2b2b2 0%, white 100%);
+    /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #b2b2b2 0%, white 100%);
+    /* IE10+ */
+    background: linear-gradient(top, #b2b2b2 0%, white 100%);
+    /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#b2b2b2', endColorstr='#ffffff',GradientType=0 );
+    /* IE6-8 */ }
+  #page_content h3 {
+    font-size: 3.0em;
+    font-family: ITCAvantGardeGothicStdBold;
+    text-transform: uppercase;
+    color: #333;
+    letter-spacing: -0.1em;
+    line-height: 1;
+    padding-top: 20px;
+    margin-left: 10px;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1; }
+  #page_content h4 {
+    font-size: 2em;
+    color: #f05922;
+    margin: 0; }
+  #page_content #disclaimer {
+    box-shadow: 0px 0px 15px #ccc;
+    border-radius: 5px;
+    padding: 8px 15px 8px 25px;
+    display: inline-block; }
+    #page_content #disclaimer:before {
+      content: "IMPORTANT";
+      color: #F05922;
+      font-family: ITCAvantGardeGothicStdBold;
+      font-size: 1.4em;
+      display: block;
+      margin-left: -10px; }
+  #page_content #lifestylecontent {
+    display: block;
+    position: relative;
+    z-index: 2;
+    padding-bottom: 20px; }
+    #page_content #lifestylecontent #mainimg {
+      float: right;
+      margin-left: 25px;
+      margin-bottom: 25px;
+      box-shadow: 2px 5px 30px #000;
+      border-radius: 10px; }
+    #page_content #lifestylecontent p {
+      font-size: 1.2em; }
+    #page_content #lifestylecontent #lifestylecontentblock {
+      display: block; }
+      #page_content #lifestylecontent #lifestylecontentblock p {
+        line-height: 1.8; }
+    #page_content #lifestylecontent table {
+      margin-bottom: 20px;
+      border-collapse: collapse;
+      border-bottom: 1px solid #000;
+      border-right: 1px solid #000;
+      width: 100%;
+      font-size: 1.2em;
+      text-align: left; }
+      #page_content #lifestylecontent table tr th, #page_content #lifestylecontent table tr td {
+        border-top: 1px solid #000;
+        border-left: 1px solid #000;
+        height: 60px;
+        width: 20%;
+        padding: 4px; }
+      #page_content #lifestylecontent table tr.weights th, #page_content #lifestylecontent table tr.weights td {
+        background-color: #ccc;
+        border-top: 2px solid #000;
+        border-bottom: 2px solid #000; }
+    #page_content #lifestylecontent #classSelector {
+      display: none; }
+      #page_content #lifestylecontent #classSelector ul#vehicleTypes {
+        list-style: none;
+        margin: 0;
+        padding: 0; }
+        #page_content #lifestylecontent #classSelector ul#vehicleTypes li {
+          float: left;
+          width: 25%;
+          margin: 5px 0;
+          text-align: center; }
+          #page_content #lifestylecontent #classSelector ul#vehicleTypes li a {
+            position: relative;
+            height: 100px;
+            margin: 0 5px;
+            padding: 5px 10px;
+            display: block;
+            font-size: 11px;
+            text-decoration: none;
+            color: #000;
+            border: 2px solid #000;
+            border-radius: 8px;
+            opacity: .4;
+            -webkit-transition: 0.4s all ease-in-out;
+            -moz-transition: 0.4s all ease-in-out;
+            -o-transition: 0.4s all ease-in-out;
+            transition: 0.4s all ease-in-out;
+            white-space: nowrap; }
+            #page_content #lifestylecontent #classSelector ul#vehicleTypes li a.active, #page_content #lifestylecontent #classSelector ul#vehicleTypes li a:hover {
+              opacity: 1; }
+            #page_content #lifestylecontent #classSelector ul#vehicleTypes li a#compact img {
+              margin-top: 24px;
+              width: 60%; }
+            #page_content #lifestylecontent #classSelector ul#vehicleTypes li a#midsized img {
+              margin-top: 6px;
+              width: 90%; }
+            #page_content #lifestylecontent #classSelector ul#vehicleTypes li a#suv img {
+              margin-top: 6px; }
+            #page_content #lifestylecontent #classSelector ul#vehicleTypes li a#fullsize img {
+              margin-top: 9px; }
+            #page_content #lifestylecontent #classSelector ul#vehicleTypes li a img {
+              width: 100%;
+              padding: 5px 0;
+              height: auto;
+              display: block;
+              margin: auto; }
+            #page_content #lifestylecontent #classSelector ul#vehicleTypes li a span {
+              position: absolute;
+              width: 90%;
+              bottom: 5px;
+              left: 10px;
+              text-align: center; }
+      #page_content #lifestylecontent #classSelector #vehicleClasses {
+        position: relative;
+        z-index: 1;
+        padding: 10px 0; }
+        #page_content #lifestylecontent #classSelector #vehicleClasses p {
+          margin: 0; }
+        #page_content #lifestylecontent #classSelector #vehicleClasses #classCarousel {
+          display: block;
+          position: relative;
+          overflow: hidden;
+          min-height: 100px;
+          z-index: 1; }
+          #page_content #lifestylecontent #classSelector #vehicleClasses #classCarousel #carouselArrowLeft {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50px;
+            height: 100%;
+            z-index: 100;
+            cursor: pointer;
+            background-color: #fff; }
+            #page_content #lifestylecontent #classSelector #vehicleClasses #classCarousel #carouselArrowLeft span {
+              margin: 20px 0 0 8px;
+              height: 0;
+              width: 0;
+              border: 50px solid transparent;
+              border-left: 0px;
+              border-right: 36px solid #007f3f;
+              display: inline-block; }
+          #page_content #lifestylecontent #classSelector #vehicleClasses #classCarousel #carouselArrowRight {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50px;
+            height: 100%;
+            z-index: 100;
+            cursor: pointer;
+            background-color: white; }
+            #page_content #lifestylecontent #classSelector #vehicleClasses #classCarousel #carouselArrowRight span {
+              margin: 20px 0 0 8px;
+              height: 0;
+              width: 0;
+              border: 50px solid transparent;
+              border-right: 0px;
+              border-left: 36px solid #007f3f;
+              display: inline-block; }
+          #page_content #lifestylecontent #classSelector #vehicleClasses #classCarousel #carousel {
+            position: relative;
+            left: 0; }
+            #page_content #lifestylecontent #classSelector #vehicleClasses #classCarousel #carousel .vehicleClass {
+              position: relative;
+              float: left;
+              padding: 5px 15px;
+              cursor: pointer;
+              z-index: 50;
+              min-width: 125px; }
+              #page_content #lifestylecontent #classSelector #vehicleClasses #classCarousel #carousel .vehicleClass p.vehicleName {
+                margin: 0;
+                font-weight: bold;
+                font-size: 11px;
+                padding-bottom: 4px;
+                text-align: center; }
+              #page_content #lifestylecontent #classSelector #vehicleClasses #classCarousel #carousel .vehicleClass div.classimg {
+                display: block;
+                overflow: hidden;
+                text-align: center;
+                margin-bottom: 10px; }
+                #page_content #lifestylecontent #classSelector #vehicleClasses #classCarousel #carousel .vehicleClass div.classimg:hover {
+                  box-shadow: 0px 10px 10px #ddd; }
+                #page_content #lifestylecontent #classSelector #vehicleClasses #classCarousel #carousel .vehicleClass div.classimg img {
+                  margin: auto;
+                  vertical-align: bottom; }
+              #page_content #lifestylecontent #classSelector #vehicleClasses #classCarousel #carousel .vehicleClass div.classinfo {
+                z-index: 50;
+                position: relative;
+                display: none;
+                background-color: #c04c33;
+                color: #fff;
+                left: 0;
+                padding: 10px 0;
+                box-shadow: 0px 0px 20px #444444; }
+                #page_content #lifestylecontent #classSelector #vehicleClasses #classCarousel #carousel .vehicleClass div.classinfo p {
+                  padding: 0 10px;
+                  margin: 0; }
+                  #page_content #lifestylecontent #classSelector #vehicleClasses #classCarousel #carousel .vehicleClass div.classinfo p.hitchClass {
+                    font-size: 16px;
+                    display: block;
+                    padding-bottom: 5px;
+                    font-weight: bold; }
+                  #page_content #lifestylecontent #classSelector #vehicleClasses #classCarousel #carousel .vehicleClass div.classinfo p.shortDesc {
+                    padding-bottom: 5px; }
+                  #page_content #lifestylecontent #classSelector #vehicleClasses #classCarousel #carousel .vehicleClass div.classinfo p.gtw, #page_content #lifestylecontent #classSelector #vehicleClasses #classCarousel #carousel .vehicleClass div.classinfo p.tw {
+                    font-size: 11px; }
+              #page_content #lifestylecontent #classSelector #vehicleClasses #classCarousel #carousel .vehicleClass div.exceedsinfo {
+                z-index: 50;
+                position: relative;
+                display: none;
+                background-color: #6d6966;
+                color: #fff;
+                left: 0;
+                box-shadow: 0px 0px 20px #444444; }
+                #page_content #lifestylecontent #classSelector #vehicleClasses #classCarousel #carousel .vehicleClass div.exceedsinfo p {
+                  padding: 10px; }
+                  #page_content #lifestylecontent #classSelector #vehicleClasses #classCarousel #carousel .vehicleClass div.exceedsinfo p strong {
+                    font-size: 16px;
+                    display: block;
+                    padding-bottom: 5px; }
+  #page_content #recommended {
+    display: block;
+    clear: both;
+    position: relative;
+    z-index: 1; }
+    #page_content #recommended h4 {
+      margin: 10px 0; }
+    #page_content #recommended .part {
+      float: left;
+      width: 156px;
+      box-shadow: 0px 3px 30px #444444;
+      border-radius: 7px;
+      padding: 10px;
+      padding-bottom: 40px;
+      margin: 8px;
+      text-align: center;
+      font-size: 1.2em;
+      color: #222;
+      text-decoration: none;
+      font-weight: bold;
+      position: relative; }
+      #page_content #recommended .part:hover {
+        text-decoration: none;
+        box-shadow: 0px 0px 30px #c04c33; }
+      #page_content #recommended .part span.partimage {
+        display: block;
+        height: 160px;
+        overflow: hidden; }
+        #page_content #recommended .part span.partimage img {
+          display: block;
+          margin: auto;
+          width: 90%;
+          height: auto;
+          max-width: 90%; }
+      #page_content #recommended .part span.partname {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        width: 156px; }
+        #page_content #recommended .part span.partname strong {
+          font-size: 1.2em;
+          display: block; }
+        #page_content #recommended .part span.partname span {
+          display: block;
+          font-weight: normal; }
+          #page_content #recommended .part span.partname span strong {
+            font-size: 1em;
+            display: inline; }

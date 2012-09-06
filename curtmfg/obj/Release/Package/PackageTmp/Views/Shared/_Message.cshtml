@@ -1,0 +1,20 @@
+﻿@{
+    string message = ViewBag.message;    
+}
+<div id="site-message">@TempData["message"]</div>
+<script type="text/javascript">
+    $(function () {
+        $('#site-message').hide();
+        if ($('#site-message').html().length > 0) {
+            $("#site-message").dialog({
+                modal: true,
+                autoOpen: true,
+                buttons: {
+                    Ok: function () {
+                        $(this).dialog("close");
+                    }
+                }
+            });
+        }
+    });
+</script>

@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "curtmfg", "curtmfg\curtmfg.csproj", "{36955DA6-5371-4C6F-8E34-2963B75BE8FF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Beta|Any CPU = Beta|Any CPU
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{36955DA6-5371-4C6F-8E34-2963B75BE8FF}.Beta|Any CPU.ActiveCfg = Beta|Any CPU
+		{36955DA6-5371-4C6F-8E34-2963B75BE8FF}.Beta|Any CPU.Build.0 = Beta|Any CPU
+		{36955DA6-5371-4C6F-8E34-2963B75BE8FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36955DA6-5371-4C6F-8E34-2963B75BE8FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36955DA6-5371-4C6F-8E34-2963B75BE8FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36955DA6-5371-4C6F-8E34-2963B75BE8FF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
