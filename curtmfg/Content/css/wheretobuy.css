@@ -145,7 +145,8 @@ p.togglelegend {
     position: relative; }
     #tab_container #tab_scroll #online, #tab_container #tab_scroll #local {
       float: left;
-      padding: 0 20px; }
+      padding: 0 20px;
+      position: relative; }
       #tab_container #tab_scroll #online h2, #tab_container #tab_scroll #local h2 {
         font-size: 2.0em; }
       #tab_container #tab_scroll #online .silver .bar, #tab_container #tab_scroll #local .silver .bar {
@@ -357,3 +358,4 @@ p.togglelegend {
     #directions #directionsContent div#directionsPanel {
       float: left;
       width: 50%; }
+

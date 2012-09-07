@@ -15,8 +15,8 @@
 <script type="text/javascript" src="@Url.Content("~/Scripts/custom/tabs.js")"></script>
 <div class="clear"></div>
 <ul class="tabs">
-    <li><a id="online_tab" href="/#tab=online">Buy Online</a></li>
     <li><a id="local_tab" href="/#tab=local">Buy Local</a></li>
+    <li><a id="online_tab" href="/#tab=online">Buy Online</a></li>
     <li class="clear"></li>
 </ul>
 <form id="searchmap" action="/WhereToBuy#tab=local" method="get">
@@ -30,30 +30,6 @@
 
 <div id="tab_container">
     <div id="tab_scroll">
-        <div class="tab_content" id="online">
-            <h2>Buy Online</h2>
-            @{
-                count = 1;
-                foreach (curtmfg.DealerTier tier in tiers) {
-                    <section class="dealers typebox_@(count++) @(tier.tier.ToLower())">
-                        <h3><img src="/Content/img/smalllogo.png" alt="CURT" />@tier.tier eTailer</h3>
-                        <div class="bar"></div>
-                        @{
-                            List<curtmfg.Customer> dealers = curtmfg.Models.UDF.ShuffleList(onlinedealers.Where(x => x.tier.Equals(tier.ID)).ToList<curtmfg.Customer>());
-                            foreach (curtmfg.Customer dealer in dealers) {
-                                                <div class="dealer">
-                                                    <a href="@dealer.website" class="onlinedealer" data-name="@dealer.name" data-type="online" data-url="@dealer.website">
-                                                        <span>@dealer.name</span>
-                                                        Click Here to Buy Online
-                                                    </a>
-                                                </div>
-                            }
-                        }
-                        <div class="clear"></div>
-                    </section>
-                }
-            }
-        </div>
         <div class="tab_content" id="local">
             <h2>Buy Local</h2>
             <a href="javascript:void" id="dealer-clear">Reset Map</a>
@@ -101,6 +77,30 @@
                     </section>
                 }
                 }
+        </div>
+        <div class="tab_content" id="online">
+            <h2>Buy Online</h2>
+            @{
+                count = 1;
+                foreach (curtmfg.DealerTier tier in tiers) {
+                    <section class="dealers typebox_@(count++) @(tier.tier.ToLower())">
+                        <h3><img src="/Content/img/smalllogo.png" alt="CURT" />@tier.tier eTailer</h3>
+                        <div class="bar"></div>
+                        @{
+                            List<curtmfg.Customer> dealers = curtmfg.Models.UDF.ShuffleList(onlinedealers.Where(x => x.tier.Equals(tier.ID)).ToList<curtmfg.Customer>());
+                            foreach (curtmfg.Customer dealer in dealers) {
+                                                <div class="dealer">
+                                                    <a href="@dealer.website" class="onlinedealer" data-name="@dealer.name" data-type="online" data-url="@dealer.website">
+                                                        <span>@dealer.name</span>
+                                                        Click Here to Buy Online
+                                                    </a>
+                                                </div>
+                            }
+                        }
+                        <div class="clear"></div>
+                    </section>
+                }
+            }
         </div>
     </div>
 </div>

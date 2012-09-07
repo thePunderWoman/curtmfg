@@ -206,52 +206,88 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Content Include="Content\css\alexfont.css" />
-    <Content Include="Content\css\blog.css" />
+    <Content Include="Content\css\blog.css">
+      <DependentUpon>blog.scss</DependentUpon>
+    </Content>
     <Content Include="Content\css\blog.scss" />
-    <Content Include="Content\css\category.css" />
+    <Content Include="Content\css\category.css">
+      <DependentUpon>category.scss</DependentUpon>
+    </Content>
     <Content Include="Content\css\category.scss" />
-    <Content Include="Content\css\contact.css" />
+    <Content Include="Content\css\contact.css">
+      <DependentUpon>contact.scss</DependentUpon>
+    </Content>
     <Content Include="Content\css\contact.scss" />
-    <Content Include="Content\css\dealer.css" />
+    <Content Include="Content\css\dealer.css">
+      <DependentUpon>dealer.scss</DependentUpon>
+    </Content>
     <Content Include="Content\css\dealer.scss" />
     <Content Include="Content\css\demo_table.css" />
     <Content Include="Content\css\device.css" />
-    <Content Include="Content\css\directionsprint.css" />
+    <Content Include="Content\css\directionsprint.css">
+      <DependentUpon>directionsprint.scss</DependentUpon>
+    </Content>
     <Content Include="Content\css\directionsprint.scss" />
     <Content Include="Content\css\fonts\itcavantgardestd-bold-webfont.svg" />
     <Content Include="Content\css\fonts\lubalingraphstd-demi-webfont.svg" />
-    <Content Include="Content\css\forum.css" />
+    <Content Include="Content\css\forum.css">
+      <DependentUpon>forum.scss</DependentUpon>
+    </Content>
     <Content Include="Content\css\forum.scss" />
-    <Content Include="Content\css\hitch.css" />
+    <Content Include="Content\css\hitch.css">
+      <DependentUpon>hitch.scss</DependentUpon>
+    </Content>
     <Content Include="Content\css\hitch.scss" />
-    <Content Include="Content\css\hitchLookup.css" />
+    <Content Include="Content\css\hitchLookup.css">
+      <DependentUpon>hitchLookup.scss</DependentUpon>
+    </Content>
     <Content Include="Content\css\hitchLookup.scss" />
-    <Content Include="Content\css\home.css" />
+    <Content Include="Content\css\home.css">
+      <DependentUpon>home.scss</DependentUpon>
+    </Content>
     <Content Include="Content\css\home.scss" />
     <Content Include="Content\css\IE7.css" />
     <Content Include="Content\css\IE8.css" />
     <Content Include="Content\css\IE9.css" />
-    <Content Include="Content\css\internal.css" />
+    <Content Include="Content\css\internal.css">
+      <DependentUpon>internal.scss</DependentUpon>
+    </Content>
     <Content Include="Content\css\internal.scss" />
-    <Content Include="Content\css\lifestyle.css" />
+    <Content Include="Content\css\lifestyle.css">
+      <DependentUpon>lifestyle.scss</DependentUpon>
+    </Content>
     <Content Include="Content\css\lifestyle.scss" />
-    <Content Include="Content\css\lifestylelanding.css" />
+    <Content Include="Content\css\lifestylelanding.css">
+      <DependentUpon>lifestylelanding.scss</DependentUpon>
+    </Content>
     <Content Include="Content\css\lifestylelanding.scss" />
-    <Content Include="Content\css\login.css" />
+    <Content Include="Content\css\login.css">
+      <DependentUpon>login.scss</DependentUpon>
+    </Content>
     <Content Include="Content\css\login.scss" />
-    <Content Include="Content\css\master.css" />
+    <Content Include="Content\css\master.css">
+      <DependentUpon>master.scss</DependentUpon>
+    </Content>
     <Content Include="Content\css\master.scss" />
     <Content Include="Content\css\media.css" />
-    <Content Include="Content\css\part.css" />
+    <Content Include="Content\css\part.css">
+      <DependentUpon>part.scss</DependentUpon>
+    </Content>
     <Content Include="Content\css\part.scss" />
     <Content Include="Content\css\PIE.htc" />
-    <Content Include="Content\css\search.css" />
+    <Content Include="Content\css\search.css">
+      <DependentUpon>search.scss</DependentUpon>
+    </Content>
     <Content Include="Content\css\search.scss" />
     <Content Include="Content\css\shadowbox.css" />
-    <Content Include="Content\css\testimonials.css" />
+    <Content Include="Content\css\testimonials.css">
+      <DependentUpon>testimonials.scss</DependentUpon>
+    </Content>
     <Content Include="Content\css\testimonials.scss" />
     <Content Include="Content\css\video-js.css" />
-    <Content Include="Content\css\wheretobuy.css" />
+    <Content Include="Content\css\wheretobuy.css">
+      <DependentUpon>wheretobuy.scss</DependentUpon>
+    </Content>
     <Content Include="Content\css\wheretobuy.scss" />
     <Content Include="Content\img\404.jpg" />
     <Content Include="Content\img\Accessories.png" />
@@ -629,7 +665,9 @@
     <Content Include="Scripts\jquery.imagesloaded.min.js" />
     <Content Include="Scripts\jquery.tmpl.min.js" />
     <Content Include="Scripts\modernizr.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
