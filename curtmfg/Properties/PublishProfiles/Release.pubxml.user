@@ -12,7 +12,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/curtmfg.dll">
-      <publishTime>09/07/2012 08:44:36</publishTime>
+      <publishTime>10/01/2012 12:13:56</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>09/06/2012 09:57:28</publishTime>
@@ -1320,7 +1320,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/10/2012 13:27:40</publishTime>
     </File>
     <File Include="Scripts/custom/scripts.js">
-      <publishTime>08/10/2012 13:27:39</publishTime>
+      <publishTime>09/19/2012 15:17:51</publishTime>
     </File>
     <File Include="Scripts/custom/shadowbox.js">
       <publishTime>08/10/2012 13:27:39</publishTime>
@@ -1329,7 +1329,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/16/2012 09:07:10</publishTime>
     </File>
     <File Include="Scripts/custom/tabs.js">
-      <publishTime>08/22/2012 11:12:05</publishTime>
+      <publishTime>10/01/2012 12:10:15</publishTime>
     </File>
     <File Include="Scripts/custom/testimonials.js">
       <publishTime>08/10/2012 13:27:39</publishTime>
@@ -1482,7 +1482,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/27/2012 15:12:53</publishTime>
     </File>
     <File Include="Views/Shared/_Head.cshtml">
-      <publishTime>08/22/2012 15:52:57</publishTime>
+      <publishTime>09/12/2012 12:51:45</publishTime>
     </File>
     <File Include="Views/Shared/_Header.cshtml">
       <publishTime>08/13/2012 15:41:16</publishTime>
@@ -1551,7 +1551,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/10/2012 13:27:39</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>09/07/2012 08:48:41</publishTime>
+      <publishTime>09/19/2012 15:20:00</publishTime>
     </File>
   </ItemGroup>
 </Project>

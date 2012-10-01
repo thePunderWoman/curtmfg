@@ -140,16 +140,19 @@ $(function () {
         }
         });
         $.getJSON('/Dealer/GetWhereToBuyDealers', function (data) {
+            console.log(data);
             $('#dealerloading').remove();
             var count = 4;
             var dealers = new Array();
             $(data).each(function (x, obj) {
                 dealers.push(obj);
             });
+            console.log(dealers);
             for (var i = count; i > 0; i--) {
-                var rand = Math.round(Math.random() * (i - 1));
+                var rand = Math.round(Math.random() * (dealers.length - 1));
                 $('#wheretobuyul').append('<li class="onlinedealer" style="display: none;"><a target="_blank" data-position="' + i + '" data-partid="' + partID + '" data-name="' + dealers[rand].name + '" href="' + dealers[rand].searchURL + partID + '">' + ((dealers[rand].logo != null && dealers[rand].logo != "") ? '<img src="' + dealers[rand].logo + '" alt="' + dealers[rand].name + '" />' : dealers[rand].name) + '</a></li>');
                 dealers.splice(rand, 1);
+                console.log(dealers);
             }
             $('#wheretobuyul').append('<li class="clear"></li>');
             $('#wheretobuyul li.onlinedealer').fadeIn();

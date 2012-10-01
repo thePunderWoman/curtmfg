@@ -33,6 +33,6 @@ C:\Users\jjaniuk\Projects\curtmfg\curtmfg\bin\System.Web.Razor.xml
 C:\Users\jjaniuk\Projects\curtmfg\curtmfg\bin\System.Web.WebPages.xml
 C:\Users\jjaniuk\Projects\curtmfg\curtmfg\bin\System.Web.WebPages.Deployment.xml
 C:\Users\jjaniuk\Projects\curtmfg\curtmfg\bin\System.Web.WebPages.Razor.xml
-C:\Users\jjaniuk\Projects\curtmfg\curtmfg\obj\Release\ResolveAssemblyReference.cache
 C:\Users\jjaniuk\Projects\curtmfg\curtmfg\obj\Release\curtmfg.dll
 C:\Users\jjaniuk\Projects\curtmfg\curtmfg\obj\Release\curtmfg.pdb
+C:\Users\jjaniuk\Projects\curtmfg\curtmfg\obj\Release\curtmfg.csprojResolveAssemblyReference.cache

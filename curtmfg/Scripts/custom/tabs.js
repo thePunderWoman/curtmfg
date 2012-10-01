@@ -7,7 +7,7 @@ var cpad = 0;
 var count = 0;
 $(function () {
     contwidth = $('#tab_container').parent().width();
-    cpad = Number($('#tab_container .tab_content').css('padding-left').split('p')[0]) + Number($('#tab_container .tab_content').css('padding-right').split('p')[0]);
+    cpad = Number($('#tab_container .tab_content').css('paddingLeft').split('p')[0]) + Number($('#tab_container .tab_content').css('paddingRight').split('p')[0]);
     currentTab = getCurrentTab();
     initTabs();
     if (!detectHistorySupport()) {
