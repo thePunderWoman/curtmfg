@@ -98,8 +98,6 @@ namespace curtmfg
 		
 		private string _fax;
 		
-		private int _isAdmin;
-		
 		private string _comments;
 		
 		private System.DateTime _dateAdded;
@@ -142,8 +140,6 @@ namespace curtmfg
     partial void OnphoneChanged();
     partial void OnfaxChanging(string value);
     partial void OnfaxChanged();
-    partial void OnisAdminChanging(int value);
-    partial void OnisAdminChanged();
     partial void OncommentsChanging(string value);
     partial void OncommentsChanged();
     partial void OndateAddedChanging(System.DateTime value);
@@ -347,26 +343,6 @@ namespace curtmfg
 					this._fax = value;
 					this.SendPropertyChanged("fax");
 					this.OnfaxChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_isAdmin", DbType="Int NOT NULL")]
-		public int isAdmin
-		{
-			get
-			{
-				return this._isAdmin;
-			}
-			set
-			{
-				if ((this._isAdmin != value))
-				{
-					this.OnisAdminChanging(value);
-					this.SendPropertyChanging();
-					this._isAdmin = value;
-					this.SendPropertyChanged("isAdmin");
-					this.OnisAdminChanged();
 				}
 			}
 		}

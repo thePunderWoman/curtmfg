@@ -1,0 +1,110 @@
+﻿@{
+    ViewBag.Title = "Index";
+    ViewBag.layoutclass = "content";
+    List<string> css = new List<string>();
+    css.Add(Url.Content("~/Content/css/contact.css"));
+    ViewBag.css = css;
+    Layout = "~/Views/Shared/_InternalLayout.cshtml";
+    ContentPage content = ViewBag.content;
+    List<string> errors = ViewBag.errors;
+    List<curtmfg.ContactType> types = ViewBag.types;
+    string defaultvalue = ViewBag.defaultvalue;
+    List<FullCountry> countries = ViewBag.countries;
+}
+<script type="text/javascript" src="/Scripts/custom/contact.js"></script>
+<div id="contact_info">
+    @if (content.contentID != 0) {
+        <h2>@content.page_title</h2>
+    } else {
+        <h2>Contact Us</h2>
+    }
+
+    <article id="left_content">
+        @if (content.contentID != 0) {
+            @Html.Raw(content.revision.content_text)
+        }
+        <span class="clear"></span>
+    </article>
+
+    <form action="@Url.Content("~/Contact/Send")" method="post" id="contact_form">
+        <input type="hidden" name="page" value="@((content.contentID != 0) ? content.slug : "")" />
+        @if (errors.Count() > 0) {
+            <ul class="error">
+                @foreach (string error in errors) {
+                    <li>@error</li>
+                }
+            </ul>
+        }
+        <ul>
+            <li>
+                <label for="first_name">Enter your first name<span class="req">*</span></label>
+                <input type="text" name="first_name" id="first_name" placeholder="Enter your first name." value="@((ViewBag.first_name != null) ? ViewBag.first_name : "")" />
+            </li>
+            <li>
+                <label for="last_name">Enter your last name<span class="req">*</span></label>
+                <input type="text" name="last_name" id="last_name" placeholder="Enter your last name." value="@((ViewBag.last_name != null) ? ViewBag.last_name : "")" />
+            </li>
+            <li>
+                <label for="email">Enter your e-mail address<span class="req">*</span></label>
+                <input type="email" name="email" id="email" placeholder="Enter your e-mail address." value="@((ViewBag.email != null) ? ViewBag.email : "")" required />
+            </li>
+            <li>
+                <label for="address1">Enter your Street Address</label>
+                <input type="text" name="address1" id="address1" placeholder="Enter your street address. (optional)" value="@((ViewBag.address1 != null) ? ViewBag.address1 : "")" />
+            </li>
+            <li>
+                <label for="address2"></label>
+                <input type="text" name="address2" id="address2" placeholder="Address line 2. (optional)" value="@((ViewBag.address2 != null) ? ViewBag.address2 : "")" />
+            </li>
+            <li>
+                <label for="city">Enter your City</label>
+                <input type="text" name="city" id="city" placeholder="Enter your city. (optional)" value="@((ViewBag.city != null) ? ViewBag.city : "")" />
+            </li>
+            <li>
+                <label for="state">Select your State / Province</label>
+                <select name="state" id="state">
+                    <option value="0" style="color: #ccc;">- Select State / Province -</option>
+                    @foreach (FullCountry country in countries) {
+                        <optgroup label="@country.name">
+                            @foreach (curtmfg.State state in country.states) {
+                                <option value="@state.stateID" @((ViewBag.state != null && ViewBag.State == state.stateID) ? "selected" : "")>@(state.abbr + " - " + state.state1)</option>
+                            }
+                        </optgroup>
+                    }
+                </select>
+            </li>
+            <li>
+                <label for="postalcode">Enter your Postal Code</label>
+                <input type="text" name="postalcode" id="postalcode" placeholder="Enter your postal code. (optional)" value="@((ViewBag.postalcode != null) ? ViewBag.postalcode : "")" />
+            </li>
+            <li>
+                <label for="phone">Enter your Phone</label>
+                <input type="tel" name="phone" id="phone" placeholder="Enter your phone number. (optional)" value="@((ViewBag.phone != null) ? ViewBag.phone : "")" />
+            </li>
+            <li>
+                <label for="type">What are you Contacting Us About?<span class="req">*</span></label>
+                <select name="type" id="type" required>
+                    <option value="">Select a Reason...</option>
+                    @foreach (curtmfg.ContactType type in types) {
+                        <option value="@type.name" @((type.name == ViewBag.type) ? "selected" : "")>@type.name</option>
+                    }
+                </select>
+            </li>
+            <li>
+                <label for="subject">Enter the subject<span class="req">*</span></label>
+                <input type="text" name="subject" id="subject" placeholder="Enter the subject." value="@((ViewBag.subject != null) ? ViewBag.subject : "")" required/>
+            </li>
+            <li>
+                <label for="contactmessage">Enter the body of your message<span class="req">*</span></label>
+                <textarea cols="60" rows="8" name="contactmessage" id="contactmessage" placeholder="Enter the body of your message." required>@((ViewBag.contactmessage != null) ? ViewBag.contactmessage : "")</textarea>
+            </li>
+            <li>
+                @Html.Raw(ReCaptcha.GenerateCaptcha())
+            </li>
+            <li id="buttons" style="clear:both">
+                <input type="submit" class="button" value="Send It!" />
+            </li>
+        </ul>
+    </form>
+    <span class="clear"></span>
+</div>

@@ -11,7 +11,6 @@
       <Column Name="website" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
       <Column Name="phone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="fax" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="isAdmin" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="comments" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
       <Column Name="dateAdded" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="isActive" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />

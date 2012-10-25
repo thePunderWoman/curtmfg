@@ -1,7 +1,4 @@
-﻿@{
-    bool loggedin = curtmfg.Models.AuthenticateModel.checkAuth(Request.Cookies.Get("customerID"));
-}
-<div style="overflow: hidden; height: 75px">
+﻿<div style="overflow: hidden; height: 75px">
 	<div id="searchArea" style="text-align: left;">
 		<div class="searchBox">
             <form name="sitesearch" id="sitesearch" action="@Url.Content("~/Search")" method="get">
@@ -9,16 +6,6 @@
 				<input type="submit" class="button" id="btnSearch" value="Search" />
             </form>
 		</div>
-		<span>@if (loggedin) { <a href='/dealer/logout'>Log Out</a> <text>|</text> <a href='/dealer/'>Dealer Home</a>} else { <a href='javascript:void(0)' id='dealerLogin'>Dealer Login</a> <text>|</text> <a href="@Url.Content("~/Dealer/BecomeADealer")">Become a Dealer</a> }</span>
-	</div>
-	<div id="loginArea" style="text-align: left; display: none">
-		<div class="searchBox">
-            <form name="dealerlogin" id="dealerlogin" action="@Url.Content("~/Dealer/Login")" method="post">
-				<input type="text" size="20" name="curtcustid" id="curtcustid" placeholder="Email / Customer ID" required />
-				<input type="password" size="20" name="password" id="password" placeholder="Password" required />
-				<input type="submit" class="button" name="btnLogin" id="btnLogin" value="Login" />
-            </form>
-		</div>
-		<span><a href="javascript:void(0)" id="search">Search</a> | <a href="@Url.Content("~/Dealer/ForgotPassword")">Forgot Password</a> | <a href="@Url.Content("~/Dealer/BecomeADealer")">Become a Dealer</a></span>
+		<span><a href="http://dealers.curtmfg.com" target="_blank">Dealer Login</a> | <a href="@Url.Content("~/Dealer/BecomeADealer")">Become a Dealer</a></span>
 	</div>
 </div>
