@@ -209,7 +209,11 @@ loadMarkers = function (data) {
             var contentString = '<div id="content"><div id="siteNotice"></div><p style="font-size: 12px;"><strong>' + name + '</strong><br>';
             contentString += location.address + '<br>' + location.city + ', ' + ((location.State == null) ? "" : location.State.abbr) + ' ' + location.postalCode + '<br>';
             contentString += location.phone;
-            contentString += '<br /><a class="getDirections" data-name="' + name + '" data-id="' + location.locationID + '" href="/WhereToBuy/Directions/' + location.locid + '">Get Directions</a></p></div>';
+            contentString += '<br /><a class="getDirections" data-name="' + name + '" data-id="' + location.locationID + '" href="/WhereToBuy/Directions/' + location.locid + '">Get Directions</a>';
+            if (location.showWebsite) {
+                contentString += '<br /><a href="' + location.websiteurl + '" target="_blank">Visit Website</a>';
+            }
+            contentString += "</p></div>";
             var infoobj = new google.maps.InfoWindow({
                 content: contentString
             });
@@ -280,7 +284,7 @@ loadMarkers = function (data) {
         var clearspan = $('#dealertype_' + location.dealerTier.ID + ' #clearspan_' + location.dealerTier.ID);
         $(clearspan).before(MapMarkers[tierindex].markers[MapMarkers[tierindex].getIndex(locid)].dealerbox);
         //markerarray[MarkerPositions[location.locationID]].distance = location.distance.toFixed(2);
-        $('#location_' + location.locationID).html('<p><strong>' + location.name + '</strong><br>' + location.address + '<br>' + location.city + ', ' + ((location.State == null) ? "" : location.State.abbr) + ' ' + location.postalCode + '<br>' + location.phone + '<br>Distance: <span id="distance_' + location.locationID + '">' + location.distance.toFixed(2) + '</span> Miles<br><a class="getDirections" data-name="' + location.name + '" data-id="' + location.locationID + '" href="/WhereToBuy/Directions/' + location.locationID + '">Get Directions</a></p>');
+        $('#location_' + location.locationID).html('<p><strong>' + location.name + '</strong><br>' + location.address + '<br>' + location.city + ', ' + ((location.State == null) ? "" : location.State.abbr) + ' ' + location.postalCode + '<br>' + location.phone + '<br>Distance: <span id="distance_' + location.locationID + '">' + location.distance.toFixed(2) + '</span> Miles<br><a class="getDirections" data-name="' + location.name + '" data-id="' + location.locationID + '" href="/WhereToBuy/Directions/' + location.locationID + '">Get Directions</a>' + ((location.showWebsite) ? '<a class="showWebsite" href="' + location.websiteurl + '" target="_blank">Visit Website</a>' : '') + '</p>');
         //$('#distance_' + location.locationID).html(markerarray[MarkerPositions[location.locationID]].distance);
     });
     $('#local .dealers').each(function () {

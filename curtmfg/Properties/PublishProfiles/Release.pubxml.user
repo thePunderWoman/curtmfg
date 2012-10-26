@@ -8,7 +8,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <LastUsedBuildConfiguration>Release</LastUsedBuildConfiguration>
     <LastUsedPlatform>Any CPU</LastUsedPlatform>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA4y9wc16VxkG3vL1079NKbQAAAAACAAAAAAADZgAAwAAAABAAAABQZLDG6boSGZeu4USXkrK4AAAAAASAAACgAAAAEAAAANFOQq6gKiLkNLtZdMremwUQAAAAC3Z5Xww5gtlzS85CB98bxBQAAABt/HNZ57THDBZ8eeaqpgeEyx26TQ==</EncryptedPassword>
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA4y9wc16VxkG3vL1079NKbQAAAAACAAAAAAADZgAAwAAAABAAAABqi9L9eNbvp5wrQpWNYR7PAAAAAASAAACgAAAAEAAAADYK5so8nJVQprgQOrrY730QAAAAjJVZ1WcJNNjv8LQgqBcwFhQAAABfvbQVylcLehu2FRY5aMK8FpE/LA==</EncryptedPassword>
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/curtmfg.dll">

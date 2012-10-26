@@ -283,7 +283,7 @@ p.togglelegend {
 						&:visited {
 							color: blue;
 						}
-						&.getDirections {
+						&.getDirections, &.showWebsite {
 							padding: 0;
 							&:hover {
 								background-color: transparent;
@@ -317,7 +317,7 @@ p.togglelegend {
 
 		#local {
 			.dealers .dealer {
-				height: 100px;
+				height: 125px;
 			}
 		}
 	}

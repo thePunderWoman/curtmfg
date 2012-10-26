@@ -269,6 +269,8 @@
       <Column Name="mCodeID" Type="System.Int32" DbType="Int" CanBeNull="false" />
       <Column Name="salesRepID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="tier" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="showWebsite" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="eLocalURL" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
       <Association Name="Customer_CustomerLocation" Member="CustomerLocations" ThisKey="cust_id" OtherKey="cust_id" Type="CustomerLocation" />
       <Association Name="Customer_DealerType" Member="DealerType" ThisKey="dealer_type" OtherKey="dealer_type" Type="DealerType" Cardinality="One" />
       <Association Name="Customer_DealerTier" Member="DealerTier" ThisKey="tier" OtherKey="ID" Type="DealerTier" Cardinality="One" />

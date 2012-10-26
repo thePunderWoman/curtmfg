@@ -5361,6 +5361,10 @@ namespace curtmfg
 		
 		private int _tier;
 		
+		private bool _showWebsite;
+		
+		private string _eLocalURL;
+		
 		private EntitySet<CustomerLocation> _CustomerLocations;
 		
 		private EntityRef<DealerType> _DealerType;
@@ -5421,6 +5425,10 @@ namespace curtmfg
     partial void OnsalesRepIDChanged();
     partial void OntierChanging(int value);
     partial void OntierChanged();
+    partial void OnshowWebsiteChanging(bool value);
+    partial void OnshowWebsiteChanged();
+    partial void OneLocalURLChanging(string value);
+    partial void OneLocalURLChanged();
     #endregion
 		
 		public Customer()
@@ -5912,6 +5920,46 @@ namespace curtmfg
 					this._tier = value;
 					this.SendPropertyChanged("tier");
 					this.OntierChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_showWebsite", DbType="Bit NOT NULL")]
+		public bool showWebsite
+		{
+			get
+			{
+				return this._showWebsite;
+			}
+			set
+			{
+				if ((this._showWebsite != value))
+				{
+					this.OnshowWebsiteChanging(value);
+					this.SendPropertyChanging();
+					this._showWebsite = value;
+					this.SendPropertyChanged("showWebsite");
+					this.OnshowWebsiteChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_eLocalURL", DbType="VarChar(500)")]
+		public string eLocalURL
+		{
+			get
+			{
+				return this._eLocalURL;
+			}
+			set
+			{
+				if ((this._eLocalURL != value))
+				{
+					this.OneLocalURLChanging(value);
+					this.SendPropertyChanging();
+					this._eLocalURL = value;
+					this.SendPropertyChanged("eLocalURL");
+					this.OneLocalURLChanged();
 				}
 			}
 		}

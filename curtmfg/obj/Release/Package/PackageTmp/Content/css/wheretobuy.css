@@ -256,9 +256,9 @@ p.togglelegend {
               background-color: #e54e31; }
             #tab_container #tab_scroll #online .dealers div.dealer a:visited, #tab_container #tab_scroll #local .dealers div.dealer a:visited {
               color: blue; }
-            #tab_container #tab_scroll #online .dealers div.dealer a.getDirections, #tab_container #tab_scroll #local .dealers div.dealer a.getDirections {
+            #tab_container #tab_scroll #online .dealers div.dealer a.getDirections, #tab_container #tab_scroll #online .dealers div.dealer a.showWebsite, #tab_container #tab_scroll #local .dealers div.dealer a.getDirections, #tab_container #tab_scroll #local .dealers div.dealer a.showWebsite {
               padding: 0; }
-              #tab_container #tab_scroll #online .dealers div.dealer a.getDirections:hover, #tab_container #tab_scroll #local .dealers div.dealer a.getDirections:hover {
+              #tab_container #tab_scroll #online .dealers div.dealer a.getDirections:hover, #tab_container #tab_scroll #online .dealers div.dealer a.showWebsite:hover, #tab_container #tab_scroll #local .dealers div.dealer a.getDirections:hover, #tab_container #tab_scroll #local .dealers div.dealer a.showWebsite:hover {
                 background-color: transparent;
                 text-decoration: underline; }
           #tab_container #tab_scroll #online .dealers div.dealer p, #tab_container #tab_scroll #local .dealers div.dealer p {
@@ -272,7 +272,7 @@ p.togglelegend {
       #tab_container #tab_scroll #online .typebox_1 a span, #tab_container #tab_scroll #local .typebox_1 a span {
         font-size: 1.3em; }
     #tab_container #tab_scroll #local .dealers .dealer {
-      height: 100px; }
+      height: 125px; }
 
 #directions {
   display: block;
