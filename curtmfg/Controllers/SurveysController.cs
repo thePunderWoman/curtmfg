@@ -17,8 +17,6 @@ namespace curtmfg.Controllers
 
         public ActionResult webproperties()
         {
-
-
             return View();
         }
 
