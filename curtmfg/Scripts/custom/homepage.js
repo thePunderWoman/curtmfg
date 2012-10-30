@@ -86,7 +86,7 @@ loadVideo = function (obj) {
     var ytvideoID = $(obj).data("videoid");
     $('#videospan-' + ytvideoID).empty();
     $('#videospan-' + ytvideoID).append('<iframe allowtransparency="true" id="frame_' + ytvideoID + '" width="270" height="203" frameborder="0" allowfullscreen></iframe>');
-    $('iframe#frame_' + ytvideoID).attr('src', 'http://www.youtube.com/embed/' + ytvideoID + '?autoplay=1');
+    $('iframe#frame_' + ytvideoID).attr('src', 'http://www.youtube.com/embed/' + ytvideoID + '?autoplay=1&rel=0');
 }
 
 loadLatestParts = function (data) {
