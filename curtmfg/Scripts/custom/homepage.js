@@ -19,7 +19,9 @@ function readyMethods() {
         $("ul.videos li a").removeClass("selectedVideo"); //Remove any "active" class
         $(this).addClass("selectedVideo"); //Add "active" class to selected tab
         $(".video_content").hide(); //Hide all tab content
-
+        $(".videoIframe .videoThumb").show();
+        $(".videoIframe span.overlay").show();
+        $(".videoIframe iframe").remove();
         var activeTab = $(this).attr("href"); //Find the href attribute value to identify the active tab + content
         $(activeTab).fadeIn(); //Fade in the active ID content
         $(activeTab + " iframe").fadeIn();
@@ -84,7 +86,8 @@ loadYouTube = function () {
 
 loadVideo = function (obj) {
     var ytvideoID = $(obj).data("videoid");
-    $('#videospan-' + ytvideoID).empty();
+    $('#videospan-' + ytvideoID + ' .overlay').hide();
+    $('#videospan-' + ytvideoID + ' .videoThumb').hide();
     $('#videospan-' + ytvideoID).append('<iframe allowtransparency="true" id="frame_' + ytvideoID + '" width="270" height="203" frameborder="0" allowfullscreen></iframe>');
     $('iframe#frame_' + ytvideoID).attr('src', 'http://www.youtube.com/embed/' + ytvideoID + '?autoplay=1&rel=0');
 }
