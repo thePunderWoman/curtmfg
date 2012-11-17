@@ -30,6 +30,7 @@
       <Column Name="requireAuthentication" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Column Name="showOnSitemap" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Column Name="sort" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="websiteID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="Menu_Menu_SiteContent" Member="Menu_SiteContents" ThisKey="menuID" OtherKey="menuID" Type="Menu_SiteContent" />
     </Type>
   </Table>
@@ -190,6 +191,7 @@
       <Column Name="slug" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
       <Column Name="requireAuthentication" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Column Name="canonical" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="websiteID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="SiteContent_Menu_SiteContent" Member="Menu_SiteContents" ThisKey="contentID" OtherKey="contentID" Type="Menu_SiteContent" />
       <Association Name="SiteContent_SiteContentRevision" Member="SiteContentRevisions" ThisKey="contentID" OtherKey="contentID" Type="SiteContentRevision" />
     </Type>

@@ -28,10 +28,10 @@ namespace curtmfg.Controllers
                     ViewBag.parentcategories = parentcategories;
                 }
 
-                SimpleMenu mainmenu = curtmfg.Models.MenuModel.GetPrimary();
+                SimpleMenu mainmenu = new MenuModel().GetPrimary();
                 ViewBag.mainmenu = mainmenu;
 
-                List<SimpleMenu> sitemapmenus = curtmfg.Models.MenuModel.GetFooterSitemap();
+                List<SimpleMenu> sitemapmenus = new MenuModel().GetFooterSitemap();
                 ViewBag.sitemapmenus = sitemapmenus;
 
                 //List<string> years = Hitch_API.getYears();

@@ -6,22 +6,27 @@ using System.Web.Script.Serialization;
 
 namespace curtmfg.Models {
     public class MenuModel {
+        public int websiteID {
+            get {
+                return 1;
+            }
+        }
 
-        public static Menu GetMenu(int id = 0) {
+        public Menu GetMenu(int id = 0) {
             Menu menu = new Menu();
             try {
                 CurtDevDataContext db = new CurtDevDataContext();
-                menu = db.Menus.Where(x => x.menuID == id).First<Menu>();
+                menu = db.Menus.Where(x => x.menuID == id && x.websiteID.Equals(this.websiteID)).First<Menu>();
             } catch { }
             return menu;
         }
 
-        public static SimpleMenu GetPrimary() {
+        public SimpleMenu GetPrimary() {
             SimpleMenu menu = new SimpleMenu();
             try {
                 CurtDevDataContext db = new CurtDevDataContext();
                 menu = (from m in db.Menus
-                        where m.isPrimary == true
+                        where m.isPrimary == true && m.websiteID.Equals(this.websiteID)
                         select new SimpleMenu {
                             menuID = m.menuID,
                             menu_name = m.menu_name,
@@ -65,12 +70,12 @@ namespace curtmfg.Models {
             } catch { return menu; }
         }
 
-        public static List<SimpleMenu> GetFooterSitemap() {
+        public List<SimpleMenu> GetFooterSitemap() {
             List<SimpleMenu> menus = new List<SimpleMenu>();
             try {
                 CurtDevDataContext db = new CurtDevDataContext();
                 menus = (from m in db.Menus
-                        where m.showOnSitemap == true
+                         where m.showOnSitemap == true && m.websiteID.Equals(this.websiteID)
                         orderby m.sort
                         select new SimpleMenu {
                             menuID = m.menuID,
@@ -114,12 +119,12 @@ namespace curtmfg.Models {
             return menus;
         }
 
-        public static menuWithContent Get(string name = "") {
+        public menuWithContent Get(string name = "") {
             menuWithContent menu = new menuWithContent();
             try {
                 CurtDevDataContext db = new CurtDevDataContext();
                 menu = (from m in db.Menus
-                        where m.menu_name.ToLower() == name.ToLower()
+                        where m.menu_name.ToLower() == name.ToLower() && m.websiteID.Equals(this.websiteID)
                         select new menuWithContent {
                             menuID = m.menuID,
                             menu_name = m.menu_name,
@@ -164,21 +169,22 @@ namespace curtmfg.Models {
             } catch { return menu; }
         }
 
-        public static List<menuWithContent> GetSitemap() {
+        public List<menuWithContent> GetSitemap() {
             List<menuWithContent> menus = new List<menuWithContent>();
             List<menuWithContent> remove = new List<menuWithContent>();
             try {
                 CurtDevDataContext db = new CurtDevDataContext();
                 menus = (from m in db.Menus
+                         where m.websiteID.Equals(this.websiteID)
                          orderby m.isPrimary descending
-                        select new menuWithContent {
-                            menuID = m.menuID,
-                            menu_name = m.menu_name,
-                            display_name = m.display_name,
-                            requireAuthentication = m.requireAuthentication,
-                            isPrimary = m.isPrimary,
-                            active = m.active
-                        }).ToList<menuWithContent>();
+                         select new menuWithContent {
+                             menuID = m.menuID,
+                             menu_name = m.menu_name,
+                             display_name = m.display_name,
+                             requireAuthentication = m.requireAuthentication,
+                             isPrimary = m.isPrimary,
+                             active = m.active
+                         }).ToList<menuWithContent>();
 
                 foreach (menuWithContent menu in menus) {
                     List<menuItem> contents = (from msc in db.Menu_SiteContents
@@ -223,7 +229,7 @@ namespace curtmfg.Models {
             return menus;
         }
         
-        public static menuWithContent GetByContentID(int contentID = 0, int id = 0, bool authenticated = false) {
+        public menuWithContent GetByContentID(int contentID = 0, int id = 0, bool authenticated = false) {
             menuWithContent menu = new menuWithContent();
             try {
                 CurtDevDataContext db = new CurtDevDataContext();
@@ -231,7 +237,7 @@ namespace curtmfg.Models {
                     id = db.Menu_SiteContents.Where(x => x.contentID == contentID).Select(x => x.menuID).FirstOrDefault();
                 }
                 menu = (from m in db.Menus
-                        where m.menuID == id && m.isPrimary == false && (!m.requireAuthentication || (m.requireAuthentication && authenticated))
+                        where m.menuID == id && m.websiteID.Equals(this.websiteID) && m.isPrimary == false && (!m.requireAuthentication || (m.requireAuthentication && authenticated))
                         select new menuWithContent {
                             menuID = m.menuID,
                             menu_name = m.menu_name,

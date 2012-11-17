@@ -16,7 +16,7 @@ namespace curtmfg.Controllers
         public ActionResult Index()
         {
             ContentPage content = new ContentPage();
-            content = SiteContentModel.GetPrimary();
+            content = new SiteContentModel().GetPrimary();
             ViewBag.content = content;
 
             List<NewsItem> news = new List<NewsItem>();

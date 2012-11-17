@@ -14,10 +14,10 @@ namespace curtmfg.Controllers
 
         public ActionResult Index(){
 
-            List<menuWithContent> sitemap = MenuModel.GetSitemap();
+            List<menuWithContent> sitemap = new MenuModel().GetSitemap();
             ViewBag.sitemap = sitemap;
 
-            List<ContentPage> contents = SiteContentModel.GetSitemap();
+            List<ContentPage> contents = new SiteContentModel().GetSitemap();
             ViewBag.contents = contents;
 
             List<NewsItem> news = NewsModel.GetAll();

@@ -34,7 +34,7 @@ namespace curtmfg.Controllers
             ViewBag.errors = (errors == null) ? new List<string>() : errors;
             
             try {
-                ContentPage content = SiteContentModel.Get(page);
+                ContentPage content = new SiteContentModel().Get(page);
                 ViewBag.content = content;
             } catch { ViewBag.content = null; }
 

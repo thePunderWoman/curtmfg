@@ -19,7 +19,7 @@ namespace curtmfg.Controllers
             if (AuthenticateModel.checkAuth(Request.Cookies.Get("customerID"))) {
                 authenticated = true;
             }
-            ContentPage content = SiteContentModel.Get(name, menuid, authenticated);
+            ContentPage content = new SiteContentModel().Get(name, menuid, authenticated);
             if (content.contentID > 0 && content.published) {
                 ViewBag.content = content;
                 if (content.requireAuthentication && !authenticated) {

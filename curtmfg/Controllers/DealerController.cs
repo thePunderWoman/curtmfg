@@ -19,7 +19,7 @@ namespace curtmfg.Controllers
                 return RedirectToAction("Login", new { message = message });
             }
 
-            menuWithContent dealermenu = MenuModel.Get("dealerarea");
+            menuWithContent dealermenu = new MenuModel().Get("dealerarea");
             ViewBag.dealermenu = dealermenu;
             ContentPage content = new ContentPage();
             foreach (menuItem item in dealermenu.getChildren()) {
@@ -172,10 +172,10 @@ namespace curtmfg.Controllers
                 string message = "You are not logged in!";
                 return RedirectToAction("Login", new { message = message });
             }
-            ContentPage content = SiteContentModel.Get(name);
+            ContentPage content = new SiteContentModel().Get(name);
             ViewBag.content = content;
 
-            menuWithContent dealermenu = MenuModel.Get("dealerarea");
+            menuWithContent dealermenu = new MenuModel().Get("dealerarea");
             ViewBag.dealermenu = dealermenu;
 
             return View("index");

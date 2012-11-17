@@ -806,6 +806,8 @@ namespace curtmfg
 		
 		private int _sort;
 		
+		private int _websiteID;
+		
 		private EntitySet<Menu_SiteContent> _Menu_SiteContents;
 		
     #region Extensibility Method Definitions
@@ -828,6 +830,8 @@ namespace curtmfg
     partial void OnshowOnSitemapChanged();
     partial void OnsortChanging(int value);
     partial void OnsortChanged();
+    partial void OnwebsiteIDChanging(int value);
+    partial void OnwebsiteIDChanged();
     #endregion
 		
 		public Menu()
@@ -992,6 +996,26 @@ namespace curtmfg
 					this._sort = value;
 					this.SendPropertyChanged("sort");
 					this.OnsortChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_websiteID", DbType="Int NOT NULL")]
+		public int websiteID
+		{
+			get
+			{
+				return this._websiteID;
+			}
+			set
+			{
+				if ((this._websiteID != value))
+				{
+					this.OnwebsiteIDChanging(value);
+					this.SendPropertyChanging();
+					this._websiteID = value;
+					this.SendPropertyChanged("websiteID");
+					this.OnwebsiteIDChanged();
 				}
 			}
 		}
@@ -3966,6 +3990,8 @@ namespace curtmfg
 		
 		private string _canonical;
 		
+		private int _websiteID;
+		
 		private EntitySet<Menu_SiteContent> _Menu_SiteContents;
 		
 		private EntitySet<SiteContentRevision> _SiteContentRevisions;
@@ -4002,6 +4028,8 @@ namespace curtmfg
     partial void OnrequireAuthenticationChanged();
     partial void OncanonicalChanging(string value);
     partial void OncanonicalChanged();
+    partial void OnwebsiteIDChanging(int value);
+    partial void OnwebsiteIDChanged();
     #endregion
 		
 		public SiteContent()
@@ -4287,6 +4315,26 @@ namespace curtmfg
 					this._canonical = value;
 					this.SendPropertyChanged("canonical");
 					this.OncanonicalChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_websiteID", DbType="Int NOT NULL")]
+		public int websiteID
+		{
+			get
+			{
+				return this._websiteID;
+			}
+			set
+			{
+				if ((this._websiteID != value))
+				{
+					this.OnwebsiteIDChanging(value);
+					this.SendPropertyChanging();
+					this._websiteID = value;
+					this.SendPropertyChanged("websiteID");
+					this.OnwebsiteIDChanged();
 				}
 			}
 		}
