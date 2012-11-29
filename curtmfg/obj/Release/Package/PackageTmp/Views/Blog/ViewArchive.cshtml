@@ -19,7 +19,7 @@
 <section id="rightContent">
     @if (posts.Count() > 0) {
         foreach (curtmfg.Models.PostWithCategories post in posts) {
-            <article class="post" id="post_@post.postID">
+            <article class="post" id="post_@post.blogPostID">
                 <header>
                     <h3><a href="/Blog/Post/@String.Format("{0:M-dd-yyyy}", post.publishedDate)/@post.slug">@post.post_title</a></h3>
                     <p class="byline">

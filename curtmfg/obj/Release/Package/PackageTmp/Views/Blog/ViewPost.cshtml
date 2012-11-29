@@ -33,7 +33,7 @@
 @Html.Partial("_BlogNavigation")
 
 <section id="rightContent">
-    <article class="post" id="post_@post.postID">
+    <article class="post" id="post_@post.blogPostID">
         <header>
             @if (errors != null && errors.Trim() != "") {<p class="error">@errors</p>}
             <h2>@post.post_title</h2>
