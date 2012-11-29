@@ -1,5 +1,5 @@
 ﻿@{
-    List<curtmfg.Models.PostWithCategories> posts = ViewBag.posts;
+    List<curtmfg.Models.PostWithCategories> posts = ViewBag.posts ?? new List<curtmfg.Models.PostWithCategories>();
     ViewBag.Title = "Blog";
     List<string> css = new List<string> { "/Content/css/blog.css" };
     ViewBag.css = css;
@@ -13,25 +13,30 @@
 @Html.Partial("_BlogNavigation")
 
 <section id="rightContent">
-    @foreach (curtmfg.Models.PostWithCategories post in posts) {
-        <article class="post" id="post_@post.postID">
-            <header>
-                <h3><a href="/Blog/Post/@String.Format("{0:M-dd-yyyy}", post.publishedDate)/@post.slug">@post.post_title</a></h3>
-                <p class="byline">
-                    By <a href="/Blog/Author/@(Server.UrlEncode(post.author.fname))_@(Server.UrlEncode(post.author.lname))">@post.author.fname @post.author.lname</a>
-                    <span>@String.Format("{0:MMMM d, yyyy} at {0:h:mm tt}", post.publishedDate)</span>
-                </p>
-            </header>
-            @if (post.post_text.Length > 400) {
-                @Html.Raw(post.post_text.Substring(0, 399) + "... <a class=\"readmore\" href=\"/Blog/Post/" + String.Format("{0:M-dd-yyyy}", post.publishedDate) + "/" + post.slug + "/\">Read More</a>")
-            } else {
-                @Html.Raw(post.post_text)
-            }
-            <footer>
-                <p>@post.comments.Count() Comment@((post.comments.Count() != 1) ? "s" : "") <a href="/Blog/Post/@String.Format("{0:M-dd-yyyy}", post.publishedDate)/@post.slug/#comments">Add a Comment</a></p>
-            </footer>
-        </article>
+    @if(posts.Count > 0) {
+        foreach (curtmfg.Models.PostWithCategories post in posts) {
+            <article class="post" id="post_@post.blogPostID">
+                <header>
+                    <h3><a href="/Blog/Post/@String.Format("{0:M-dd-yyyy}", post.publishedDate)/@post.slug">@post.post_title</a></h3>
+                    <p class="byline">
+                        By <a href="/Blog/Author/@(Server.UrlEncode(post.author.fname))_@(Server.UrlEncode(post.author.lname))">@post.author.fname @post.author.lname</a>
+                        <span>@String.Format("{0:MMMM d, yyyy} at {0:h:mm tt}", post.publishedDate)</span>
+                    </p>
+                </header>
+                @if (post.post_text.Length > 400) {
+                    @Html.Raw(post.post_text.Substring(0, 399) + "... <a class=\"readmore\" href=\"/Blog/Post/" + String.Format("{0:M-dd-yyyy}", post.publishedDate) + "/" + post.slug + "/\">Read More</a>")
+                } else {
+                    @Html.Raw(post.post_text)
+                }
+                <footer>
+                    <p>@post.comments.Count() Comment@((post.comments.Count() != 1) ? "s" : "") <a href="/Blog/Post/@String.Format("{0:M-dd-yyyy}", post.publishedDate)/@post.slug/#comments">Add a Comment</a></p>
+                </footer>
+            </article>
+        }
+    } else {
+        <p>No Blog Posts</p>   
     }
+    @if(pagecount > 0) {
     <footer id="pagination">
         @if (page > 1 && pagecount > 1) {
             //Previous page link
@@ -43,5 +48,6 @@
             <a id="nextpage" rel="next" href="/Blog?page=@(page + 1)">Next &gt;</a>
         }
     </footer>
+    }
 </section>
 <span class="clear"></span>
