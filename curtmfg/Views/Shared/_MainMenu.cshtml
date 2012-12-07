@@ -13,7 +13,7 @@
                 if (item.hasContent()) {
                     <li @((counter == contents.Count()) ? "class=last" : "") style="width: @(100 / contents.Count)% ;"><a style="width: 100% ; text-align: center;" href="/page/@item.content.slug">@item.content.page_title</a></li>
                 } else {
-                    <li @((counter == contents.Count()) ? "class=last" : "") style="width: @(100 / contents.Count)% ;"><a style="width: 100% ; text-align: center;" href="@item.menuLink">@item.menuTitle</a></li>
+                    <li @((counter == contents.Count()) ? "class=last" : "") style="width: @(100 / contents.Count)% ;"><a style="width: 100% ; text-align: center;" @((item.linkTarget) ? "target=_blank" : "") href="@item.menuLink">@item.menuTitle</a></li>
                 }
             }
         }

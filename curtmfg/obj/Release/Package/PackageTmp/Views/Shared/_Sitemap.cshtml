@@ -8,7 +8,7 @@
                 <h5>@((menu.display_name != null && menu.display_name != "") ? menu.display_name : menu.menu_name)</h5>
                 <ul>
                     @foreach (curtmfg.Models.menuItem item in menu.contents) {
-                        <li><a href="@((item.hasContent()) ? ("/page/" + item.content.slug) : item.menuLink)">@((item.hasContent()) ? item.content.page_title : item.menuTitle)</a></li>
+                        <li><a href="@((item.hasContent()) ? ("/page/" + item.content.slug) : item.menuLink)" @((!item.hasContent() && item.linkTarget) ? "target=_blank" : "")>@((item.hasContent()) ? item.content.page_title : item.menuTitle)</a></li>
                     }
                 </ul>
             </nav>

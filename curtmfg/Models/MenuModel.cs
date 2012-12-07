@@ -44,6 +44,7 @@ namespace curtmfg.Models {
                                                menuSort = msc.menuSort,
                                                menuTitle = msc.menuTitle,
                                                menuLink = msc.menuLink,
+                                               linkTarget = msc.linkTarget,
                                                parentID = msc.parentID,
                                                contentID = msc.contentID,
                                                content = (from sc in db.SiteContents
@@ -94,6 +95,7 @@ namespace curtmfg.Models {
                                             menuSort = msc.menuSort,
                                             menuTitle = msc.menuTitle,
                                             menuLink = msc.menuLink,
+                                            linkTarget = msc.linkTarget,
                                             parentID = msc.parentID,
                                             contentID = msc.contentID,
                                             content = (from sc in db.SiteContents
@@ -144,6 +146,7 @@ namespace curtmfg.Models {
                                                menuSort = msc.menuSort,
                                                menuTitle = msc.menuTitle,
                                                menuLink = msc.menuLink,
+                                               linkTarget = msc.linkTarget,
                                                parentID = msc.parentID,
                                                contentID = msc.contentID,
                                                content = (from sc in db.SiteContents
@@ -196,6 +199,7 @@ namespace curtmfg.Models {
                                                    menuSort = msc.menuSort,
                                                    menuTitle = msc.menuTitle,
                                                    menuLink = msc.menuLink,
+                                                   linkTarget = msc.linkTarget,
                                                    parentID = msc.parentID,
                                                    contentID = msc.contentID,
                                                    content = (from sc in db.SiteContents
@@ -257,6 +261,7 @@ namespace curtmfg.Models {
                                                 menuSort = msc.menuSort,
                                                 menuTitle = msc.menuTitle,
                                                 menuLink = msc.menuLink,
+                                                linkTarget = msc.linkTarget,
                                                 parentID = msc.parentID,
                                                 contentID = msc.contentID,
                                                 content = (from sc in db.SiteContents

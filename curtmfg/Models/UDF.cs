@@ -82,7 +82,7 @@ namespace curtmfg.Models {
                 if (menuitem.hasContent()) {
                     pagecontent += "<a href='/page/" + menu.menuID + "/" + menuitem.content.slug + "' " + ((contentID == menuitem.contentID) ? "class='active'" : "") + " >" + menuitem.content.page_title + "</a>";
                 } else {
-                    pagecontent += "<a href='" + menuitem.menuLink + "'>" + menuitem.menuTitle + "</a>";
+                    pagecontent += "<a " + ((menuitem.linkTarget) ? "target=_blank" : "" ) + " href='" + menuitem.menuLink + "'>" + menuitem.menuTitle + "</a>";
                 }
                 if (menu.hasChildren(menuitem.menuContentID)) {
                     pagecontent += generateMenu(menu, menuitem.menuContentID, contentID);
@@ -101,7 +101,7 @@ namespace curtmfg.Models {
                 if (menuitem.hasContent()) {
                     pagecontent += "<a href='/page/" + menu.menuID + "/" + menuitem.content.slug + "' >" + menuitem.content.page_title + "</a>";
                 } else {
-                    pagecontent += "<a href='" + menuitem.menuLink + "'>" + menuitem.menuTitle + "</a>";
+                    pagecontent += "<a " + ((menuitem.linkTarget) ? "target=_blank" : "") + " href='" + menuitem.menuLink + "'>" + menuitem.menuTitle + "</a>";
                 }
                 if (menu.hasChildren(menuitem.menuContentID)) {
                     pagecontent += generateMenu(menu, menuitem.menuContentID);
