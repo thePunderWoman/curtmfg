@@ -9536,6 +9536,8 @@ namespace curtmfg
 		
 		private bool _newWindow;
 		
+		private string _menuPosition;
+		
 		private EntitySet<LandingPageData> _LandingPageDatas;
 		
 		private EntitySet<LandingPageImage> _LandingPageImages;
@@ -9566,6 +9568,8 @@ namespace curtmfg
     partial void OnconversionLabelChanged();
     partial void OnnewWindowChanging(bool value);
     partial void OnnewWindowChanged();
+    partial void OnmenuPositionChanging(string value);
+    partial void OnmenuPositionChanged();
     #endregion
 		
 		public LandingPage()
@@ -9791,6 +9795,26 @@ namespace curtmfg
 					this._newWindow = value;
 					this.SendPropertyChanged("newWindow");
 					this.OnnewWindowChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_menuPosition", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
+		public string menuPosition
+		{
+			get
+			{
+				return this._menuPosition;
+			}
+			set
+			{
+				if ((this._menuPosition != value))
+				{
+					this.OnmenuPositionChanging(value);
+					this.SendPropertyChanging();
+					this._menuPosition = value;
+					this.SendPropertyChanged("menuPosition");
+					this.OnmenuPositionChanged();
 				}
 			}
 		}

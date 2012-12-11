@@ -461,6 +461,7 @@
       <Column Name="conversionID" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
       <Column Name="conversionLabel" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
       <Column Name="newWindow" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="menuPosition" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
       <Association Name="LandingPage_LandingPageData" Member="LandingPageDatas" ThisKey="id" OtherKey="landingPageID" Type="LandingPageData" />
       <Association Name="LandingPage_LandingPageImage" Member="LandingPageImages" ThisKey="id" OtherKey="landingPageID" Type="LandingPageImage" />
     </Type>

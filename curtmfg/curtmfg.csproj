@@ -795,6 +795,7 @@
     <Content Include="Views\Shared\_LandingLayout.cshtml" />
     <Content Include="Views\Shared\_LandingHeader.cshtml" />
     <Content Include="Views\LandingPage\index.cshtml" />
+    <Content Include="Views\LandingPage\_images.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />

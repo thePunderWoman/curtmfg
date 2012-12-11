@@ -21,6 +21,8 @@ a.landingLink {
   margin: auto;
   width: 969px;
   text-decoration: none; }
+  a.landingLink img {
+    display: block; }
 
 #page_content {
   background: #fff;
@@ -173,4 +175,9 @@ a.archive {
   height: 190px; }
   #hitchlookup p {
     padding-bottom: 2px; }
+
+.chicklet {
+  display: block;
+  width: 969px;
+  margin: auto; }
 

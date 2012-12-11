@@ -21,6 +21,9 @@ a.landingLink {
 	margin: auto;
 	width: 969px;
 	text-decoration: none;
+	img {
+		display: block;
+	}
 }
 
 #page_content {
@@ -223,4 +226,10 @@ a.archive {
 	p {
 		padding-bottom: 2px;
 	}
+}
+
+.chicklet {
+	display: block;
+	width: 969px;
+	margin: auto;
 }

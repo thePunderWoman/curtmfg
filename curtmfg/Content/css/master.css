@@ -320,7 +320,7 @@ a:hover {
   #header #homeHeader {
     display: block;
     text-align: right;
-    padding-right: 10px;
+    padding: 0 10px 10px 0;
     position: relative; }
     #header #homeHeader #header_img {
       display: block;
@@ -355,7 +355,7 @@ a:hover {
   margin: auto;
   text-align: center;
   padding: 10px 0 20px;
-  margin: 10px 0 0;
+  margin: 0;
   overflow: hidden; }
   #sub_nav ul {
     position: relative;
@@ -499,7 +499,7 @@ a:hover {
 #internalheader {
   display: block;
   text-align: right;
-  padding-right: 10px; }
+  padding: 0 10px 10px 0; }
 
 #hitchlookup {
   position: absolute;
@@ -579,9 +579,9 @@ a:hover {
   clear: both; }
   #nav_container ul {
     display: block;
-    margin: 5px 0;
+    margin: 0;
     list-style: none;
-    padding: 0; }
+    padding: 5px 0; }
     #nav_container ul li {
       float: left; }
       #nav_container ul li a {

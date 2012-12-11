@@ -2,22 +2,16 @@
     curtmfg.LandingPage landingPage = ViewBag.landingPage ?? new curtmfg.LandingPage();
     ViewBag.Title = landingPage.name;
 	Layout = "~/Views/Shared/_LandingLayout.cshtml";
-    string datastr = "";
-    foreach(curtmfg.LandingPageData data in landingPage.LandingPageDatas) {
-        datastr += "data-" + data.dataKey + "=" + data.dataValue + " ";
-    }
 }
-<a href="@landingPage.url" @datastr class="landingLink @landingPage.linkClasses" @((landingPage.newWindow) ? "target=_blank" : "")>
-    @foreach (curtmfg.LandingPageImage image in landingPage.LandingPageImages) {
-        <img src="@image.url" alt="Page Image" />
-    }
-</a>
 @if(landingPage.pageContent != null && landingPage.pageContent.Trim().Length > 0) {
     <section id="page_content" class="content">
         @Html.Raw(landingPage.pageContent)
     </section>
 }
 <div class="clear"></div>
+@if (landingPage.menuPosition == "bottom") {
+    <div class="chicklet">@Html.Partial("_SubNav")</div>
+}
 
 @if (landingPage.conversionID != "" && landingPage.conversionLabel != "") {
     <!-- Google Code for adwords Conversion -->

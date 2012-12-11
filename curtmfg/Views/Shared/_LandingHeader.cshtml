@@ -1,6 +1,17 @@
-﻿<header id="header">
+﻿@{
+    curtmfg.LandingPage landingPage = ViewBag.landingPage ?? new curtmfg.LandingPage();
+}
+<header id="header">
 	<a id="topLogo" href="@Url.Content("~")"><img src="@Url.Content("~/Content/img/logo.png")" height="57" width="372" alt="CURT Manufacturing" /></a>
     @Html.Partial("_SiteSearch")
     @Html.Partial("_MainMenu")
-    @Html.Partial("_SubNav")
+    @if (landingPage.menuPosition == "top") {
+        @Html.Partial("_SubNav")
+        @Html.Partial("_images")
+    } else {
+        @Html.Partial("_images")
+    }
+    @if (landingPage.menuPosition == "middle") {
+        @Html.Partial("_SubNav")
+    }
 </header>

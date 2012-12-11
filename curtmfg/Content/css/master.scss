@@ -326,7 +326,7 @@ $headendp: 100%;
 	#homeHeader {
 		display: block;
 		text-align: right;
-		padding-right: 10px;
+		padding: 0 10px 10px 0;
 		position: relative;
 		#header_img{
 			display: block;
@@ -359,7 +359,7 @@ $headendp: 100%;
     margin: auto;
     text-align: center;
     padding: 10px 0 20px;
-    margin: 10px 0 0;
+    margin: 0;
 	overflow: hidden;
 
 	ul {
@@ -550,7 +550,7 @@ $headendp: 100%;
 #internalheader {
 	display: block;
 	text-align: right;
-	padding-right: 10px;
+	padding: 0 10px 10px 0;
 }
 
 #hitchlookup {
@@ -652,9 +652,9 @@ $headendp: 100%;
 	clear: both;
 	ul {
 		display: block;
-		margin: 5px 0;
+		margin: 0;
 		list-style: none;
-		padding: 0;
+		padding: 5px 0;
 		
 		li {
 			float: left;

@@ -1,0 +1,12 @@
+﻿@{
+    curtmfg.LandingPage landingPage = ViewBag.landingPage ?? new curtmfg.LandingPage();
+    string datastr = "";
+    foreach(curtmfg.LandingPageData data in landingPage.LandingPageDatas) {
+        datastr += "data-" + data.dataKey + "=" + data.dataValue + " ";
+    }
+}
+<a href="@landingPage.url" @datastr class="landingLink @landingPage.linkClasses" @((landingPage.newWindow) ? "target=_blank" : "")>
+    @foreach (curtmfg.LandingPageImage image in landingPage.LandingPageImages) {
+        <img src="@image.url" alt="Page Image" />
+    }
+</a>
