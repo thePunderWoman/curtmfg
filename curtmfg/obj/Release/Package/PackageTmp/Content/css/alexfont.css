@@ -1,8 +1,0 @@
-@font-face{
-    font-family: "ITCLubalinGraphStdDemi";
-	src: url('fonts/lubalingraphstd-demi-webfont.eot');
-    src: url('fonts/lubalingraphstd-demi-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/lubalingraphstd-demi-webfont.woff') format('woff'),
-         url('fonts/lubalingraphstd-demi-webfont.ttf') format('truetype'),
-         url('fonts/lubalingraphstd-demi-webfont.svg#ITCLubalinGraphStdDemi') format('svg');
-}

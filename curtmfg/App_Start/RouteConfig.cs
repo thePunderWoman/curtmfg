@@ -17,6 +17,18 @@ namespace curtmfg {
             );
 
             routes.MapRoute(
+                name: "LandingPage",
+                url: "lp/{id}",
+                defaults: new { controller = "LandingPage", action = "Index", id = 0 }
+            );
+
+            routes.MapRoute(
+                name: "LandingPageWithName",
+                url: "lp/{id}/{name}",
+                defaults: new { controller = "LandingPage", action = "Index", id = 0, name = "" }
+            );
+
+            routes.MapRoute(
                 name: "TechSupportContact",
                 url: "technical_service",
                 defaults: new { controller = "Contact", action = "Index", page = "technical_service", defaultvalue = "Tech Services" }

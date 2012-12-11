@@ -1,0 +1,22 @@
+﻿@{
+    List<string> css = (ViewBag.css != null) ? ViewBag.css : new List<string>();
+    css.Add(Url.Content("~/Content/css/internal.css"));
+    ViewBag.css = css;
+}
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    @Html.Partial("_Head")
+    <script src="/Scripts/custom/landingpage.js"></script>
+</head>
+
+<body>
+    <div id="container">
+        @Html.Partial("_LandingHeader")
+        @RenderBody()
+        @Html.Partial("_Sitemap")
+        @Html.Partial("_Footer")
+    </div>
+    @Html.Partial("_AnalyticsBottom")
+</body>
+</html>

@@ -1,0 +1,40 @@
+﻿@{
+    curtmfg.LandingPage landingPage = ViewBag.landingPage ?? new curtmfg.LandingPage();
+    ViewBag.Title = landingPage.name;
+	Layout = "~/Views/Shared/_LandingLayout.cshtml";
+    string datastr = "";
+    foreach(curtmfg.LandingPageData data in landingPage.LandingPageDatas) {
+        datastr += "data-" + data.dataKey + "=" + data.dataValue + " ";
+    }
+}
+<a href="@landingPage.url" @datastr class="landingLink @landingPage.linkClasses" @((landingPage.newWindow) ? "target=_blank" : "")>
+    @foreach (curtmfg.LandingPageImage image in landingPage.LandingPageImages) {
+        <img src="@image.url" alt="Page Image" />
+    }
+</a>
+@if(landingPage.pageContent != null && landingPage.pageContent.Trim().Length > 0) {
+    <section id="page_content" class="content">
+        @Html.Raw(landingPage.pageContent)
+    </section>
+}
+<div class="clear"></div>
+
+@if (landingPage.conversionID != "" && landingPage.conversionLabel != "") {
+    <!-- Google Code for adwords Conversion -->
+    <script type="text/javascript">
+    /* <![CDATA[ */
+        var google_conversion_id = @landingPage.conversionID;
+        var google_conversion_language = "en";
+        var google_conversion_format = "2";
+        var google_conversion_color = "ffffff";
+        var google_conversion_label = "@landingPage.conversionLabel";
+    /* ]]> */
+    </script>
+    <script type="text/javascript" src="https://www.googleadservices.com/pagead/conversion.js">
+    </script>
+    <noscript>
+    <div style="display:inline;">
+    <img height="1" width="1" style="border-style:none;" alt="" src="https://www.googleadservices.com/pagead/conversion/@landingPage.conversionID/?label=@landingPage.conversionLabel&amp;guid=ON&amp;script=0"/>
+    </div>
+    </noscript>
+}

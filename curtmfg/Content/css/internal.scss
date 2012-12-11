@@ -16,6 +16,13 @@ $gradendp: 50%;
 	background: linear-gradient(top, $gradstart $gradstartp,$gradmiddle $gradmiddlep,$gradend $gradendp); /* W3C */
 }
 
+a.landingLink {
+	display: block;
+	margin: auto;
+	width: 969px;
+	text-decoration: none;
+}
+
 #page_content {
 	background: #fff;
 	//overflow: hidden;

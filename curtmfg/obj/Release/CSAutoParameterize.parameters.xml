@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<parameters>
-  <parameter name="CurtDevConnectionString-Web.config Connection String" description="CurtDevConnectionString Connection String used in web.config by the application to access the database." defaultValue="Data Source=10.10.90.83;Initial Catalog=CurtDev;Persist Security Info=True;User ID=curtDuser2;Password=eC0mm3rc3" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="C:\\Users\\jjaniuk\\Projects\\curtmfg\\curtmfg\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='CurtDevConnectionString']/@connectionString" />
-  </parameter>
-  <parameter name="alex_dbConnectionString-Web.config Connection String" description="alex_dbConnectionString Connection String used in web.config by the application to access the database." defaultValue="Data Source=10.10.90.83;Initial Catalog=alex_db;Persist Security Info=True;User ID=curtDuser2;Password=eC0mm3rc3" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="C:\\Users\\jjaniuk\\Projects\\curtmfg\\curtmfg\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='alex_dbConnectionString']/@connectionString" />
-  </parameter>
-</parameters>

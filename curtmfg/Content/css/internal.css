@@ -16,6 +16,12 @@
   background: linear-gradient(top, #857f73 0%, #c6c1bd 33%, #ededed 50%);
   /* W3C */ }
 
+a.landingLink {
+  display: block;
+  margin: auto;
+  width: 969px;
+  text-decoration: none; }
+
 #page_content {
   background: #fff;
   position: relative; }
@@ -167,3 +173,4 @@ a.archive {
   height: 190px; }
   #hitchlookup p {
     padding-bottom: 2px; }
+

@@ -138,6 +138,15 @@ namespace curtmfg
     partial void InsertMapPolygonCoordinate(MapPolygonCoordinate instance);
     partial void UpdateMapPolygonCoordinate(MapPolygonCoordinate instance);
     partial void DeleteMapPolygonCoordinate(MapPolygonCoordinate instance);
+    partial void InsertLandingPage(LandingPage instance);
+    partial void UpdateLandingPage(LandingPage instance);
+    partial void DeleteLandingPage(LandingPage instance);
+    partial void InsertLandingPageData(LandingPageData instance);
+    partial void UpdateLandingPageData(LandingPageData instance);
+    partial void DeleteLandingPageData(LandingPageData instance);
+    partial void InsertLandingPageImage(LandingPageImage instance);
+    partial void UpdateLandingPageImage(LandingPageImage instance);
+    partial void DeleteLandingPageImage(LandingPageImage instance);
     #endregion
 		
 		public CurtDevDataContext() : 
@@ -463,6 +472,30 @@ namespace curtmfg
 			get
 			{
 				return this.GetTable<MapPolygonCoordinate>();
+			}
+		}
+		
+		public System.Data.Linq.Table<LandingPage> LandingPages
+		{
+			get
+			{
+				return this.GetTable<LandingPage>();
+			}
+		}
+		
+		public System.Data.Linq.Table<LandingPageData> LandingPageDatas
+		{
+			get
+			{
+				return this.GetTable<LandingPageData>();
+			}
+		}
+		
+		public System.Data.Linq.Table<LandingPageImage> LandingPageImages
+		{
+			get
+			{
+				return this.GetTable<LandingPageImage>();
 			}
 		}
 	}
@@ -9450,6 +9483,714 @@ namespace curtmfg
 						this._MapPolygonID = default(int);
 					}
 					this.SendPropertyChanged("MapPolygon");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.LandingPage")]
+	public partial class LandingPage : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private int _websiteID;
+		
+		private string _name;
+		
+		private System.DateTime _startDate;
+		
+		private System.DateTime _endDate;
+		
+		private string _url;
+		
+		private string _pageContent;
+		
+		private string _linkClasses;
+		
+		private string _conversionID;
+		
+		private string _conversionLabel;
+		
+		private bool _newWindow;
+		
+		private EntitySet<LandingPageData> _LandingPageDatas;
+		
+		private EntitySet<LandingPageImage> _LandingPageImages;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnwebsiteIDChanging(int value);
+    partial void OnwebsiteIDChanged();
+    partial void OnnameChanging(string value);
+    partial void OnnameChanged();
+    partial void OnstartDateChanging(System.DateTime value);
+    partial void OnstartDateChanged();
+    partial void OnendDateChanging(System.DateTime value);
+    partial void OnendDateChanged();
+    partial void OnurlChanging(string value);
+    partial void OnurlChanged();
+    partial void OnpageContentChanging(string value);
+    partial void OnpageContentChanged();
+    partial void OnlinkClassesChanging(string value);
+    partial void OnlinkClassesChanged();
+    partial void OnconversionIDChanging(string value);
+    partial void OnconversionIDChanged();
+    partial void OnconversionLabelChanging(string value);
+    partial void OnconversionLabelChanged();
+    partial void OnnewWindowChanging(bool value);
+    partial void OnnewWindowChanged();
+    #endregion
+		
+		public LandingPage()
+		{
+			this._LandingPageDatas = new EntitySet<LandingPageData>(new Action<LandingPageData>(this.attach_LandingPageDatas), new Action<LandingPageData>(this.detach_LandingPageDatas));
+			this._LandingPageImages = new EntitySet<LandingPageImage>(new Action<LandingPageImage>(this.attach_LandingPageImages), new Action<LandingPageImage>(this.detach_LandingPageImages));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_websiteID", DbType="Int NOT NULL")]
+		public int websiteID
+		{
+			get
+			{
+				return this._websiteID;
+			}
+			set
+			{
+				if ((this._websiteID != value))
+				{
+					this.OnwebsiteIDChanging(value);
+					this.SendPropertyChanging();
+					this._websiteID = value;
+					this.SendPropertyChanged("websiteID");
+					this.OnwebsiteIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_name", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
+		public string name
+		{
+			get
+			{
+				return this._name;
+			}
+			set
+			{
+				if ((this._name != value))
+				{
+					this.OnnameChanging(value);
+					this.SendPropertyChanging();
+					this._name = value;
+					this.SendPropertyChanged("name");
+					this.OnnameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_startDate", DbType="DateTime NOT NULL")]
+		public System.DateTime startDate
+		{
+			get
+			{
+				return this._startDate;
+			}
+			set
+			{
+				if ((this._startDate != value))
+				{
+					this.OnstartDateChanging(value);
+					this.SendPropertyChanging();
+					this._startDate = value;
+					this.SendPropertyChanged("startDate");
+					this.OnstartDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_endDate", DbType="DateTime NOT NULL")]
+		public System.DateTime endDate
+		{
+			get
+			{
+				return this._endDate;
+			}
+			set
+			{
+				if ((this._endDate != value))
+				{
+					this.OnendDateChanging(value);
+					this.SendPropertyChanging();
+					this._endDate = value;
+					this.SendPropertyChanged("endDate");
+					this.OnendDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_url", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
+		public string url
+		{
+			get
+			{
+				return this._url;
+			}
+			set
+			{
+				if ((this._url != value))
+				{
+					this.OnurlChanging(value);
+					this.SendPropertyChanging();
+					this._url = value;
+					this.SendPropertyChanged("url");
+					this.OnurlChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pageContent", DbType="Text", UpdateCheck=UpdateCheck.Never)]
+		public string pageContent
+		{
+			get
+			{
+				return this._pageContent;
+			}
+			set
+			{
+				if ((this._pageContent != value))
+				{
+					this.OnpageContentChanging(value);
+					this.SendPropertyChanging();
+					this._pageContent = value;
+					this.SendPropertyChanged("pageContent");
+					this.OnpageContentChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_linkClasses", DbType="VarChar(255)")]
+		public string linkClasses
+		{
+			get
+			{
+				return this._linkClasses;
+			}
+			set
+			{
+				if ((this._linkClasses != value))
+				{
+					this.OnlinkClassesChanging(value);
+					this.SendPropertyChanging();
+					this._linkClasses = value;
+					this.SendPropertyChanged("linkClasses");
+					this.OnlinkClassesChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_conversionID", DbType="VarChar(150)")]
+		public string conversionID
+		{
+			get
+			{
+				return this._conversionID;
+			}
+			set
+			{
+				if ((this._conversionID != value))
+				{
+					this.OnconversionIDChanging(value);
+					this.SendPropertyChanging();
+					this._conversionID = value;
+					this.SendPropertyChanged("conversionID");
+					this.OnconversionIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_conversionLabel", DbType="VarChar(150)")]
+		public string conversionLabel
+		{
+			get
+			{
+				return this._conversionLabel;
+			}
+			set
+			{
+				if ((this._conversionLabel != value))
+				{
+					this.OnconversionLabelChanging(value);
+					this.SendPropertyChanging();
+					this._conversionLabel = value;
+					this.SendPropertyChanged("conversionLabel");
+					this.OnconversionLabelChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_newWindow", DbType="Bit NOT NULL")]
+		public bool newWindow
+		{
+			get
+			{
+				return this._newWindow;
+			}
+			set
+			{
+				if ((this._newWindow != value))
+				{
+					this.OnnewWindowChanging(value);
+					this.SendPropertyChanging();
+					this._newWindow = value;
+					this.SendPropertyChanged("newWindow");
+					this.OnnewWindowChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LandingPage_LandingPageData", Storage="_LandingPageDatas", ThisKey="id", OtherKey="landingPageID")]
+		public EntitySet<LandingPageData> LandingPageDatas
+		{
+			get
+			{
+				return this._LandingPageDatas;
+			}
+			set
+			{
+				this._LandingPageDatas.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LandingPage_LandingPageImage", Storage="_LandingPageImages", ThisKey="id", OtherKey="landingPageID")]
+		public EntitySet<LandingPageImage> LandingPageImages
+		{
+			get
+			{
+				return this._LandingPageImages;
+			}
+			set
+			{
+				this._LandingPageImages.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_LandingPageDatas(LandingPageData entity)
+		{
+			this.SendPropertyChanging();
+			entity.LandingPage = this;
+		}
+		
+		private void detach_LandingPageDatas(LandingPageData entity)
+		{
+			this.SendPropertyChanging();
+			entity.LandingPage = null;
+		}
+		
+		private void attach_LandingPageImages(LandingPageImage entity)
+		{
+			this.SendPropertyChanging();
+			entity.LandingPage = this;
+		}
+		
+		private void detach_LandingPageImages(LandingPageImage entity)
+		{
+			this.SendPropertyChanging();
+			entity.LandingPage = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.LandingPageData")]
+	public partial class LandingPageData : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private int _landingPageID;
+		
+		private string _dataKey;
+		
+		private string _dataValue;
+		
+		private EntityRef<LandingPage> _LandingPage;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnlandingPageIDChanging(int value);
+    partial void OnlandingPageIDChanged();
+    partial void OndataKeyChanging(string value);
+    partial void OndataKeyChanged();
+    partial void OndataValueChanging(string value);
+    partial void OndataValueChanged();
+    #endregion
+		
+		public LandingPageData()
+		{
+			this._LandingPage = default(EntityRef<LandingPage>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_landingPageID", DbType="Int NOT NULL")]
+		public int landingPageID
+		{
+			get
+			{
+				return this._landingPageID;
+			}
+			set
+			{
+				if ((this._landingPageID != value))
+				{
+					if (this._LandingPage.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnlandingPageIDChanging(value);
+					this.SendPropertyChanging();
+					this._landingPageID = value;
+					this.SendPropertyChanged("landingPageID");
+					this.OnlandingPageIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dataKey", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string dataKey
+		{
+			get
+			{
+				return this._dataKey;
+			}
+			set
+			{
+				if ((this._dataKey != value))
+				{
+					this.OndataKeyChanging(value);
+					this.SendPropertyChanging();
+					this._dataKey = value;
+					this.SendPropertyChanged("dataKey");
+					this.OndataKeyChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dataValue", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string dataValue
+		{
+			get
+			{
+				return this._dataValue;
+			}
+			set
+			{
+				if ((this._dataValue != value))
+				{
+					this.OndataValueChanging(value);
+					this.SendPropertyChanging();
+					this._dataValue = value;
+					this.SendPropertyChanged("dataValue");
+					this.OndataValueChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LandingPage_LandingPageData", Storage="_LandingPage", ThisKey="landingPageID", OtherKey="id", IsForeignKey=true)]
+		public LandingPage LandingPage
+		{
+			get
+			{
+				return this._LandingPage.Entity;
+			}
+			set
+			{
+				LandingPage previousValue = this._LandingPage.Entity;
+				if (((previousValue != value) 
+							|| (this._LandingPage.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._LandingPage.Entity = null;
+						previousValue.LandingPageDatas.Remove(this);
+					}
+					this._LandingPage.Entity = value;
+					if ((value != null))
+					{
+						value.LandingPageDatas.Add(this);
+						this._landingPageID = value.id;
+					}
+					else
+					{
+						this._landingPageID = default(int);
+					}
+					this.SendPropertyChanged("LandingPage");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.LandingPageImages")]
+	public partial class LandingPageImage : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private int _landingPageID;
+		
+		private string _url;
+		
+		private int _sort;
+		
+		private EntityRef<LandingPage> _LandingPage;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnlandingPageIDChanging(int value);
+    partial void OnlandingPageIDChanged();
+    partial void OnurlChanging(string value);
+    partial void OnurlChanged();
+    partial void OnsortChanging(int value);
+    partial void OnsortChanged();
+    #endregion
+		
+		public LandingPageImage()
+		{
+			this._LandingPage = default(EntityRef<LandingPage>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_landingPageID", DbType="Int NOT NULL")]
+		public int landingPageID
+		{
+			get
+			{
+				return this._landingPageID;
+			}
+			set
+			{
+				if ((this._landingPageID != value))
+				{
+					if (this._LandingPage.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnlandingPageIDChanging(value);
+					this.SendPropertyChanging();
+					this._landingPageID = value;
+					this.SendPropertyChanged("landingPageID");
+					this.OnlandingPageIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_url", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
+		public string url
+		{
+			get
+			{
+				return this._url;
+			}
+			set
+			{
+				if ((this._url != value))
+				{
+					this.OnurlChanging(value);
+					this.SendPropertyChanging();
+					this._url = value;
+					this.SendPropertyChanged("url");
+					this.OnurlChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sort", DbType="Int NOT NULL")]
+		public int sort
+		{
+			get
+			{
+				return this._sort;
+			}
+			set
+			{
+				if ((this._sort != value))
+				{
+					this.OnsortChanging(value);
+					this.SendPropertyChanging();
+					this._sort = value;
+					this.SendPropertyChanged("sort");
+					this.OnsortChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LandingPage_LandingPageImage", Storage="_LandingPage", ThisKey="landingPageID", OtherKey="id", IsForeignKey=true)]
+		public LandingPage LandingPage
+		{
+			get
+			{
+				return this._LandingPage.Entity;
+			}
+			set
+			{
+				LandingPage previousValue = this._LandingPage.Entity;
+				if (((previousValue != value) 
+							|| (this._LandingPage.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._LandingPage.Entity = null;
+						previousValue.LandingPageImages.Remove(this);
+					}
+					this._LandingPage.Entity = value;
+					if ((value != null))
+					{
+						value.LandingPageImages.Add(this);
+						this._landingPageID = value.id;
+					}
+					else
+					{
+						this._landingPageID = default(int);
+					}
+					this.SendPropertyChanged("LandingPage");
 				}
 			}
 		}

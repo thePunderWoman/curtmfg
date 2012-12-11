@@ -155,6 +155,7 @@
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\ContentController.cs" />
+    <Compile Include="Controllers\LandingPageController.cs" />
     <Compile Include="Controllers\SurveysController.cs" />
     <Compile Include="Controllers\DealerController.cs" />
     <Compile Include="Controllers\FAQController.cs" />
@@ -198,6 +199,7 @@
     <Compile Include="Models\FAQ.cs" />
     <Compile Include="Models\Forum.cs" />
     <Compile Include="Models\Hitch_API.cs" />
+    <Compile Include="Models\LandingPage.cs" />
     <Compile Include="Models\Logger.cs" />
     <Compile Include="Models\MediaModel.cs" />
     <Compile Include="Models\MenuModel.cs" />
@@ -653,10 +655,12 @@
     <Content Include="Scripts\custom\hitchResults.js" />
     <Content Include="Scripts\custom\hitch_lookup.js" />
     <Content Include="Scripts\custom\homepage.js" />
+    <Content Include="Scripts\custom\jquery.cycle.all.js" />
     <Content Include="Scripts\custom\jquery.cycle.lite.js" />
     <Content Include="Scripts\custom\jquery.dataTables.min.js" />
     <Content Include="Scripts\custom\jquery.popup.js" />
     <Content Include="Scripts\custom\jquery.smoothDivScroll-1.1-min.js" />
+    <Content Include="Scripts\custom\landingpage.js" />
     <Content Include="Scripts\custom\lifestyle.js" />
     <Content Include="Scripts\custom\lifestyles.js" />
     <Content Include="Scripts\custom\randomize.js" />
@@ -788,6 +792,9 @@
     <None Include="Properties\PublishProfiles\Release.pubxml" />
     <Content Include="Views\Surveys\WebProperties.cshtml" />
     <Content Include="Views\Surveys\Thank.cshtml" />
+    <Content Include="Views\Shared\_LandingLayout.cshtml" />
+    <Content Include="Views\Shared\_LandingHeader.cshtml" />
+    <Content Include="Views\LandingPage\index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
