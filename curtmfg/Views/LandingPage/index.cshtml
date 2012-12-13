@@ -13,7 +13,7 @@
     <div class="chicklet">@Html.Partial("_SubNav")</div>
 }
 
-@if (landingPage.conversionID != "" && landingPage.conversionLabel != "") {
+@if (landingPage.conversionID != null && landingPage.conversionID.Trim() != "" && landingPage.conversionLabel != null && landingPage.conversionLabel.Trim() != "") {
     <!-- Google Code for adwords Conversion -->
     <script type="text/javascript">
     /* <![CDATA[ */

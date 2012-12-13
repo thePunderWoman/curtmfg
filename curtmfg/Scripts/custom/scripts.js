@@ -110,6 +110,9 @@ $(function () {
     $(document).on("click", ".buyOnline", function (event) {
         event.preventDefault();
         var partID = $(this).attr('id');
+        if (partID == undefined || partID == '') {
+            partID = $(this).data('id');
+        }
         var analyticstr = 'Opened Where to buy for part ' + partID;
         if (typeof (_gaq) != 'undefined') {
             _gaq.push(['_trackEvent', 'WhereToBuy', 'Initial Click', analyticstr]);
