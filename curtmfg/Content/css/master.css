@@ -1017,3 +1017,11 @@ p.breadcrumbs {
     border: none;
     background-color: transparent; }
 
+.maintenance {
+  padding: 10px;
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+  text-align: center;
+  background-color: #900; }
+
