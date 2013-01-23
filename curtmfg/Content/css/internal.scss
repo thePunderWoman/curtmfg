@@ -16,7 +16,7 @@ $gradendp: 50%;
 	background: linear-gradient(top, $gradstart $gradstartp,$gradmiddle $gradmiddlep,$gradend $gradendp); /* W3C */
 }
 
-a.landingLink {
+.landingLink {
 	display: block;
 	margin: auto;
 	width: 969px;
@@ -24,6 +24,14 @@ a.landingLink {
 	img {
 		display: block;
 	}
+}
+
+.AvantGarde {
+	font-family: ITCAvantGardeGothicStdBold;
+	text-transform: uppercase;
+	color: #666;
+	letter-spacing: -.1em;
+	line-height: 1;
 }
 
 #page_content {

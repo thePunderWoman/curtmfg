@@ -5,8 +5,16 @@
         datastr += "data-" + data.dataKey + "=" + data.dataValue + " ";
     }
 }
-<a href="@landingPage.url" @datastr class="landingLink @landingPage.linkClasses" @((landingPage.newWindow) ? "target=_blank" : "")>
-    @foreach (curtmfg.LandingPageImage image in landingPage.LandingPageImages) {
-        <img src="@image.url" alt="Page Image" />
-    }
-</a>
+@if (landingPage.url != "") {
+    <a href="@landingPage.url" @datastr class="landingLink @landingPage.linkClasses" @((landingPage.newWindow) ? "target=_blank" : "")>
+        @foreach (curtmfg.LandingPageImage image in landingPage.LandingPageImages) {
+            <img src="@image.url" alt="Page Image" />
+        }
+    </a>
+} else {
+    <div @datastr class="landingLink @landingPage.linkClasses">
+        @foreach (curtmfg.LandingPageImage image in landingPage.LandingPageImages) {
+            <img src="@image.url" alt="Page Image" />
+        }
+    </div>
+}

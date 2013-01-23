@@ -16,13 +16,20 @@
   background: linear-gradient(top, #857f73 0%, #c6c1bd 33%, #ededed 50%);
   /* W3C */ }
 
-a.landingLink {
+.landingLink {
   display: block;
   margin: auto;
   width: 969px;
   text-decoration: none; }
-  a.landingLink img {
+  .landingLink img {
     display: block; }
+
+.AvantGarde {
+  font-family: ITCAvantGardeGothicStdBold;
+  text-transform: uppercase;
+  color: #666;
+  letter-spacing: -0.1em;
+  line-height: 1; }
 
 #page_content {
   background: #fff;
