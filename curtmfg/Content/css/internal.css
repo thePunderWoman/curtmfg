@@ -28,7 +28,7 @@
   font-family: ITCAvantGardeGothicStdBold;
   text-transform: uppercase;
   color: #666;
-  letter-spacing: -0.1em;
+  letter-spacing: -0.06em;
   line-height: 1; }
 
 #page_content {
@@ -39,7 +39,7 @@
     font-family: ITCAvantGardeGothicStdBold;
     text-transform: uppercase;
     color: #666;
-    letter-spacing: -0.1em;
+    letter-spacing: -0.06em;
     line-height: 1;
     margin: 0;
     padding: .83em 0; }

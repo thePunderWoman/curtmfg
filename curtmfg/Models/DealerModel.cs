@@ -42,7 +42,7 @@ namespace curtmfg.Models
                                 cust_id = cl.cust_id,
                                 isprimary = cl.isprimary,
                                 contact_person = cl.contact_person,
-                                websiteurl = (c.eLocalURL == null) ? "" : c.eLocalURL,
+                                websiteurl = (c.eLocalURL == null || c.eLocalURL.Trim() == "") ? ((c.website == null || c.website.Trim() == "") ? "" : c.website) : c.eLocalURL,
                                 showWebsite = c.showWebsite
                             }).FirstOrDefault<DealerLocation>();
             } catch { };
@@ -186,7 +186,7 @@ namespace curtmfg.Models
                                                   cust_id = cl.cust_id,
                                                   isprimary = cl.isprimary,
                                                   contact_person = cl.contact_person,
-                                                  websiteurl = (c.eLocalURL == null) ? "" : c.eLocalURL,
+                                                  websiteurl = (c.eLocalURL == null || c.eLocalURL.Trim() == "") ? ((c.website == null || c.website.Trim() == "") ? "" : c.website) : c.eLocalURL,
                                                   showWebsite = c.showWebsite
                                               }).OrderByDescending(x => x.dealerTier.sort).ThenBy(x => x.distance).ToList<DealerLocation>();
             IQueryable<DealerLocation> locationqry = locationlist.AsQueryable();
@@ -266,7 +266,7 @@ namespace curtmfg.Models
                                                   cust_id = cl.cust_id,
                                                   isprimary = cl.isprimary,
                                                   contact_person = cl.contact_person,
-                                                  websiteurl = (c.eLocalURL == null) ? "" : c.eLocalURL,
+                                                  websiteurl = (c.eLocalURL == null || c.eLocalURL.Trim() == "") ? ((c.website == null || c.website.Trim() == "") ? "" : c.website) : c.eLocalURL,
                                                   showWebsite = c.showWebsite
                                               }).ToList<DealerLocation>();
             return locations;
@@ -299,7 +299,7 @@ namespace curtmfg.Models
                                               cust_id = cl.cust_id,
                                               isprimary = cl.isprimary,
                                               contact_person = cl.contact_person,
-                                              websiteurl = (c.eLocalURL == null) ? "" : c.eLocalURL,
+                                              websiteurl = (c.eLocalURL == null || c.eLocalURL.Trim() == "") ? ((c.website == null || c.website.Trim() == "") ? "" : c.website) : c.eLocalURL,
                                               showWebsite = c.showWebsite
                                           }).ToList<DealerLocation>();
             return locations;
@@ -346,7 +346,7 @@ namespace curtmfg.Models
                                                   cust_id = cl.cust_id,
                                                   isprimary = cl.isprimary,
                                                   contact_person = cl.contact_person,
-                                                  websiteurl = (c.eLocalURL == null) ? "" : c.eLocalURL,
+                                                  websiteurl = (c.eLocalURL == null || c.eLocalURL.Trim() == "") ? ((c.website == null || c.website.Trim() == "") ? "" : c.website) : c.eLocalURL,
                                                   showWebsite = c.showWebsite
                                               }).OrderBy(x => x.distance).ToList<DealerLocation>();
             return locations;

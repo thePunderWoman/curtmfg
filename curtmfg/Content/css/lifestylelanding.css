@@ -32,7 +32,7 @@
     font-family: ITCAvantGardeGothicStdBold;
     text-transform: uppercase;
     color: #333;
-    letter-spacing: -0.1em;
+    letter-spacing: -0.06em;
     line-height: 1;
     padding-top: 20px;
     margin-left: 10px;
@@ -298,3 +298,4 @@
           #page_content #recommended .part span.partname span strong {
             font-size: 1em;
             display: inline; }
+

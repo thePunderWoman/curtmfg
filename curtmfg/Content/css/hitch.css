@@ -602,7 +602,7 @@ h4#vehicle.hasvehicle {
     padding: 5px 0;
     font-family: ITCAvantGardeGothicStdBold;
     text-transform: uppercase;
-    letter-spacing: -0.1em;
+    letter-spacing: -0.06em;
     line-height: 1;
     color: #818286; }
   #howto div.partvideo iframe {
@@ -712,3 +712,4 @@ div#rate {
       #accessories .accessory span.accessname span strong {
         font-size: 1em;
         display: inline; }
+
