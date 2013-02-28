@@ -273,8 +273,8 @@ $(function(){
                 <li><a id="accessories_tab" href="/part/@(part.partID)#tab=accessories">Accessories</a></li>
             }
             <li><a id="reviews_tab" href="/part/@(part.partID)#tab=reviews">Reviews</a></li>
-            @if (showInstallSheet || videos.Count > 0) {
-                <li><a id="howto_tab" href="/part/@(part.partID)#tab=howto">How To</a></li>
+            @if (videos.Count > 0) {
+                <li><a id="howto_tab" href="/part/@(part.partID)#tab=howto">Videos</a></li>
             }
             <li class="clear"></li>
         </ul>
@@ -535,29 +535,14 @@ $(function(){
                         <p class="noreviews">No Reviews. Be the first person to review this product.</p>
                     }
                 </div>
-                @if (showInstallSheet || videos.Count > 0) {
+                @if (videos.Count > 0) {
 			        <div class="tab_content" id="howto">
-                        @if (instructionPath != "") {
-                            <p id="howto_instruction">
-                                Instruction Sheet #@part.partID:
-                                <a title="Download Instruction Sheet" href="@instructionPath" target="_blank">
-                                    <span>Download</span>
-                                    <img src="@Url.Content("~/Content/img/pdf.png")" id="howto_icon" />
-                                </a>
-                            </p>
-                            
-                        }
                         @foreach (curtmfg.Models.APIVideo vid in videos) {
                             <div class="partvideo">
                                 <p class="videoType">@vid.type</p>
                                 <iframe src="http://www.youtube.com/embed/@vid.youTubeVideoID?rel=0" allowfullscreen></iframe>
                             </div>
                         }
-                        @*if (installVideo != "") {
-                            <div id="installationVideo">
-                                <iframe width="400" height="264" src="http://www.youtube.com/embed/@installVideo?rel=0" allowfullscreen></iframe>
-                            </div>
-                        }*@
 			        </div>
                 }
                 <span class="clear"></span>
