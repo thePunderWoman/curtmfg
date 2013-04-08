@@ -5,6 +5,7 @@ using System.Web;
 using System.Net;
 using System.Text.RegularExpressions;
 using System.Security.Cryptography;
+using System.Net.Mail;
 
 namespace curtmfg.Models {
     public class UDF {
@@ -142,6 +143,16 @@ namespace curtmfg.Models {
         public static bool IsEmail(string email) {
             if (email != null) return Regex.IsMatch(email, MatchEmailPattern);
             else return false;
+        }
+
+        public static void SendEmail(string to, string subject, string body, bool html) {
+            MailMessage mail = new MailMessage();
+            SmtpClient SmtpServer = new SmtpClient();
+            mail.To.Add(to);
+            mail.Subject = subject;
+            mail.IsBodyHtml = html;
+            mail.Body = body;
+            SmtpServer.Send(mail);
         }
     }
 }

@@ -280,7 +280,7 @@ namespace curtmfg.Models {
                 string part_json = wc.DownloadString(url);
                 List<APIPart> parts = JsonConvert.DeserializeObject<List<APIPart>>(part_json);
                 return parts;
-            } catch {
+            } catch (Exception e) {
                 return new List<APIPart>();
             };
         }

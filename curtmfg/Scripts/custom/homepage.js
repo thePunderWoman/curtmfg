@@ -10,7 +10,7 @@ function readyMethods() {
     $(".video_content:first").show(); //Show first tab content*/
 
     $.getJSON('/Twitter/GetTweets', loadTweets);
-    $.get('http://api.curtmfg.com/V2/getLatestParts?dataType=JSONP&callback=loadLatestParts', function () { }, 'jsonp');
+    $.get('//api.curtmfg.com/V2/getLatestParts?dataType=JSONP&callback=loadLatestParts', function () { }, 'jsonp');
 
     loadYouTube();
 
@@ -73,7 +73,7 @@ loadYouTube = function () {
             }
             var vid = '<div id="video' + i + '" class="video_content video-js-box">';
             vid += '<span class="video_title">' + obj.title + '</span>';
-            vid += '<span id="videospan-' + obj.youtubeID + '" class="videoIframe"><img src="' + obj.screenshot + '" alt="' + obj.title + '" class="videoThumb" /><span class="overlay" data-videoID="' + obj.embed_link + '"><span class="playbutton"></span></span></span>';
+            vid += '<span id="videospan-' + obj.youtubeID + '" class="videoIframe"><img src="' + obj.screenshot.replace('http:','').replace('https:','') + '" alt="' + obj.title + '" class="videoThumb" /><span class="overlay" data-videoID="' + obj.embed_link + '"><span class="playbutton"></span></span></span>';
             vid += '<div class="video_text"><span>' + obj.description + '</span></div></div>';
             $('#videos').append(vid);
         });
@@ -89,7 +89,7 @@ loadVideo = function (obj) {
     $('#videospan-' + ytvideoID + ' .overlay').hide();
     $('#videospan-' + ytvideoID + ' .videoThumb').hide();
     $('#videospan-' + ytvideoID).append('<iframe allowtransparency="true" id="frame_' + ytvideoID + '" width="270" height="203" frameborder="0" allowfullscreen></iframe>');
-    $('iframe#frame_' + ytvideoID).attr('src', 'http://www.youtube.com/embed/' + ytvideoID + '?autoplay=1&rel=0');
+    $('iframe#frame_' + ytvideoID).attr('src', '//www.youtube.com/embed/' + ytvideoID + '?autoplay=1&rel=0');
 }
 
 loadLatestParts = function (data) {
