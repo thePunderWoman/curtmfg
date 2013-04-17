@@ -9,7 +9,7 @@
     }
     string title = "CURT Manufacturing";
     if (ViewBag.Title != null & ViewBag.Title != "") {
-        title += " | " + ViewBag.Title;
+        title = ViewBag.Title + " | " + title;
     }
 }
 
