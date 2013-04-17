@@ -394,8 +394,8 @@
     <Content Include="Content\img\icons\Cargo_Management_opacity.png" />
     <Content Include="Content\img\icons\Electrical.png" />
     <Content Include="Content\img\icons\Electrical_opacity.png" />
-    <Content Include="Content\img\icons\Hitches.png" />
-    <Content Include="Content\img\icons\Hitches_opacity.png" />
+    <Content Include="Content\img\icons\Trailer_Hitches.png" />
+    <Content Include="Content\img\icons\Trailer_Hitches_opacity.png" />
     <Content Include="Content\img\icons\Security.png" />
     <Content Include="Content\img\icons\Security_opacity.png" />
     <Content Include="Content\img\icons\Specialized_Towing.png" />
