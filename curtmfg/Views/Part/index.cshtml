@@ -38,6 +38,7 @@
     List<string> errors = ViewBag.errors ?? new List<string>();
     bool showInstallSheet = (instructionPath != "") ? true : false;
     bool showInstallation = (showInstallSheet || (part.vehicleAttributes.Count > 0 && part.vehicleID != 0) || (installVideo != null && installVideo.videoID != 0)) ? true : false;
+    bool activeStatus = (part.status == 800 || part.status == 900);
 }
 @{
     if (colorcode != null && colorcode != "") {
@@ -169,8 +170,10 @@ $(function(){
             <span class="clear"></span>
         </header>
         <div id="hitchleft">
+            @if (activeStatus) {
             <a href="/WhereToBuy/" class="buyOnline button" id="@(part.partID)">Where To Buy</a>
             <p id="msrp">MSRP <span title="Check Out Our Dealers' Great Prices!" class="tip">@String.Format("{0:c}", part.listPrice)</span></p>
+            }
             <span class="clear"></span>
             @if (bullets.Count() > 0) {
                 <ul>

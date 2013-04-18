@@ -21,7 +21,14 @@ namespace curtmfg.Controllers {
         // GET: /HitchLookup/
 
         public ActionResult Index(int id, Review review = null) {
-
+            if (id.ToString().Length == 6) {
+                int pid = Convert.ToInt32(id.ToString().Substring(0, 5));
+                int lid = Convert.ToInt32(id.ToString().Substring(5, 1));
+                if (lid == 0) {
+                    int nid = Convert.ToInt32(pid.ToString() + "3");
+                    return RedirectToRoutePermanent("Part", new { id = nid });
+                }
+            }
             if (review != null) {
                 ViewBag.name = review.name;
                 ViewBag.email = review.email;
