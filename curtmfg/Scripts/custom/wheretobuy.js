@@ -627,12 +627,15 @@ $(function () {
         }
     });
 
-    $(document).on('click','.dealer a.onlinedealer', function () {
+    $(document).on('click', '.dealer a.onlinedealer', function (e) {
+        e.preventDefault();
         var locname = $(this).data('name');
+        var href = $(this).attr('href');
         var analyticstr = 'Clicked Online Dealer ' + locname;
         if (typeof (_gaq) != 'undefined') {
             _gaq.push(['_trackEvent', 'WhereToBuy', 'Clicked Online Dealer', analyticstr]);
         }
+        setTimeout(function () { document.location.href = href }, 100);
     });
 
     $(document).on('click', '#toggles .toggle input', function (e) {
