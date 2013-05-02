@@ -69,7 +69,7 @@ body {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e64d2c', endColorstr='#8e402f',GradientType=0 );
   /* IE6-9 */
   border: none;
-  border-radius: 4px/6px;
+  border-radius: 4px / 6px;
   border-bottom: 1px solid #e64d2c;
   color: #fff;
   text-transform: uppercase;
@@ -485,10 +485,10 @@ a:hover {
         -o-transform: scaleY(-1);
         transform: scaleY(-1);
         opacity: .5; }
-      #sub_nav ul li#category_hitches a {
-        background: url("../img/icons/Hitches_opacity.png") bottom center no-repeat; }
-      #sub_nav ul li#category_hitches span {
-        background: url("../img/icons/Hitches.png") bottom center no-repeat;
+      #sub_nav ul li#category_trailer_hitches a {
+        background: url("../img/icons/Trailer_Hitches_opacity.png") bottom center no-repeat; }
+      #sub_nav ul li#category_trailer_hitches span {
+        background: url("../img/icons/Trailer_Hitches.png") bottom center no-repeat;
         -webkit-transform: scaleY(-1);
         -moz-transform: scaleY(-1);
         -ms-transform: scaleY(-1);
@@ -909,7 +909,7 @@ img.actualsizeimg {
     font-family: ITCAvantGardeGothicStdBold;
     text-transform: uppercase;
     color: #333;
-    letter-spacing: -0.06em;
+    letter-spacing: -.06em;
     line-height: 1; }
   #wheretobuydealers ul {
     display: block;
