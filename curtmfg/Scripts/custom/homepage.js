@@ -95,7 +95,18 @@ loadVideo = function (obj) {
 loadLatestParts = function (data) {
     $('#latestpartloader').hide();
     $('#partloadingmessage').remove();
-    $(data).each(function (i, obj) {
+    // randomize data
+    var tempdata = [];
+    var newdata = [];
+    for (var i = 0; i < data.length; i++) {
+        tempdata.push(data[i])
+    }
+    for (var i = 0; i < data.length - 1; i++) {
+        newdata.push(tempdata.splice(Math.floor(Math.random() * tempdata.length), 1)[0]);
+    }
+    newdata.push(tempdata[0]);
+    // display data
+    $(newdata).each(function (i, obj) {
         var imgsrc = "";
         var imgloader = "/Content/img/ajax-loader4.gif";
         var smallimgsrc = "";
