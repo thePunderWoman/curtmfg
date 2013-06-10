@@ -28,15 +28,18 @@
     List<string> bullets = new List<string>();
     curtmfg.Models.APIVideo installVideo = videos.Where(x => x.type.ToLower().Equals("installation video")).FirstOrDefault<APIVideo>();
     string instructionPath = "";
+    string appGuidePath = "";
     List<curtmfg.Models.APIReview> reviews = part.reviews;
     foreach (curtmfg.Models.APIAttribute attribute in part.content) {
         if (attribute.key.ToLower() == "note") { notes.Add(attribute.value); };
         if (attribute.key.ToLower() == "bullet") { bullets.Add(attribute.value); };
         if (attribute.key.ToLower() == "description") { description.Add(attribute.value); };
         if (attribute.key.ToLower() == "installationsheet") { instructionPath = attribute.value; };
+        if (attribute.key.ToLower() == "appguide") { appGuidePath = attribute.value; };
     }
     List<string> errors = ViewBag.errors ?? new List<string>();
     bool showInstallSheet = (instructionPath != "") ? true : false;
+    bool showAppGuide = (appGuidePath != "") ? true : false;
     bool showInstallation = (showInstallSheet || (part.vehicleAttributes.Count > 0 && part.vehicleID != 0) || (installVideo != null && installVideo.videoID != 0)) ? true : false;
     bool activeStatus = (part.status == 800 || part.status == 900);
 }
@@ -160,7 +163,7 @@ $(function(){
                     <iframe seamless="seamless" src="//platform.twitter.com/widgets/tweet_button.html?count=none&amp;url=@Url.Content("~/part/" + part.partID)" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
                 </div>
                 <div class="facebook-like">
-                    <iframe seamless="seamless" src="//www.facebook.com/plugins/like.php?href=@Url.Content("~/part/" + part.partID)&amp;send=false&amp;layout=standard&amp;width=48&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=20&amp;appId=154903937934243"  scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+                    <iframe seamless="seamless" src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.curtmfg.com%2Fpart%2F@(part.partID)&amp;send=false&amp;layout=standard&amp;width=48&amp;show_faces=false&amp;font&amp;colorscheme=light&amp;action=like&amp;height=35&amp;appId=154903937934243" scrolling="no" frameborder="0" style="border:none; overflow:hidden; allowTransparency="true"></iframe>
                 </div>
                 <div class="gplus1">
                     <g:plusone size="medium" annotation="none" href="@Url.Content("~/part/" + part.partID)"></g:plusone>
@@ -199,6 +202,26 @@ $(function(){
                 <a rel="shadowbox[video];width=600;height=364" title="@primaryvid.type for Part #@part.partID" href="http://www.youtube.com/v/@primaryvid.youTubeVideoID&hl=en&fs=1&rel=0&autoplay=1" id="primaryVideo" data-partid="@part.partID"><img src="@primaryvid.typeicon" alt="View the @primaryvid.type" /></a>
             }
         </div>
+        @if (showAppGuide) {
+            <table id="appguide">
+                <thead>
+                    <tr>
+                        <th colspan="2">Fit Your Vehicle</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="label">Application Guide</td>
+                        <td>
+                            <a id="pdf" target="_blank" href="@appGuidePath">
+                                <span>Download</span>
+                                <img src="@Url.Content("~/Content/img/pdf.png")" width="20" alt="pdf" />
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        }
         @if (showInstallation) {
             <table id="installation">
                 <thead>

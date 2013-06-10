@@ -6,8 +6,10 @@
 @foreach (APIPart part in parts) {
     List<curtmfg.Models.APIAttribute> attributes = part.attributes.Where(x => x.key.ToLower() != "upc").ToList<curtmfg.Models.APIAttribute>();
     string instructionPath = "";
+    string appGuidePath = "";
     foreach (curtmfg.Models.APIAttribute attribute in part.content) {
         if (attribute.key.ToLower() == "installationsheet") { instructionPath = attribute.value; };
+        if (attribute.key.ToLower() == "appguide") { appGuidePath = attribute.value; };
     }
     string fitclass = "";
     if (ViewBag.category != null && ViewBag.category.vehicleSpecific && part.vehicleID != null && part.vehicleID != 0 && ViewBag.vehicleID != "") {
@@ -78,6 +80,12 @@
         <div class="productRight">
             <a href="/WhereToBuy/" class="buyOnline button" id="@part.partID">Where To Buy</a>
             <p class="msrp">MSRP <span>@String.Format("{0:c}", part.listPrice)</span></p>
+            @if (appGuidePath != "") {
+                <a class="instructions" target="_blank" href="@appGuidePath">
+                    <span>Fit Your Vehicle - Application Guide</span>
+                    <img src="@Url.Content("~/Content/img/pdf.png")" width="20" />
+                </a>
+            }
             @if (instructionPath != "") {
                 <a class="instructions" target="_blank" href="@instructionPath">
                     <span>Instructions</span>
@@ -108,7 +116,7 @@
                     <iframe scrolling="no" frameborder="0" allowTransparency="true" src="//platform.twitter.com/widgets/tweet_button.html?count=none&amp;url=@Url.Content("~/part/" + part.partID)"></iframe>
                 </div>
                 <div class="facebook-like">
-                    <iframe src="//www.facebook.com/plugins/like.php?href=@Url.Content("~/part/" + part.partID)&amp;send=false&amp;layout=standard&amp;width=48&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=20&amp;appId=154903937934243"  scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+                    <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.curtmfg.com%2Fpart%2F@(part.partID)&amp;send=false&amp;layout=standard&amp;width=48&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=20&amp;appId=154903937934243"  scrolling="no" frameborder="0" allowTransparency="true"></iframe>
                 </div>
                 <div class="gplus1">
                     <g:plusone size="medium" annotation="none" href="@Url.Content("~/part/" + part.partID)"></g:plusone>
