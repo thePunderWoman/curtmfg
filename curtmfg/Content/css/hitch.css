@@ -165,7 +165,7 @@ h4#vehicle.hasvehicle {
       color: Blue; }
       #hitchInfo #pdf span:hover {
         text-decoration: underline; }
-  #hitchInfo table#installation, #hitchInfo table#details {
+  #hitchInfo table#installation, #hitchInfo table#details, #hitchInfo table#appguide {
     max-width: 232px;
     float: right;
     clear: right;
@@ -177,27 +177,27 @@ h4#vehicle.hasvehicle {
     text-align: left;
     background-color: #f4f4f4;
     margin-bottom: 10px; }
-    #hitchInfo table#installation thead th, #hitchInfo table#details thead th {
+    #hitchInfo table#installation thead th, #hitchInfo table#details thead th, #hitchInfo table#appguide thead th {
       border-bottom: 4px solid #dddddd;
       font-size: 1.4em;
       width: 230px; }
-    #hitchInfo table#installation tbody td, #hitchInfo table#details tbody td {
+    #hitchInfo table#installation tbody td, #hitchInfo table#details tbody td, #hitchInfo table#appguide tbody td {
       height: 25px; }
-      #hitchInfo table#installation tbody td a img, #hitchInfo table#details tbody td a img {
+      #hitchInfo table#installation tbody td a img, #hitchInfo table#details tbody td a img, #hitchInfo table#appguide tbody td a img {
         vertical-align: middle; }
-      #hitchInfo table#installation tbody td.label, #hitchInfo table#details tbody td.label {
+      #hitchInfo table#installation tbody td.label, #hitchInfo table#details tbody td.label, #hitchInfo table#appguide tbody td.label {
         text-align: right;
         padding: 0 15px;
         font-weight: bold;
         font-size: 1em; }
-      #hitchInfo table#installation tbody td a#showVideo, #hitchInfo table#details tbody td a#showVideo {
+      #hitchInfo table#installation tbody td a#showVideo, #hitchInfo table#details tbody td a#showVideo, #hitchInfo table#appguide tbody td a#showVideo {
         text-decoration: none;
         background: url("/Content/img/playvideo.png") top left no-repeat;
         width: 30px;
         height: 20px;
         float: left;
         font-size: 0px; }
-        #hitchInfo table#installation tbody td a#showVideo:hover, #hitchInfo table#details tbody td a#showVideo:hover {
+        #hitchInfo table#installation tbody td a#showVideo:hover, #hitchInfo table#details tbody td a#showVideo:hover, #hitchInfo table#appguide tbody td a#showVideo:hover {
           text-decoration: underline; }
 
 .tooltip {
@@ -602,7 +602,7 @@ h4#vehicle.hasvehicle {
     padding: 5px 0;
     font-family: ITCAvantGardeGothicStdBold;
     text-transform: uppercase;
-    letter-spacing: -0.06em;
+    letter-spacing: -.06em;
     line-height: 1;
     color: #818286; }
   #howto div.partvideo iframe {
