@@ -197,10 +197,10 @@ $(function(){
                     }
                 </ul>
             }
-            @if (videos.Any(x => x.isPrimary.Equals(true))) {
+            @*@if (videos.Any(x => x.isPrimary.Equals(true))) {
                 curtmfg.Models.APIVideo primaryvid = videos.Where(x => x.isPrimary.Equals(true)).FirstOrDefault();
                 <a rel="shadowbox[video];width=600;height=364" title="@primaryvid.type for Part #@part.partID" href="http://www.youtube.com/v/@primaryvid.youTubeVideoID&hl=en&fs=1&rel=0&autoplay=1" id="primaryVideo" data-partid="@part.partID"><img src="@primaryvid.typeicon" alt="View the @primaryvid.type" /></a>
-            }
+            }*@
         </div>
         @if (showAppGuide) {
             <table id="appguide">
@@ -243,9 +243,11 @@ $(function(){
                     }
                     @if (installVideo != null && installVideo.videoID != 0) {
                         <tr>
-                            <td class="label">Installation Video</td>
-                            <td>
-                                <a id="showVideo" rel="shadowbox[installationvideo];width=600;height=364" title="Installation Video for Part #@part.partID" href="http://www.youtube.com/v/@installVideo.youTubeVideoID&hl=en&fs=1&rel=0&autoplay=1" data-partid="@part.partID">View</a>
+                            <td colspan="2" class="installvideo">
+                                <a id="showVideo" rel="shadowbox[installationvideo];width=600;height=364" title="Installation Video for Part #@part.partID" href="http://www.youtube.com/v/@installVideo.youTubeVideoID&hl=en&fs=1&rel=0&autoplay=1" data-partid="@part.partID">
+                                    <img src="http://i.ytimg.com/vi/@installVideo.youTubeVideoID/mqdefault.jpg" alt="Installation Video" />
+                                    <span class="overlay" data-videoid="@installVideo.youTubeVideoID"><span class="playbutton"></span></span>
+                                </a>
                             </td>
                         </tr>
                     }
