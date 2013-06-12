@@ -337,6 +337,19 @@ function addInstallSheets(partobj, part) {
     }
 }
 
+function addAppGuides(partobj, part) {
+    var guidePath = "";
+    if (part.content.length > 0) {
+        for (var i in part.content) {
+            if (part.content[i].key != undefined && part.content[i].key.length > 0 && part.content[i].key.toLowerCase() == "appguide") guidePath = part.content[i].value;
+        }
+    }
+
+    if (guidePath != "") {
+        $(partobj).find('p.msrp').after('<a class="instructions" target="_blank" href="' + guidePath + '"><span>Fit Your Vehicle</span><img src="/Content/img/pdf.png" width="20" /></a>');
+    }
+}
+
 function mailPart(prodID) {
     var message = "[Your name] would like to share a CURT Part with you. http://www.curtmfg.com/part/" + prodID;
     end = " would like to share a CURT Part with you. http://www.curtmfg.com/part/" + prodID;
@@ -503,6 +516,7 @@ function appendPart(part, page) {
     }
     $(thispart).find('.shortDescription').after(attrtable);
     addInstallSheets(thispart, part);
+    addAppGuides(thispart, part)
     gapi.plusone.go("part_" + part.partID);
 }
 
