@@ -13,3 +13,4 @@ TestResults
 *.user
 Web.Debug.config
 Web.Release.config
+Web.Beta.config
