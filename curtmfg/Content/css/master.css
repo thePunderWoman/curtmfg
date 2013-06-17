@@ -784,27 +784,6 @@ article.question {
     padding-top: 4px; }
 
 /* End FAQ */
-/* Application Guides */
-#applicationGuides {
-  display: block; }
-  #applicationGuides h3 {
-    color: #f26552;
-    font-size: 1.5em;
-    font-weight: normal;
-    padding-bottom: 16px; }
-  #applicationGuides .app {
-    display: block;
-    margin-bottom: 10px; }
-    #applicationGuides .app .app_links {
-      width: 120px;
-      float: left; }
-    #applicationGuides .app span {
-      line-height: 2.5em;
-      vertical-align: bottom;
-      float: left;
-      font-size: 1.6em; }
-
-/* End Application Guides */
 div.starrating {
   display: block;
   height: 15px;
@@ -1024,4 +1003,23 @@ p.breadcrumbs {
   font-size: 15px;
   text-align: center;
   background-color: #900; }
+
+#applicationGuides h3 {
+  font-size: 1.8em; }
+#applicationGuides table {
+  width: 95%;
+  border-collapse: collapse;
+  margin: 9px; }
+  #applicationGuides table tbody tr {
+    border-top: 1px dashed #bfbfbf; }
+    #applicationGuides table tbody tr:first-child {
+      border-top: none; }
+    #applicationGuides table tbody tr td {
+      padding: 6px 4px; }
+      #applicationGuides table tbody tr td:first-child {
+        font-size: 1.6em;
+        font-weight: bold;
+        font-family: 'Roboto Condensed', sans-serif; }
+    #applicationGuides table tbody tr:nth-child(even) {
+      background-color: #e7e7e7; }
 

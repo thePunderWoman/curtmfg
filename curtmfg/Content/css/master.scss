@@ -930,37 +930,6 @@ article.question {
 
 /* End FAQ */
 
-/* Application Guides */
-#applicationGuides {
-	display: block;
-
-	h3 {
-		color: #f26552;
-		font-size: 1.5em;
-		font-weight: normal;
-		padding-bottom: 16px;
-	}
-
-	.app {
-		display: block;
-		margin-bottom: 10px;
-		
-		.app_links {
-			width: 120px;
-			float:left;
-		}
-
-		span {
-			line-height: 2.5em;
-			vertical-align: bottom;
-			float:left;
-			font-size: 1.6em;
-		}
-	}
-}
-
-/* End Application Guides */
-
 div.starrating {
 	display: block;
 	height: 15px;
@@ -1219,4 +1188,36 @@ p.breadcrumbs {
 	font-size: 15px;
 	text-align: center;
 	background-color: #900;
+}
+
+#applicationGuides {
+	h3 {
+		font-size: 1.8em;
+	}
+
+    table {
+		width: 95%;
+        border-collapse: collapse;
+		margin: 9px;
+        tbody {
+            tr {
+				border-top: 1px dashed #bfbfbf;
+				&:first-child {
+					border-top: none;
+				}
+                td {
+					padding: 6px 4px;
+                    &:first-child {
+                        font-size: 1.6em;
+                        font-weight: bold;
+                        font-family: 'Roboto Condensed', sans-serif;
+                    }
+                }
+
+                &:nth-child(even) {
+                    background-color: #e7e7e7;
+                }
+            }
+        }
+    }
 }
